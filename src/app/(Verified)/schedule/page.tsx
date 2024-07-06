@@ -12,7 +12,7 @@ const Schedule =async ()=>{
         
         <Text ml='29px'>Schedule {" "}</Text>
         
-      <Table name={session?.user?.name}/>
+      <Table name={session?.user?.name} email={session?.user?.email}/>
         </div>
     )
 }

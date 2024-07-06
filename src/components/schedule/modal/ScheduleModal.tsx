@@ -21,6 +21,8 @@ import {
 import { useState } from "react";
 import DateTime from "./change/DateTime";
 import Location from "./change/Location";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 
 type ValuePiece = Date | null;
@@ -31,7 +33,8 @@ type Value = ValuePiece | [ValuePiece, ValuePiece];
 const ScheduleModal: React.FC<{
   hiding: () => void;
   name: string | null | undefined;
-}> = ({ hiding, name }) => {
+  email: string | null | undefined;
+}> = ({ hiding, name,email }) => {
   const date = useAppSelector(selectDate);
   const time = useAppSelector(selectTime);
   const location = useAppSelector(selectLocation);
@@ -43,6 +46,7 @@ const ScheduleModal: React.FC<{
   const online = useAppSelector(selectOnline);
   const [dateTime,setDateTime] = useState(false);
   const [locations,setLocation] = useState(false);
+  const [loading,setLoading] = useState(false);
   
 
   const dispatch = useAppDispatch();
@@ -56,12 +60,49 @@ const ScheduleModal: React.FC<{
     dispatch(handleChange({ name, value }));
   };
 
+  const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
+    try {
+      setLoading(true);
+
+      // Assuming data is from component state
+      const dataToSend = {
+        date,
+        time,
+        location,
+        patientName:patient,
+        purpose,
+        status,
+        duration,
+        type,
+        online,
+      };
+
+      // Implement data validation if needed (using Yup, Zod, etc.)
+
+      const response = await axios.post(`/api/appointment/add/${email}`, dataToSend);
+      if (response.status === 201) {
+        toast.success('Successfully added appointment');
+      } else {
+        toast.error(response.data.message || 'Failed to add appointment');
+      }
+    } catch (error: any) {
+      if (error.response) {
+        toast.error(error.response.data.message);
+      } else {
+        console.error('Error creating appointment:', error);
+        toast.error('An unexpected error occurred.');
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
 
     <form
-      onSubmit={() => {}}
+      onSubmit={handleSubmit}
       className="block absolute z-[250] top-16 left-1/2 transform -translate-x-1/2 rounded-lg w-[760.2px] bg-white"
     >
       {dateTime&&(<DateTime onClick={()=>setDateTime(false)} />)}
@@ -163,16 +204,17 @@ const ScheduleModal: React.FC<{
 
         <div className="v_center justify-end mx-20 gap-5 my-12">
           <button
+          type="button"
             onClick={hiding}
             className="font-mukta font-medium text-base py-2 px-3 text-black"
           >
             Cancel{" "}
           </button>
-          <button className="font-mukta font-medium text-base py-2 px-3 bg-[#0000ac] text-white rounded-lg border-2 border-[#0000ac]">
+          <button type="button" className="font-mukta font-medium text-base py-2 px-3 bg-[#0000ac] text-white rounded-lg border-2 border-[#0000ac]">
             Begin Appointment{" "}
           </button>
-          <button className="font-mukta font-medium text-base py-2 px-3 text-[#0000ac] rounded-lg border-2 border-[#0000ac]">
-            Save
+          <button  className="font-mukta font-medium text-base py-2 px-3 text-[#0000ac] rounded-lg border-2 border-[#0000ac]">
+            {loading?'Saving...':'Save'}
           </button>
         </div>
       </div>

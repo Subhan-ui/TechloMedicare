@@ -4,6 +4,7 @@ import OnlyModal from './ScheduleModal'
 type ModalProps = {
   hiding: () => void;
   name:string|null|undefined;
+  email:string|null|undefined;
 };
 
 const Modals: React.FC<ModalProps> = (props) => {
@@ -11,7 +12,7 @@ const Modals: React.FC<ModalProps> = (props) => {
     <div className="animate_animated animate__backInUp">
       <Backdrop hiding={props.hiding} />,
       
-      <OnlyModal name={props.name} hiding={props.hiding} />,
+      <OnlyModal email={props.email} name={props.name} hiding={props.hiding} />,
     </div>
   );
 };

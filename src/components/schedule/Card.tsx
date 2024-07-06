@@ -1,13 +1,25 @@
+import { SchedulerTypes } from "devextreme-react/scheduler";
 import { GoPerson, GoClock, GoLocation } from "react-icons/go";
 import { GrNotes } from "react-icons/gr";
+import { formatDate } from "devextreme/localization";
 
-const Card: React.FC<{
-  color: string;
-  name: string;
-  reason: string;
-  time: string;
-  location: string;
-}> = ({ color, name, reason, time, location }) => {
+type AppointmentProps = {
+  data: { targetedAppointmentData: SchedulerTypes.Appointment };
+};
+
+const Card: React.FC<AppointmentProps> = (props) => {
+  const color = "#2f80ed";
+  const { targetedAppointmentData } = props.data;
+  const { location, name, purpose} =
+    targetedAppointmentData;
+  const time = ` ${formatDate(
+    targetedAppointmentData.displayStartDate,
+    "shortTime"
+  )} - ${formatDate(
+    targetedAppointmentData.displayEndDate,
+    "shortTime"
+  )}`;
+  console.log('card component running')
   return (
     <div
       className="w-[187px] h-[119px] rounded-lg pt-1  "
@@ -26,7 +38,7 @@ const Card: React.FC<{
         </div>
         <div className="v_center gap-3 ml-2 font-mukta font-normal text-xs">
           <GrNotes size={10} />
-          {reason}
+          {purpose}
         </div>
         <div className="v_center gap-3 ml-2 font-mukta font-normal text-xs">
           <GoClock size={10} />
