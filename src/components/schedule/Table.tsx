@@ -3,20 +3,19 @@
 import Card from "./Card";
 import Col from "./Col";
 import Bar from "@/components/commonContent/TopBar";
-import {
-  IoPrintOutline,
-  IoAddSharp,
-  IoFunnelOutline,
-  IoHelpCircleOutline,
-} from "react-icons/io5";
+import { Print, Add, Filter, Help } from "@/constants/react-icons";
 import Modals from "@/components/schedule/modal/Modal";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Something from "../ui/Something";
+import { EventProps } from "react-big-calendar";
 
 
 // location,time,duration,name,purpose
 type appointmentData = {
+  id: string,
+  event_id:string,
+  title:string,
   location: string;
   time: string;
   nextDate:string;
@@ -24,10 +23,10 @@ type appointmentData = {
   name: string;
   purspose: string;
   online: boolean;
-  startDate: string;
-  endDate: string;
+  start: Date;
+  end: Date;
 }
-
+type cardType = EventProps&{location:string,name:string,purpose:string,start:Date,end:Date}
 
 const calculateEndTime = (startDate: Date, duration: string): Date => {
   const endDate = new Date(startDate);
@@ -44,7 +43,7 @@ const convertToDateTime = (dateString: string, timeString: string): Date => {
 
 const Table:React.FC<{name:string|undefined|null,email:string|undefined|null}> = ({name,email}) => {
   const [show,setShow]=useState(false);
-  const [data,setData]=useState<appointmentData[]>([])
+  const [data,setData]=useState<cardType[]>([])
 
   useEffect(() => {
     (async () => {
@@ -52,16 +51,18 @@ const Table:React.FC<{name:string|undefined|null,email:string|undefined|null}> =
         try {
           const response = await axios.get(`/api/appointment/get?email=${email}`);
           const transformedData = response.data.map((appointment: appointmentData) => {
-            const startDate = convertToDateTime(appointment.nextDate, appointment.time);
-            const endDate = calculateEndTime(startDate, appointment.duration);
+            const start = convertToDateTime(appointment.nextDate, appointment.time);
+            const end = calculateEndTime(start, appointment.duration);
 
             return {
               ...appointment,
-              startDate: startDate.toString(),
-              endDate: endDate.toString(),
+              start: start,
+              end: end,
+              event_id: appointment.id,
+              title: appointment.name
             };
           });
-          console.log(transformedData)
+          
           setData(transformedData);
         } catch (error) {
           console.error('Error fetching appointments:', error);
@@ -76,36 +77,17 @@ const Table:React.FC<{name:string|undefined|null,email:string|undefined|null}> =
 
   return (
     <>
-    {show&&<Modals email={email} name={name} hiding={handleShowModal}/>}
-    <Bar classN="justify-between">
-        <h1 className="font-mukta font-medium text-xl">
-        Weekly schedule from 25th  to 1st November 2022
-        </h1>
+      {show && <Modals email={email} name={name} hiding={handleShowModal} />}
+      <Bar classN="justify-between">
+        <h1 className="font-mukta font-medium text-xl">Weekly schedule from 25th to 1st November 2022</h1>
         <div className="v_center gap-5">
-          <IoAddSharp
-            onClick={handleShowModal}
-            className="border p-1 h-[40px] w-[40px]"
-            color="#333333"
-            size={18}
-          />
-          <IoFunnelOutline
-            className="border p-1 h-[40px] w-[40px]"
-            color="#333333"
-            size={25}
-          />
-          <IoPrintOutline
-            className="border p-1 h-[40px] w-[40px]"
-            color="#333333"
-            size={25}
-          />
-          <IoHelpCircleOutline
-            className="border p-1 h-[40px] w-[40px]"
-            color="#333333"
-            size={26}
-          />
+          <Add onClick={handleShowModal} className="border p-1 h-[40px] w-[40px]" color="#333333" size={18} />
+          <Filter className="border p-1 h-[40px] w-[40px]" color="#333333" size={25} />
+          <Print className="border p-1 h-[40px] w-[40px]" color="#333333" size={25} />
+          <Help className="border p-1 h-[40px] w-[40px]" color="#333333" size={26} />
         </div>
       </Bar>
-      <Something data={data}/>
+      <Something data={data} />
     </>
   );
 };

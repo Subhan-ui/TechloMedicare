@@ -23,35 +23,33 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const session = await getServerSession(authOptions);
-  if(!session?.user?.email){
-    redirect('/login');
+  if (!session?.user?.email) {
+    redirect("/login");
   }
   return (
     <StoreProvider>
-    <html lang="en">
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
-        />
-      </Head>
-      <body className={`bg-[#F5F5F5] v_center flex-col`}>
-      <ToastProvider />
-        <div className="w-[1412px]">
-          <Navbar />
-          <div className="flex">
-            <SideNav />
-            <Suspense fallback={<Loading />}>
-            <EdgeStoreProvider>
-            {children}
-            </EdgeStoreProvider>
-            </Suspense>
+      <html lang="en">
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
+          />
+        </Head>
+        <body className={`bg-[#F5F5F5] v_center flex-col`}>
+          <ToastProvider />
+          <div className="w-[1412px]">
+            <Navbar />
+            <div className="flex">
+              <SideNav />
+              <Suspense fallback={<Loading />}>
+                <EdgeStoreProvider>{children}</EdgeStoreProvider>
+              </Suspense>
+            </div>
           </div>
-        </div>
-      </body>
-    </html>
+        </body>
+      </html>
     </StoreProvider>
   );
 }

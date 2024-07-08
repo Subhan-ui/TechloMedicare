@@ -6,7 +6,6 @@ const Col: React.FC<{ day: string }> = ({ day }) => {
       <div className="text-center border-r-2 h-[190px] border-b-2"></div>
       <div className="text-center border-r-2 h-[190px] border-b-2"></div>
       <div className="text-center border-r-2 h-[190px] border-b-2"></div>
-      
     </>
   );
 };

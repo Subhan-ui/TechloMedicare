@@ -1,36 +1,72 @@
-import { task } from "@/models/taskCard";
-import Task from "./Task";
-import { CiSquarePlus } from "react-icons/ci";
-import { FaChevronRight } from "react-icons/fa";
+"use client";
 
-const Tasks = ()=>{
-    const taskContent:task[] = [
-        {id: 1, date: '24 October 2022', title: 'Sign up for covid - 19 training course for medicine'},
-        {id: 2, date: '24 October 2022', title: 'Sign up for covid - 19 training course for medicine'},
-        {id: 3, date: '24 October 2022', title: 'Sign up for covid - 19 training course for medicine'},
-        {id: 4, date: '24 October 2022', title: 'Sign up for covid - 19 training course for medicine'},
-    ]
-    return (
-        <div className="bg-white mt-[17px] w-[709px] px-[16.67px]">
-            <div className="v_center justify-between h-[61.78px]">
-                <h5 className="font-bold text-base font-mukta">Tasks</h5>
-                <h4 className="v_center gap-2 font-mukta text-[#0000AC] font-semibold text-sm">New Tasks <CiSquarePlus size={24}/></h4>
-            </div>
-            <div className="flex flex-col gap-4">
-            {taskContent.map(task=>(
-                <Task 
+import Task from "./Task";
+import { Add, Right } from "@/constants/react-icons";
+
+import useTasks from "@/hooks/useTasks";
+import TaskModal from "./TaskModal";
+
+const Tasks: React.FC<{ email: string | undefined | null }> = ({ email }) => {
+  const {
+    data,
+    loading,
+    show,
+    loadAdd,
+    title,
+    handleSubmit,
+    handleChange,
+    handleDelete,
+    handleShow,
+    handleTitle,
+  } = useTasks({ email });
+  return (
+    <>
+      {show && (
+        <TaskModal
+          title={title}
+          handleTitle={handleTitle}
+          handleShow={handleShow}
+          handleSubmit={handleSubmit}
+          loadAdd={loadAdd}
+        />
+      )}
+      <div className="bg-white mt-[17px] w-[709px] px-[16.67px]">
+        <div className="v_center justify-between h-[61.78px]">
+          <h5 className="font-bold text-base font-mukta">Tasks</h5>
+          <h4
+            onClick={handleShow}
+            className="v_center gap-2 font-mukta text-[#0000AC] font-semibold text-sm cursor-pointer"
+          >
+            New Tasks <Add size={24} />
+          </h4>
+        </div>
+        {!loading ? (
+          <div className="flex flex-col gap-4">
+            {data.map((task) => (
+              <Task
+                handleChange={handleChange}
                 key={task.id}
                 id={task.id}
                 date={task.date}
-                title={task.title}
-                />
-
+                title={task.task}
+                checked={task.completed}
+                handleDelete={handleDelete}
+              />
             ))}
-            </div>
-        <p className="font-mukta text-[#0000ac] v_center justify-end py-9 gap-3">View all <FaChevronRight className="border-2 border-gray-300 h-[17.6px] w-[17.6px]" size={17}/></p>
-        </div>
-    )
-}
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
+        <p className="font-mukta text-[#0000ac] v_center justify-end py-9 gap-3">
+          View all{" "}
+          <Right
+            className="border-2 border-gray-300 h-[17.6px] w-[17.6px]"
+            size={17}
+          />
+        </p>
+      </div>
+    </>
+  );
+};
 
 export default Tasks;
-

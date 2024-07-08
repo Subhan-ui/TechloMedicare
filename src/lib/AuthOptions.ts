@@ -26,11 +26,14 @@ export const authOptions: AuthOptions = {
           credentials.password,
           12
         );
-        const isPasswordValid = await bcrypt.compare(credentials.password, user.hashedPassword);
+        const isPasswordValid = await bcrypt.compare(
+          credentials.password,
+          user.hashedPassword
+        );
         if (!isPasswordValid) {
           throw new Error("Incorrect Password");
         }
-       return user;
+        return user;
       },
     }),
   ],

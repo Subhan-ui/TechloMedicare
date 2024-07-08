@@ -12,10 +12,9 @@ import {
 } from "@/store/features/login/loginSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import axios from "axios";
-import { signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import toast from "react-hot-toast";
 
 const Home = () => {

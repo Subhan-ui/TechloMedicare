@@ -8,10 +8,10 @@ import {
   selectPassword,
 } from "@/store/features/login/loginSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { signIn, signOut } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 
 const Login = () => {
@@ -52,9 +52,9 @@ const Login = () => {
       setLoading(false);
     }
   };
-  const handleShow=()=>{
-    setShow(prev=>!prev)
-  }
+  const handleShow = () => {
+    setShow((prev) => !prev);
+  };
   return (
     <div className="w-[544px] h-[1025px] px-[47px]">
       <h1 className="mt-[125px] font-mukta text-4xl">Welcome to Medicare</h1>
@@ -73,13 +73,18 @@ const Login = () => {
         value={password}
         onChange={handleChanges}
       />
-      {show?(
+      {show ? (
         <>
-        <Modals hiding={handleShow}/>
+          <Modals hiding={handleShow} />
         </>
-      ):(<p onClick={handleShow} className="cursor-pointer font-mukta text-[#4f4f4f] text-end hover:text-[#0000ac] font-semibold">
-        Forgot Password?
-      </p>)}
+      ) : (
+        <p
+          onClick={handleShow}
+          className="cursor-pointer font-mukta text-[#4f4f4f] text-end hover:text-[#0000ac] font-semibold"
+        >
+          Forgot Password?
+        </p>
+      )}
       <button
         onClick={handleSubmit}
         className="w-full bg-[#0000ac] text-white py-4 rounded-xl"

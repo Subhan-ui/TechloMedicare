@@ -52,3 +52,11 @@ model Appointment {
   type              String
   online            Boolean
 }
+
+model Tasks {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  doctorEmail String
+  task        String
+  completed   Boolean
+  date        String
+}

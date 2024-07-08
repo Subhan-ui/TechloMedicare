@@ -1,15 +1,10 @@
-
 type componentsProps = {
   children: React.ReactNode;
   classN: string;
-  onClick?: ()=>void;
-}
+  onClick?: () => void;
+};
 
-const Bar: React.FC<componentsProps> = ({
-  children,
-  classN,
-  onClick,
-}) => {
+const Bar: React.FC<componentsProps> = ({ children, classN, onClick }) => {
   return (
     <>
       <div
@@ -21,4 +16,5 @@ const Bar: React.FC<componentsProps> = ({
     </>
   );
 };
+
 export default Bar;

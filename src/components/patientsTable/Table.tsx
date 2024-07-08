@@ -1,21 +1,59 @@
+import Link from "next/link";
+import { Help, Add, Search, Filter } from "@/constants/react-icons";
+import Bar from "@/components/commonContent/TopBar";
+import { selectNumber } from "@/store/features/patients/patientSlice";
+import { useAppSelector } from "@/store/hooks";
+
 const Table: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const number = useAppSelector(selectNumber);
   return (
-    <table className="mx-[22.55px] bg-white mt-[17px] table-fixed w-[1122px]">
-      <thead className="h-[65.7px] border-b-2 border-gray-300">
-        <tr className="font-mukta text-lg text-[#828282] text-center">
-          <td>Profile</td>
-          <td>Name</td>
-          <td>Diagnosis</td>
-          <td>Status</td>
-          <td>Phone Number</td>
-          <td>Date of Birth</td>
-          <td>Options</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>{children}</tr>
-      </tbody>
-    </table>
+    <>
+      <Bar classN="justify-between">
+        <h1 className="font-mukta font-semibold text-xl">
+          Total Patients <span className="text-[#828282]">({number})</span>
+        </h1>
+        <div className="v_center gap-5">
+          <Link href="/patients/add">
+            <Add
+              className="border p-1 h-[40px] w-[40px]"
+              color="#333333"
+              size={18}
+            />
+          </Link>
+          <Search
+            className="border p-1 h-[40px] w-[40px]"
+            color="#333333"
+            size={22}
+          />
+          <Filter
+            className="border p-1 h-[40px] w-[40px]"
+            color="#333333"
+            size={25}
+          />
+          <Help
+            className="border p-1 h-[40px] w-[40px]"
+            color="#333333"
+            size={26}
+          />
+        </div>
+      </Bar>
+      <table className="mx-[22.55px] bg-white mt-[17px] table-fixed w-[1122px]">
+        <thead className="h-[65.7px] border-b-2 border-gray-300">
+          <tr className="font-mukta text-lg text-[#828282] text-center">
+            <td>Profile</td>
+            <td>Name</td>
+            <td>Diagnosis</td>
+            <td>Status</td>
+            <td>Phone Number</td>
+            <td>Date of Birth</td>
+            <td>Options</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>{children}</tr>
+        </tbody>
+      </table>
+    </>
   );
 };
 

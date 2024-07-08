@@ -2,8 +2,7 @@ import { authOptions } from "@/lib/AuthOptions";
 import { getServerSession } from "next-auth";
 import { signOut } from "next-auth/react";
 import Image from "next/image";
-import { IoMailOutline, IoExitOutline, IoSearchSharp } from "react-icons/io5";
-import { LuBell } from "react-icons/lu";
+import { Search, Bell, Mail,  } from "@/constants/react-icons";
 import LogoutButton from "./ui/logoutButton";
 // import { useRouter } from "next/navigation";
 
@@ -33,7 +32,7 @@ const Navbar = async () => {
               className="pl-3 rounded-md border-2 border-gray-300 h-[40.21px] w-[580px]"
             />
             <button type="submit" className="absolute right-7">
-              <IoSearchSharp size={24} color="#828282" />
+              <Search size={24} color="#828282" />
             </button>
           </form>
           <div className="text-end font-mukta">
@@ -46,8 +45,8 @@ const Navbar = async () => {
             </p>
           </div>
           <div className="gap-[34.9px] v_center">
-            <IoMailOutline size={24} color="#828282" />
-            <LuBell size={24} color="#828282" />
+            <Mail size={24} color="#828282" />
+            <Bell size={24} color="#828282" />
             <LogoutButton />
           </div>
         </div>

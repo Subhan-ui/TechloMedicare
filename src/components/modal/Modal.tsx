@@ -1,4 +1,4 @@
-import Backdrop from "./ModalBackdrop";
+import Backdrop from "../modals/ModalBackdrop";
 import OnlyModal from "./PasswordModal";
 
 type ModalProps = {

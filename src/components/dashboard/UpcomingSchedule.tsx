@@ -1,4 +1,4 @@
-import { IoAddSharp } from "react-icons/io5";
+import { Add } from "@/constants/react-icons";
 
 const UpcomingSchedule = () => {
   return (
@@ -7,7 +7,7 @@ const UpcomingSchedule = () => {
         <h1 className="font-mukta font-bold text-base">Upcoming Schedule</h1>
         <div className="v_center gap-3 font-mukta font-semibold text-xs text-[#0000ac]">
           <p>New Appointment{" "}</p>
-          <IoAddSharp
+          <Add
             className="border p-1 h-[23.45px] w-[23.45px]"
             color="#0000ac"
             size={18}

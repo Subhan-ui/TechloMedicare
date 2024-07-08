@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Backdrop from "../modal/ModalBackdrop";
+import Backdrop from "../modals/ModalBackdrop";
 import { useEdgeStore } from "@/lib/edgestore";
 import { stringify } from "querystring";
 import Link from "next/link";

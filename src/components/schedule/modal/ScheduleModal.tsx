@@ -1,7 +1,4 @@
-import { IoCloseSharp } from "react-icons/io5";
-import { GoPerson, GoClock, GoLocation } from "react-icons/go";
-import { FaRegBell } from "react-icons/fa";
-import { ImCross } from "react-icons/im";
+import { Cross, Person,Clock,LocationI,Bell } from "@/constants/react-icons";
 import Button from "./Button";
 import Toggle from "@/components/ui/ScheduleModalToggle";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
@@ -109,24 +106,24 @@ const ScheduleModal: React.FC<{
       {locations&&(<Location onClick={()=>setLocation(false)} />)}
       <div className="text-white bg-[#0000ac] w-full h-[82px] v_center justify-between px-6">
         <h2 className="font-mukta font-bold text-2xl ">New Appointment</h2>
-        <IoCloseSharp size={24} onClick={hiding} className="cursor-pointer" />
+        <Cross size={24} onClick={hiding} className="cursor-pointer" />
       </div>
       <div className="mt-7 flex justify-around">
         <div className="v_center gap-1 flex-col">
-          <GoPerson size={24} color="#2f80ed" />
+          <Person size={24} color="#2f80ed" />
           <h2 className="font-mukta text-lg text-[#2f80ed]">Practitioner</h2>
           <p className="font-mukta text-base">{name}</p>
           <p className="font-mukta font-bold text-base">General Doctor</p>
         </div>
         <div className="v_center gap-1 flex-col">
-          <GoClock size={24} color="#2f80ed" />
+          <Clock size={24} color="#2f80ed" />
           <h2 className="font-mukta text-lg text-[#2f80ed]">Date and Time</h2>
           <p className="font-mukta text-base">{date}</p>
           <p className="font-mukta font-bold text-base">{time}</p>
           <p onClick={()=>setDateTime(true)} className="font-mukta text-xs text-[#2f80ed] cursor-pointer">Change</p>
         </div>
         <div className="v_center gap-1 flex-col">
-          <GoLocation size={24} color="#2f80ed" />
+          <LocationI size={24} color="#2f80ed" />
           <h2 className="font-mukta text-lg text-[#2f80ed]">Location</h2>
           <p className="font-mukta text-base">General Clinic</p>
           <p className="font-mukta font-bold text-base">Room {location}</p>
@@ -143,7 +140,7 @@ const ScheduleModal: React.FC<{
           className="w-[415px] px-3 h-[44px] ml-40 border-2 border-gray-300"
           placeholder=""
         />
-        <ImCross
+        <Cross
           className="absolute right-40 bottom-[1.08rem]"
           color="#333333"
           size={12}
@@ -194,7 +191,7 @@ const ScheduleModal: React.FC<{
       </div>
       <div>
         <div className="v_center gap-3 ml-7 mt-16">
-          <FaRegBell size={30} />
+          <Bell size={30} />
           <p className="font-mukta font-bold text-lg">Send Notifications</p>
         </div>
         <p className="font-mukta text-[#333333] text-base mx-7 mt-2">

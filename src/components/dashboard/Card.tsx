@@ -1,6 +1,6 @@
 import { card } from "@/models/dashboardCard";
-import { SlOptions } from "react-icons/sl";
-import { GrUpgrade } from "react-icons/gr";
+import { Options, Upgrade } from "@/constants/react-icons";
+
 import Image from "next/image";
 
 const Card: React.FC<card> = (props) => {
@@ -9,14 +9,14 @@ const Card: React.FC<card> = (props) => {
     <div className="w-[358.91px] h-[191.22px] bg-white p-[22px] relative">
       <div className="v_center justify-between ">
         <h1 className="font-semibold font-mukta">{props.heading}</h1>
-        <SlOptions />
+        <Options />
       </div>
       <div className="flex justify-between">
         <div>
           <h1 className="text-4xl font-bold mt-6">{props.number}</h1>
           {props.percentage !== "" && (
             <div className="absolute v_center bottom-8 gap-2">
-              <GrUpgrade
+              <Upgrade
                 className={`bg-[#27AE60] text-white rounded-full`}
                 style={{ backgroundColor:color}}
                 size={21}

@@ -14,7 +14,7 @@ import {
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 
 const FormAddPatient: React.FC<{ handleShow: () => void,cross:boolean }> = ({
-cross,handleShow
+cross
 }) => {
   const foreName = useAppSelector(selectForeName);
   const lastName = useAppSelector(selectLastName);

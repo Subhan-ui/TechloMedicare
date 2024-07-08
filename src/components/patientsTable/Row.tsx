@@ -3,7 +3,7 @@
 import { tableContent } from "@/models/table";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { BsThreeDots } from "react-icons/bs";
+import { Options } from "@/constants/react-icons";
 
 const Row: React.FC<tableContent> = (props) => {
   const [color, setColor] = useState("#1d1d1d");
@@ -42,7 +42,7 @@ const Row: React.FC<tableContent> = (props) => {
       <td>{props.last}</td>
       <td>{props.next}</td>
       <td className="relative left-16" onClick={()=>props.handleShow(props.id)}>
-        <BsThreeDots  style={{ fontSize: "20px" }}/>
+        <Options  style={{ fontSize: "20px" }}/>
         
       </td>
     </tr>

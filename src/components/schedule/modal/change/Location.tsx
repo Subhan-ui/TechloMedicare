@@ -1,7 +1,6 @@
 import { handleChange } from "@/store/features/appointment/appointmentSlice";
 import { useAppDispatch } from "@/store/hooks";
 import React from "react";
-import { useDispatch } from "react-redux";
 
 const Location: React.FC<{ onClick: () => void }> = ({ onClick }) => {
     const dispatch = useAppDispatch();

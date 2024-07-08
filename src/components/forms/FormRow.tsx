@@ -1,4 +1,4 @@
-import { ImCross } from "react-icons/im";
+import { Cross } from "@/constants/react-icons";
 
 const Row: React.FC<{
   children: string;
@@ -34,7 +34,7 @@ const Row: React.FC<{
             />
           )}
           {cross && (
-            <ImCross
+            <Cross
               className="absolute right-56 bottom-[1.08rem]"
               color="#333333"
               size={12}

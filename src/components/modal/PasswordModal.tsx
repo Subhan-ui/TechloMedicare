@@ -43,6 +43,7 @@ const PasswordModal: React.FC<ModalProps> = ({ hiding }) => {
     }
   };
   return (
+    <>
     <form
       onSubmit={handleSubmit}
       className="md:block hidden fixed z-[250] top-24 left-1/2 transform -translate-x-1/2 p-12  rounded-lg w-[45%] bg-white"
@@ -84,6 +85,7 @@ const PasswordModal: React.FC<ModalProps> = ({ hiding }) => {
         </button>
       </div>
     </form>
+    </>
   );
 };
 

@@ -1,56 +1,21 @@
 "use client";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import Input from "../ui/Input";
-import {
-  handleChange,
-  selectPassword,
-} from "@/store/features/login/loginSlice";
+import { handleChange } from "@/store/features/login/loginSlice";
 import Bar from "../commonContent/TopBar";
-import { useState } from "react";
-import axios from "axios";
-import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
+import { useAppDispatch } from "@/store/hooks";
+import useSettings from "@/hooks/usePassword";
 
 const ChangePassword: React.FC<{ email: string | null | undefined }> = ({
   email,
 }) => {
-  const router = useRouter();
-  const password = useAppSelector(selectPassword);
-  const [show, setShow] = useState(true);
-  const [loading, setLoading] = useState(false); 
   const dispatch = useAppDispatch();
-  const handleShow = () => {
-    setShow((prev) => !prev);
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      setLoading(true);
-      const response = await axios.patch("/api/auth/change", {
-        email: email,
-        password: password,
-      });
-
-      toast.success("Successfully updated your password");
-      router.push("/");
-    } catch (error: any) {
-      console.log(error);
-      if (error.response && error.response.data) {
-        toast.error(error.response.data.message);
-      } else {
-        toast.error("An error occurred. Please try again.");
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
-
+  const { handleShow, handleSubmit, loading, show, password } =
+    useSettings(email);
   return (
     <>
       {show ? (
-        <Bar classN="justify-between mt-9" onClick={handleShow}>
+        <Bar classN="justify-between mt-9 cursor-pointer" onClick={handleShow}>
           <h1 className="font-mukta font-semibold text-xl">Change Password</h1>
         </Bar>
       ) : (
