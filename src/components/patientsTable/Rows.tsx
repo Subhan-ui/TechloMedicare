@@ -12,18 +12,18 @@ const Rows: React.FC<{ email: string | null | undefined }> = ({ email }) => {
   const dispatch = useAppDispatch();
   const { handleHiding, handleShow, id, show, data, loading } =
     usePatients(email);
-  if (data.length >= 1) {
+  if (data.length >= 0) {
     dispatch(handleNumber(data.length));
     return (
       <>
-        {show && <Modal handleShow={handleHiding} id={id} />}
         <Table>
+        {show && <Modal handleShow={handleHiding} id={id} />}
           <td colSpan={7}>
             <div className="overflow-y-auto overflow-x-hidden h-[625.64px] ">
+              <table className="table-fixed w-[1122px]">
               {loading ? (
                 <Loader />
               ) : (
-                <table className="table-fixed w-[1122px]">
                   <tbody>
                     {data.map((row) => (
                       <Row
@@ -40,8 +40,8 @@ const Rows: React.FC<{ email: string | null | undefined }> = ({ email }) => {
                       />
                     ))}
                   </tbody>
-                </table>
-              )}
+              )} 
+              </table>
             </div>
           </td>
         </Table>

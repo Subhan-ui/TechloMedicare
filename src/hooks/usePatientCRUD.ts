@@ -34,12 +34,10 @@ const usePatientCRUD = (id: string, handleShow: () => void, email?: string | nul
   }>();
   const [loadingPost, setLoadingPost] = useState(false);
   const [progress, setProgress] = useState(0);
-
-
-
   const [loading, setLoading] = useState(false);
   const [loadingDelete, setLoadingDelete] = useState(false);
   const router = useRouter();
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
@@ -63,6 +61,7 @@ const usePatientCRUD = (id: string, handleShow: () => void, email?: string | nul
       setLoading(false);
     }
   };
+
   const handleDelete = async () => {
     const sure = confirm("Are you sure You wan tto delete this patient?");
     if (sure) {
@@ -80,7 +79,6 @@ const usePatientCRUD = (id: string, handleShow: () => void, email?: string | nul
       }
     }
   };
-
 
   const handleChangeUrl = async () => {
     if (image) {
@@ -125,14 +123,10 @@ const usePatientCRUD = (id: string, handleShow: () => void, email?: string | nul
         url: urls?.url,
       };
 
-      console.log("Sending patient data:", patientData);
-
       const response = await axios.post(
         `/api/patients/add/${email}`,
         patientData
       );
-
-      console.log("Server response:", response);
 
       toast.success("Patient Successfully added.");
       router.push("/patients");
@@ -143,6 +137,7 @@ const usePatientCRUD = (id: string, handleShow: () => void, email?: string | nul
       setLoadingPost(false);
     }
   };
+
   return { handleDelete, handleSubmit, loading, loadingPost, loadingDelete, handlePost, handleChangeImage, handleChangeUrl, image, urls, progress }
 }
 

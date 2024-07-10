@@ -15,19 +15,19 @@ import {
 
 const SideNav = () => {
   const router = usePathname();
-
+  
   return (
     <div className="w-[245.16px]  h-[908px] border-r-2 border-gray-300 bg-white relative">
       <h5 className="text-[#828282] text-[12px] mt-[30px] ml-[20px]">MENU</h5>
       <ul className="flex flex-col gap-4">
         <li
           className={`sideButton ${
-            router === "/" ? "text-[#0000ac]" : "text-[#828282]"
+            router === "/" ? "text-blue" : "text-[#828282]"
           }`}
         >
           <span
             className={`w-2 h-full mr-[7px] rounded-r-lg ${
-              router === "/" ? `bg-[#0000ac] ` : "bg-white"
+              router === "/" ? `bg-blue ` : "bg-white"
             }`}
           />
           <Dashboard size={24} />
@@ -40,12 +40,12 @@ const SideNav = () => {
         </li>
         <li
           className={`sideButton ${
-            router === "/schedule" ? "text-[#0000ac]" : "text-[#828282]"
+            router === "/schedule" ? "text-blue" : "text-[#828282]"
           }`}
         >
           <span
             className={`w-2 h-full mr-[7px] rounded-r-lg ${
-              router === "/schedule" ? `bg-[#0000ac] ` : "bg-white"
+              router === "/schedule" ? `bg-blue ` : "bg-white"
             }`}
           />
           <Schedules size={24} />
@@ -58,12 +58,12 @@ const SideNav = () => {
         </li>
         <li
           className={`sideButton ${
-            router === "/tasks" ? "text-[#0000ac]" : "text-[#828282]"
+            router === "/tasks" ? "text-blue" : "text-[#828282]"
           }`}
         >
           <span
             className={`w-2 h-full mr-[7px] rounded-r-lg ${
-              router === "/tasks" ? `bg-[#0000ac] ` : "bg-white"
+              router === "/tasks" ? `bg-blue ` : "bg-white"
             }`}
           />
           <Task size={24} />
@@ -71,12 +71,12 @@ const SideNav = () => {
         </li>
         <li
           className={`sideButton ${
-            router === "/patients" ? "text-[#0000ac]" : "text-[#828282]"
+            router === "/patients" ? "text-blue" : "text-[#828282]"
           }`}
         >
           <span
             className={`w-2 h-full mr-[7px] rounded-r-lg ${
-              router === "/patients" ? `bg-[#0000ac] ` : "bg-white"
+              router === "/patients" ? `bg-blue ` : "bg-white"
             }`}
           />
           <Peoples size={24} />
@@ -89,12 +89,12 @@ const SideNav = () => {
         </li>
         <li
           className={`sideButton ${
-            router === "/messages" ? "text-[#0000ac]" : "text-[#828282]"
+            router === "/messages" ? "text-blue" : "text-[#828282]"
           }`}
         >
           <span
             className={`w-2 h-full mr-[7px] rounded-r-lg ${
-              router === "/messages" ? `bg-[#0000ac] ` : "bg-white"
+              router === "/messages" ? `bg-blue ` : "bg-white"
             }`}
           />
           <Mail size={24} />
@@ -104,12 +104,12 @@ const SideNav = () => {
         </li>
         <li
           className={`sideButton ${
-            router === "/analytics" ? "text-[#0000ac]" : "text-[#828282]"
+            router === "/analytics" ? "text-blue" : "text-[#828282]"
           }`}
         >
           <span
             className={`w-2 h-full mr-[7px] rounded-r-lg ${
-              router === "/analytics" ? `bg-[#0000ac] ` : "bg-white"
+              router === "/analytics" ? `bg-blue ` : "bg-white"
             }`}
           />
           <Analytics size={24} />
@@ -125,12 +125,12 @@ const SideNav = () => {
       <ul className="flex flex-col gap-4">
         <li
           className={`sideButton ${
-            router === "/settings" ? "text-[#0000ac]" : "text-[#828282]"
+            router === "/settings" ? "text-blue" : "text-[#828282]"
           }`}
         >
           <span
             className={`w-2 h-full mr-[7px] rounded-r-lg ${
-              router === "/settings" ? `bg-[#0000ac] ` : "bg-white"
+              router === "/settings" ? `bg-blue ` : "bg-white"
             }`}
           />
           <Setting size={24} />
@@ -143,12 +143,12 @@ const SideNav = () => {
         </li>
         <li
           className={`sideButton ${
-            router === "/support" ? "text-[#0000ac]" : "text-[#828282]"
+            router === "/support" ? "text-blue" : "text-[#828282]"
           }`}
         >
           <span
             className={`w-2 h-full mr-[7px] rounded-r-lg ${
-              router === "/support" ? `bg-[#0000ac] ` : "bg-white"
+              router === "/support" ? `bg-blue ` : "bg-white"
             }`}
           />
           <Support size={24} />

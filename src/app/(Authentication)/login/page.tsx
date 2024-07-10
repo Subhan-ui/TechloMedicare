@@ -80,21 +80,21 @@ const Login = () => {
       ) : (
         <p
           onClick={handleShow}
-          className="cursor-pointer font-mukta text-[#4f4f4f] text-end hover:text-[#0000ac] font-semibold"
+          className="cursor-pointer font-mukta text-[#4f4f4f] text-end hover:text-blue font-semibold"
         >
           Forgot Password?
         </p>
       )}
       <button
         onClick={handleSubmit}
-        className="w-full bg-[#0000ac] text-white py-4 rounded-xl disabled:bg-[#0000ac96]"
+        className="w-full bg-blue text-white py-4 rounded-xl disabled:bg-disabled"
         disabled={loading}
       >
         {loading?'Loading...':'Login'}
       </button>
       <p className="text-center mt-3 font-mukta font-medium text-xl text-[#4f4f4f]">
         Don't have an account?{" "}
-        <Link href="/signup" className="text-[#0000ac]">
+        <Link href="/signup" className="text-blue">
           Sign Up
         </Link>
       </p>

@@ -16,7 +16,7 @@
     @apply h-[44.13px] w-[211.83px]  v_center  gap-1;
   }
   .activeSideButton {
-    @apply text-[#0000ac] border-l-8 border-[#0000ac] rounded-l-md h-[44.13px] w-[211.83px] pl-[12px] v_center gap-1;
+    @apply text-blue border-l-8 border-blue rounded-l-md h-[44.13px] w-[211.83px] pl-[12px] v_center gap-1;
   }
   .border {
     @apply border-2 border-gray-300;

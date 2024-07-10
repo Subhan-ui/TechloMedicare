@@ -8,7 +8,7 @@ const Button: React.FC<{
   return (
     <button
       className={`px-3 py-2 rounded-lg ${
-        active ? "bg-[#0000ac] text-white" : "bg-[#fafafa] text-[#333333]"
+        active ? "bg-blue text-white" : "bg-[#fafafa] text-[#333333]"
       }`}
       type="button"
       name={name}

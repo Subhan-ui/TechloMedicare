@@ -23,7 +23,7 @@ const UpcomingSchedule = ({
           <h1 className="font-mukta font-bold text-base">Upcoming Schedule</h1>
           <div
             onClick={handleShow}
-            className="cursor-pointer v_center gap-3 font-mukta font-semibold text-xs text-[#0000ac]"
+            className="cursor-pointer v_center gap-3 font-mukta font-semibold text-xs text-blue"
           >
             <p>New Appointment </p>
             <Add

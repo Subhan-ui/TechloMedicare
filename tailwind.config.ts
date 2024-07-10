@@ -12,7 +12,14 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        },
+        backgroundColor:{
+        "blue":'#0000ac'
       },
+      colors:{
+        'blue':'#0000ac',
+        'disabled':'#0000ac96'
+      }
     },
     fontFamily: {
       mukta: [ "Mukta", 'sans-serif'],

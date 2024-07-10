@@ -36,7 +36,7 @@ const Task: React.FC<task> = (props) => {
         className="relative bottom-8 border-2 p-1 w-[30px] rounded-md h-[30px] border-gray-300"
         onClick={handleShowButton}
       />
-      {showButton && <button onClick={()=>props.handleDelete(props.id)} className="absolute right-5 rounded-xl bottom-3 py-2 px-3 border-[1px] border-white bg-[#0000ac] text-white ">Delete</button>}
+      {showButton && <button onClick={()=>props.handleDelete(props.id)} className="absolute right-5 rounded-xl bottom-3 py-2 px-3 border-[1px] border-white bg-blue text-white ">Delete</button>}
     </div>
       </>
   );

@@ -69,7 +69,7 @@ const FormAddPatient: React.FC<{ handleShow: () => void; cross: boolean }> = ({
         <td>Sex</td>
         <td className="relative left-10 flex gap-3">
           {sex === "male" ? (
-            <button className="genderBtn bg-[#0000ac] text-white" type="button">
+            <button className="genderBtn bg-blue text-white" type="button">
               Male
             </button>
           ) : (
@@ -82,7 +82,7 @@ const FormAddPatient: React.FC<{ handleShow: () => void; cross: boolean }> = ({
             </button>
           )}
           {sex === "female" ? (
-            <button className="genderBtn bg-[#0000ac] text-white" type="button">
+            <button className="genderBtn bg-blue text-white" type="button">
               Female
             </button>
           ) : (

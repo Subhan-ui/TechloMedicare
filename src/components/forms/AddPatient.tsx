@@ -41,11 +41,11 @@ const AddPatient: React.FC<{ email: string | undefined | null }> = ({
         <div className="flex gap-4">
           <Link
             href="/patients"
-            className="border-2  border-[#0000AC] text-[#0000AC] font-mukta text-base center px-2 rounded-lg"
+            className="border-2  border-blue text-blue font-mukta text-base center px-2 rounded-lg"
           >
             Cancel
           </Link>
-          <button disabled={loadingPost} className=" border-2 disabled:bg-[#0000ac97] bg-[#0000AC] border-[#0000AC] text-white font-mukta text-base py-1.5 px-3.5  rounded-lg">
+          <button disabled={loadingPost} className=" border-2 disabled:bg-disabled bg-blue border-blue text-white font-mukta text-base py-1.5 px-3.5  rounded-lg">
             Save
           </button>
         </div>

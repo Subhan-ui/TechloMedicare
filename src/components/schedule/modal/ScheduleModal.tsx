@@ -104,7 +104,7 @@ const ScheduleModal: React.FC<{
     >
       {dateTime&&(<DateTime onClick={()=>setDateTime(false)} />)}
       {locations&&(<Location onClick={()=>setLocation(false)} />)}
-      <div className="text-white bg-[#0000ac] w-full h-[82px] v_center justify-between px-6">
+      <div className="text-white bg-blue w-full h-[82px] v_center justify-between px-6">
         <h2 className="font-mukta font-bold text-2xl ">New Appointment</h2>
         <Cross size={24} onClick={hiding} className="cursor-pointer" />
       </div>
@@ -207,10 +207,10 @@ const ScheduleModal: React.FC<{
           >
             Cancel{" "}
           </button>
-          <button type="button" className="font-mukta font-medium text-base py-2 px-3 bg-[#0000ac] text-white rounded-lg border-2 border-[#0000ac]">
+          <button type="button" className="font-mukta font-medium text-base py-2 px-3 bg-blue text-white rounded-lg border-2 border-blue">
             Begin Appointment{" "}
           </button>
-          <button  className="font-mukta font-medium text-base py-2 px-3 text-[#0000ac] rounded-lg border-2 border-[#0000ac]">
+          <button  className="font-mukta font-medium text-base py-2 px-3 text-blue rounded-lg border-2 border-blue">
             {loading?'Saving...':'Save'}
           </button>
         </div>

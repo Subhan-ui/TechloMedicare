@@ -72,14 +72,14 @@ const PasswordModal: React.FC<ModalProps> = ({ hiding }) => {
       <div className="h_center gap-24">
         <button
           type="submit"
-          className="w-48 bg-[#0000ac] text-white py-4 rounded-xl"
+          className="w-48 bg-blue text-white py-4 rounded-xl"
           disabled={loading}
         >
           {loading ? "Changing..." : "Change"}
         </button>
         <button
           onClick={hiding}
-          className="w-48 bg-[#0000ac] text-white py-4 rounded-xl"
+          className="w-48 bg-blue text-white py-4 rounded-xl"
         >
           Cancel
         </button>

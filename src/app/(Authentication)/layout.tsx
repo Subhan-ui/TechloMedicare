@@ -23,7 +23,7 @@ const RootLayout = ({ children }: propsLayout) => {
           <NextAuthSessionProvider>
             <div className="center w-full ">
               {children}
-              <div className="w-[900px] h-[1024px] bg-[#0000ac] v_center flex-col text-white">
+              <div className="w-[900px] h-[1024px] bg-blue v_center flex-col text-white">
                 <h1 className="font-mukta font-bold text-2xl mt-[137px]">
                   ALL IN ONE DASHBOARD
                 </h1>
@@ -37,7 +37,7 @@ const RootLayout = ({ children }: propsLayout) => {
                 <h2 className="font-mukta text-2xl  mt-20">
                   Keep track of all patient information in this section.
                 </h2>
-                <button className="bg-white text-[#0000ac] p-4 rounded-lg text-xs mt-24">
+                <button className="bg-white text-blue p-4 rounded-lg text-xs mt-24">
                   Learn more
                 </button>
               </div>

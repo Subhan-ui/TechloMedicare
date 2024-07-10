@@ -21,7 +21,7 @@ const Navbar = async () => {
             width={47.07}
             alt="logo"
           />
-          <h1 className="font-normal text-4xl text-[#0000ac] font-mukta">
+          <h1 className="font-normal text-4xl text-blue font-mukta">
             Medicare
           </h1>
         </div>

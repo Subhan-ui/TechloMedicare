@@ -105,14 +105,14 @@ const Home = () => {
       />
       <button
         onClick={handleRegister}
-        className="w-full bg-[#0000ac] disabled:bg-[#0000ac96] text-white py-4 rounded-xl"
+        className="w-full bg-blue disabled:bg-disabled text-white py-4 rounded-xl"
         disabled={loading}
       >
         {loading ? "Creating..." : "Sign Up"}
       </button>
       <p className="text-center mt-3 font-mukta font-medium text-xl text-[#4f4f4f]">
         Already have an account?{" "}
-        <Link href="/login" className="text-[#0000ac]">
+        <Link href="/login" className="text-blue">
           Sign In
         </Link>
       </p>

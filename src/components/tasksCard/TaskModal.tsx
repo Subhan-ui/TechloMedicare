@@ -29,11 +29,11 @@ const TaskModal = ({
           onChange={handleTitle}
         />
         <div className="flex justify-end gap-4">
-          <button className="border-2 border-white text-white rounded-lg bg-[#0000ac] py-2 px-4">
+          <button className="border-2 border-white text-white rounded-lg bg-blue py-2 px-4">
             {loadAdd ? "Adding..." : "Add"}
           </button>
           <button
-            className="border-2 border-white text-white rounded-lg bg-[#0000ac] py-2 px-4"
+            className="border-2 border-white text-white rounded-lg bg-blue py-2 px-4"
             type="button"
             onClick={handleShow}
           >

@@ -36,14 +36,14 @@ const ChangePassword: React.FC<{ email: string | null | undefined }> = ({
             <div className="h_center gap-24">
               <button
                 type="submit"
-                className="w-48 bg-[#0000ac] text-white disabled:bg-[#0000ac97] py-4 rounded-xl"
+                className="w-48 bg-blue text-white disabled:bg-disabled py-4 rounded-xl"
                 disabled={loading}
               >
                 {loading ? "Changing..." : "Change"}
               </button>
               <button
                 onClick={handleShow}
-                className="w-48 bg-[#0000ac] text-white py-4 rounded-xl"
+                className="w-48 bg-blue text-white py-4 rounded-xl"
               >
                 Cancel
               </button>

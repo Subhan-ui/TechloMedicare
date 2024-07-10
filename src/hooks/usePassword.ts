@@ -22,7 +22,7 @@ const useSettings = (email:string|null|undefined)=>{
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await axios.patch("/api/auth/change", {
+      await axios.patch("/api/auth/change", {
         email: email,
         password: password,
       });
@@ -30,7 +30,6 @@ const useSettings = (email:string|null|undefined)=>{
       toast.success("Successfully updated your password");
       router.push("/");
     } catch (error: any) {
-      console.log(error);
       if (error.response && error.response.data) {
         toast.error(error.response.data.message);
       } else {
@@ -40,6 +39,7 @@ const useSettings = (email:string|null|undefined)=>{
       setLoading(false);
     }
   };
+
     return {handleShow,handleSubmit, loading,show,password}
 }
 
