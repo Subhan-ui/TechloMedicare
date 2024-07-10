@@ -13,8 +13,8 @@ import {
 } from "@/store/features/patients/patientSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 
-const FormAddPatient: React.FC<{ handleShow: () => void,cross:boolean }> = ({
-cross
+const FormAddPatient: React.FC<{ handleShow: () => void; cross: boolean }> = ({
+  cross,
 }) => {
   const foreName = useAppSelector(selectForeName);
   const lastName = useAppSelector(selectLastName);
@@ -35,7 +35,6 @@ cross
   };
   return (
     <>
-     
       <Row
         name="foreName"
         value={foreName}

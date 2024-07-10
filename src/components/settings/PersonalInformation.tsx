@@ -60,7 +60,7 @@ const PersonalInformation: React.FC<{
             <div className="h_center gap-24">
               <button
                 type="submit"
-                className="w-48 bg-[#0000ac] text-white py-4 rounded-xl"
+                className="w-48 bg-[#0000ac] disabled:bg-[#0000ac97] text-white py-4 rounded-xl"
                 disabled={loading}
               >
                 {loading ? "Changing..." : "Change"}

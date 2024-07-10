@@ -8,7 +8,6 @@ const Schedule = async () => {
   return (
     <div>
       <Text ml="29px">Schedule </Text>
-
       <Table name={session?.user?.name} email={session?.user?.email} />
     </div>
   );

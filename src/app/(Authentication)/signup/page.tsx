@@ -14,7 +14,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import {  useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 
 const Home = () => {
@@ -105,9 +105,10 @@ const Home = () => {
       />
       <button
         onClick={handleRegister}
-        className="w-full bg-[#0000ac] text-white py-4 rounded-xl"
+        className="w-full bg-[#0000ac] disabled:bg-[#0000ac96] text-white py-4 rounded-xl"
+        disabled={loading}
       >
-        Finish
+        {loading ? "Creating..." : "Sign Up"}
       </button>
       <p className="text-center mt-3 font-mukta font-medium text-xl text-[#4f4f4f]">
         Already have an account?{" "}

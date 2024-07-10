@@ -3,7 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import {
-    handleChangeImages,
+  handleChangeImages,
   selectDateOfBirth,
   selectDiagnosis,
   selectForeName,
@@ -17,8 +17,8 @@ import { useRouter } from "next/navigation";
 import { useEdgeStore } from "@/lib/edgestore";
 
 
-const usePatientCRUD = (id:string,handleShow:()=>void,email?:string|null|undefined)=>{
-    const foreName = useAppSelector(selectForeName);
+const usePatientCRUD = (id: string, handleShow: () => void, email?: string | null | undefined) => {
+  const foreName = useAppSelector(selectForeName);
   const lastName = useAppSelector(selectLastName);
   const dateOfBirth = useAppSelector(selectDateOfBirth);
   const diagnosis = useAppSelector(selectDiagnosis);
@@ -34,9 +34,9 @@ const usePatientCRUD = (id:string,handleShow:()=>void,email?:string|null|undefin
   }>();
   const [loadingPost, setLoadingPost] = useState(false);
   const [progress, setProgress] = useState(0);
-  
-  
-  
+
+
+
   const [loading, setLoading] = useState(false);
   const [loadingDelete, setLoadingDelete] = useState(false);
   const router = useRouter();
@@ -102,7 +102,7 @@ const usePatientCRUD = (id:string,handleShow:()=>void,email?:string|null|undefin
   const handleChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     const maxSize = 1024 * 1024 * 1; // 1 MB in bytes
-  
+
     if (file && file.size > maxSize) {
       alert("File size is too large! Maximum size allowed is 1 MB.");
       e.target.value = ""; // Clear the file selection
@@ -143,7 +143,7 @@ const usePatientCRUD = (id:string,handleShow:()=>void,email?:string|null|undefin
       setLoadingPost(false);
     }
   };
-  return {handleDelete,handleSubmit,loading,loadingDelete,handlePost,handleChangeImage,handleChangeUrl,image,urls,progress}
+  return { handleDelete, handleSubmit, loading, loadingPost, loadingDelete, handlePost, handleChangeImage, handleChangeUrl, image, urls, progress }
 }
 
 export default usePatientCRUD;

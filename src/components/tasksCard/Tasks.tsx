@@ -5,6 +5,7 @@ import { Add, Right } from "@/constants/react-icons";
 
 import useTasks from "@/hooks/useTasks";
 import TaskModal from "./TaskModal";
+import Loader from "../ui/Loader";
 
 const Tasks: React.FC<{ email: string | undefined | null }> = ({ email }) => {
   const {
@@ -55,7 +56,7 @@ const Tasks: React.FC<{ email: string | undefined | null }> = ({ email }) => {
             ))}
           </div>
         ) : (
-          <p>Loading...</p>
+          <Loader />
         )}
         <p className="font-mukta text-[#0000ac] v_center justify-end py-9 gap-3">
           View all{" "}

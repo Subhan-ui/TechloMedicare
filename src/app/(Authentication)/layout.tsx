@@ -6,7 +6,7 @@ import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
 import ToastProvider from "@/providers/ToastProvider";
 
 export const metadata: Metadata = {
-  title: "Sign Up",
+  title: "Sign Up or Sign In",
   description: "For Medicare Company",
 };
 

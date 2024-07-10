@@ -18,18 +18,8 @@ type datatype = {
 };
 
 const usePatients = (email: string | null | undefined) => {
-  const [data, setData] = useState<datatype[]>([
-    {
-      id: "",
-      name: "",
-      diagnosis: "",
-      image: "",
-      phNo: "",
-      dateOfBirth: "",
-      sex: "",
-      notes: "",
-    },
-  ]);
+  const [data, setData] = useState<datatype[]>([]);
+  const [loading,setLoading]=useState(false)
   const dispatch = useAppDispatch();
   const [show, setShow] = useState(false);
 
@@ -37,10 +27,13 @@ const usePatients = (email: string | null | undefined) => {
   useEffect(() => {
     (async () => {
       try {
+        setLoading(true)
         const response = await axios.get(`/api/patients/get/${email}`);
         setData(response.data as datatype[]);
       } catch (error) {
         console.log(error);
+      } finally{
+        setLoading(false)
       }
     })();
   }, []);
@@ -74,7 +67,7 @@ const usePatients = (email: string | null | undefined) => {
   const handleHiding = () => {
     setShow(false);
   };
-  return { handleHiding, handleShow, id, show, data };
+  return { handleHiding, handleShow, id, show, data, loading };
 };
 
 export default usePatients;

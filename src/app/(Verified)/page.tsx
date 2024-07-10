@@ -10,10 +10,10 @@ export default async function Home() {
   return (
     <div className="px-[28.4px]">
       <Text ml="">Dashboard {">"} Summary</Text>
-      <Cards />
+      <Cards email={session?.user?.email}/>
       <div className="flex justify-between">
         <Tasks email={session?.user?.email} />
-        <UpcomingSchedule />
+        <UpcomingSchedule email={session?.user?.email} name={session?.user?.name} />
       </div>
     </div>
   );

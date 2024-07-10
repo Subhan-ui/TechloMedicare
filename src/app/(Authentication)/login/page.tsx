@@ -87,9 +87,10 @@ const Login = () => {
       )}
       <button
         onClick={handleSubmit}
-        className="w-full bg-[#0000ac] text-white py-4 rounded-xl"
+        className="w-full bg-[#0000ac] text-white py-4 rounded-xl disabled:bg-[#0000ac96]"
+        disabled={loading}
       >
-        Finish
+        {loading?'Loading...':'Login'}
       </button>
       <p className="text-center mt-3 font-mukta font-medium text-xl text-[#4f4f4f]">
         Don't have an account?{" "}

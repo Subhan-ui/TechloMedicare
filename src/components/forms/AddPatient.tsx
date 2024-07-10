@@ -21,6 +21,7 @@ const AddPatient: React.FC<{ email: string | undefined | null }> = ({
     image,
     urls,
     progress,
+    loadingPost
   } = usePatientCRUD("", handleShow, email);
 
   return (
@@ -44,7 +45,7 @@ const AddPatient: React.FC<{ email: string | undefined | null }> = ({
           >
             Cancel
           </Link>
-          <button className="border-2 bg-[#0000AC] border-[#0000AC] text-white font-mukta text-base py-1.5 px-3.5  rounded-lg">
+          <button disabled={loadingPost} className=" border-2 disabled:bg-[#0000ac97] bg-[#0000AC] border-[#0000AC] text-white font-mukta text-base py-1.5 px-3.5  rounded-lg">
             Save
           </button>
         </div>

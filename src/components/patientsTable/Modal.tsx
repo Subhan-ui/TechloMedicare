@@ -23,8 +23,9 @@ const Modal: React.FC<{ handleShow: () => void; id: string }> = ({
           </tbody>
         </table>
         <button
-          className="bg-[#0000ac] text-white px-3 py-2 absolute bottom-16 right-64 rounded-lg hover:bg-white hover:text-black hover:border-2 font-mukta"
+          className="bg-[#0000ac] disabled:bg-[#0000ac97] text-white px-3 py-2 absolute bottom-16 right-64 rounded-lg hover:bg-white hover:text-black hover:border-2 font-mukta"
           type="submit"
+          disabled={loading}
         >
           {loading ? "Submiting..." : "Submit"}
         </button>
@@ -36,8 +37,9 @@ const Modal: React.FC<{ handleShow: () => void; id: string }> = ({
           Cancel
         </button>
         <button
-          className="bg-[#0000ac] text-white px-3 py-2 absolute bottom-16 right-16 rounded-lg hover:bg-white hover:text-black hover:border-2 font-mukta"
+          className="bg-[#0000ac] disabled:bg-[#0000ac97] text-white px-3 py-2 absolute bottom-16 right-16 rounded-lg hover:bg-white hover:text-black hover:border-2 font-mukta"
           type="button"
+          disabled={loadingDelete}
           onClick={handleDelete}
         >
           {loadingDelete ? "Deleting" : "Delete"}

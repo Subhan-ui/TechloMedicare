@@ -3,6 +3,13 @@ export type card = {
   heading: string;
   number: number;
   percentage: string;
-  image: string;
+  image?: string;
   width: number;
+  total?: {
+    total: number;
+    male: number;
+    female: number;
+  },
+  loading: boolean;
 };
+

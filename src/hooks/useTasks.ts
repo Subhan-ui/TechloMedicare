@@ -16,9 +16,7 @@ const useTasks = ({ email }: { email: string | null | undefined }) => {
   const [title, setTitle] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [track, setTrack] = useState(0);
-  const [data, setData] = useState<typeTasks>([
-    { id: "", task: "", date: "", completed: false },
-  ]);
+  const [data, setData] = useState<typeTasks>([]);
 
   useEffect(() => {
     (async () => {

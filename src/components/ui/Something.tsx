@@ -61,11 +61,10 @@ return(<>
         style={{ height: 600 }}
         defaultView="week"
         eventPropGetter={eventStyleGetter}
-        step={15} // 15-minute intervals
+        step={15}
         timeslots={4}
         components={{
           event: EventComponent,
-          
         }}
       />
     </div>
