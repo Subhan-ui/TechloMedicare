@@ -19,11 +19,16 @@ const config: Config = {
       colors:{
         'blue':'#0000ac',
         'disabled':'#0000ac96'
+      },
+      screens:{
+        'med':'1000px',
+        'max':'1411px'
       }
     },
     fontFamily: {
       mukta: [ "Mukta", 'sans-serif'],
     },
+    
   },
   plugins: [],
 };

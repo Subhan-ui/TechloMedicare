@@ -33,7 +33,7 @@ const Chart = ({
         ]}
         colors={["#EB5757", "#2F80ED"]}
         legend={false}
-        className="font-mukta"
+        className="font-mukta md:hidden med:inline"
         interactive={false}
       />
     </>

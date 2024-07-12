@@ -51,26 +51,26 @@ const AddPatient: React.FC<{ email: string | undefined | null }> = ({
         </div>
       </Bar>
       <div className="h_center pt-[43px] w-full">
-        <div className="w-[783px] h-[800px] bg-white">
-          <table className="table-auto  ml-[41px] w-full mt-[58px]">
+        <div className="med:w-[783px] md:w-[550px] h-[800px] bg-white">
+          <table className="table-auto  med:ml-[41px] md:ml-[25px] w-full mt-[58px]">
             <tbody className="">
-              <tr className=" font-mukta text-lg text-[#4f4f4f]">
+              <tr className=" font-mukta med:text-lg md:text-sm text-[#4f4f4f]">
                 <td>Record Number</td>
-                <td className="text-[#333333] relative left-10">
+                <td className="text-[#333333] relative med:left-10 left-5">
                   Record Number will be assigned automatically when you save.
                 </td>
               </tr>
               <tr>
                 <td></td>
-                <td className="relative left-10">
+                <td className="relative med:left-10 left-5">
                   <button className=" mt-2 border-2 border-[#e0e0e0] py-2 px-3 text-[#333333] text-lg font-bold">
                     Assign manually{" "}
                   </button>
                 </td>
               </tr>
-              <tr className=" font-mukta text-lg text-[#4f4f4f]">
+              <tr className=" font-mukta med:text-lg md:text-sm text-[#4f4f4f]">
                 <td>Profile Image</td>
-                <td className="relative left-10">
+                <td className="relative med:left-10 left-5">
                   <button
                     type="button"
                     className="border-2 hover:bg-slate-400 hover:text-white p-2  bg-white"

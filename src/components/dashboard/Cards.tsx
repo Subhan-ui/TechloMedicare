@@ -65,7 +65,7 @@ const Cards = ({ email }: { email: string | undefined | null }) => {
   ];
 
   return (
-    <div className="flex gap-[17px]">
+    <div className="flex max:gap-[17px] med:gap-[13px] md:gap-[15px] md:flex-row flex-col gap-12">
       {cardData.map((cart) => (
         <Card
           loading={cart.loading}

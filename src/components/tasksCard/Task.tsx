@@ -13,7 +13,7 @@ const Task: React.FC<task> = (props) => {
 
   return (
     <>
-    <div className=" relative v_center justify-between w-[676.63px] h-[101px] bg-[#F5F5F5] pr-[20px] pl-[25.5px] pt-[18.63px]">
+    <div className=" relative v_center justify-between max:w-[676.63px] w-[100%-30px] h-[101px] bg-[#F5F5F5] pr-[20px] pl-[25.5px] pt-[18.63px]">
       <div className="flex relative bottom-4">
         <Checkbox
           checked={props.checked}

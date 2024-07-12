@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
-import Navbar from "@/components/Navbar";
-import SideNav from "@/components/SideNav";
+import Navbar from "@/components/layout/Navbar";
+import SideNav from "@/components/layout/SideNav";
 import Head from "next/head";
 import StoreProvider from "../StoreProvider";
 import { getServerSession } from "next-auth";
@@ -43,9 +43,9 @@ export default async function RootLayout({
             href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
           />
         </Head>
-        <body className={`bg-[#F5F5F5] v_center flex-col`} >
+        <body className={`bg-[#F5F5F5] v_center flex-col box-border`} >
           <ToastProvider />
-          <div className="w-[1412px]">
+          <div className="max:w-[1412px] med:w-[1000px] md:w-[768px] w-full">
             <Navbar />
             <div className="flex">
               <SideNav />

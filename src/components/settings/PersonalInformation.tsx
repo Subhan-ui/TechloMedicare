@@ -29,10 +29,10 @@ const PersonalInformation: React.FC<{
         </Bar>
       ) : (
         <>
-          <h2 className="font-mukta text-3xl font-semibold text-center mt-10">
+          <h2 className="font-mukta med:text-3xl text-lg font-semibold text-center mt-10">
             Change Information for {email}
           </h2>
-          <form className="mx-24 " onSubmit={handleSubmit}>
+          <form className="med:mx-24 md:mx-8 " onSubmit={handleSubmit}>
             <Input
               placeholder="Enter Your Name"
               name="name"
@@ -60,14 +60,14 @@ const PersonalInformation: React.FC<{
             <div className="h_center gap-24">
               <button
                 type="submit"
-                className="w-48 bg-blue disabled:bg-disabled text-white py-4 rounded-xl"
+                className="med:w-48 w-32 bg-blue disabled:bg-disabled text-white py-4 rounded-xl"
                 disabled={loading}
               >
                 {loading ? "Changing..." : "Change"}
               </button>
               <button
                 onClick={handleShow}
-                className="w-48 bg-blue text-white py-4 rounded-xl"
+                className="med:w-48 w-32 bg-blue text-white py-4 rounded-xl"
               >
                 Cancel
               </button>
