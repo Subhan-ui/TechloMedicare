@@ -67,6 +67,7 @@ const usePatients = (email: string | null | undefined) => {
   const handleHiding = () => {
     setShow(false);
   };
+  
   return {
     id,
     show,

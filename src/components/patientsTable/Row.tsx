@@ -19,34 +19,37 @@ const Row: React.FC<tableContent> = (props) => {
 
   return (
     <>
-    <tr className="h-[72.57px] font-mukta text-lg text-[#1d1d1d] text-center cursor-pointer" >
-      <td className="">
-        <Image
-          src={props.image}
-          alt="profile image"
-          height={45}
-          width={45}
-          className="aspect-square rounded-full relative left-14"
-        />
-      </td>
-      <td>{props.name}</td>
-      <td>{props.diagnosis}</td>
-      <td>
-        <div
-          className=" w-[140.23px] h-[25.5px] center rounded-full text-center font-mukta text-xs"
-          style={{ backgroundColor: `${color}52`, color: color }}
+      <tr className="h-[72.57px] font-mukta text-lg text-[#1d1d1d] text-center cursor-pointer">
+        <td className="">
+          <Image
+            src={props.image}
+            alt="profile image"
+            height={45}
+            width={45}
+            className="aspect-square rounded-full relative left-14"
+          />
+        </td>
+        <td>{props.name}</td>
+        <td>{props.diagnosis}</td>
+        <td>
+          <div
+            className=" w-[140.23px] h-[25.5px] center rounded-full text-center font-mukta text-xs"
+            style={{ backgroundColor: `${color}52`, color: color }}
+          >
+            {props.status}
+          </div>
+        </td>
+        <td>{props.last}</td>
+        <td>{props.next}</td>
+        <td
+          className="relative left-16"
+          onClick={() => props.handleShow(props.id)}
         >
-          {props.status}
-        </div>
-      </td>
-      <td>{props.last}</td>
-      <td>{props.next}</td>
-      <td className="relative left-16" onClick={()=>props.handleShow(props.id)}>
-        <Options  style={{ fontSize: "20px" }}/>
-        
-      </td>
-    </tr>
+          <Options style={{ fontSize: "20px" }} />
+        </td>
+      </tr>
     </>
   );
 };
+
 export default Row;

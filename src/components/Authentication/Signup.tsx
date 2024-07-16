@@ -16,6 +16,7 @@ const Signup = () => {
     handleRegister,
     loading,
   } = useSignup();
+
   return (
     <div className="w-[544px] h-[1025px] px-[47px]">
       <h1 className="mt-[125px] font-mukta text-4xl">Welcome to Medicare</h1>

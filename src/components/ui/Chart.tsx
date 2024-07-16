@@ -2,13 +2,7 @@ import Image from "next/image";
 import DonutChart from "react-donut-chart";
 import { typeChart } from "@/models/types";
 
-
-
-const Chart = ({
-  male,
-  female,
-  width,
-}: typeChart) => {
+const Chart = ({ male, female, width }: typeChart) => {
   if (male === undefined || female === undefined) {
     return (
       <>
@@ -23,10 +17,16 @@ const Chart = ({
   }
   return (
     <div className="relative">
-    <div className="absolute top-[2.7rem] left-[2.2rem]">
-      <p className="text-[#000000] text-xs font-normal font-mukta">{female} <span className="font-normal text-xs text-[#2780ed]">Female</span></p>
-      <p className="text-[#000000] text-xs font-normal font-mukta">{male} <span className="font-normal text-xs text-[#eb5757]">Male</span></p>
-    </div>
+      <div className="absolute top-[2.7rem] left-[2.2rem]">
+        <p className="text-[#000000] text-xs font-normal font-mukta">
+          {female}{" "}
+          <span className="font-normal text-xs text-[#2780ed]">Female</span>
+        </p>
+        <p className="text-[#000000] text-xs font-normal font-mukta">
+          {male}{" "}
+          <span className="font-normal text-xs text-[#eb5757]">Male</span>
+        </p>
+      </div>
       <DonutChart
         width={width}
         height={112}

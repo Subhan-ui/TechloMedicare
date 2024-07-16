@@ -1,4 +1,4 @@
-const useMonth = (month:string)=>{
+const useMonth = (month: string) => {
     switch (month) {
         case '0':
             return 'January'

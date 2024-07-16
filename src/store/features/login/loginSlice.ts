@@ -9,11 +9,6 @@ const initialState = {
   eNumber: "",
 };
 
-type change = {
-  name: string;
-  value: string;
-};
-
 const loginSlice = createSlice({
   name: "login",
   initialState,

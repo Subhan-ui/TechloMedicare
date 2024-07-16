@@ -9,19 +9,21 @@ import PersonalInformation from "@/components/settings/PersonalInformation";
 const Setting = async () => {
   const session = await getServerSession(authOptions);
   return (
-    <div>
-      <Text ml="23px">Settings</Text>
-      <Bar classN="justify-between">
-        <h1 className="font-mukta font-semibold text-xl">Settings</h1>
-        <Help
-          className="border p-1 h-[40px] w-[40px]"
-          color="#333333"
-          size={26}
-        />
-      </Bar>
-      <ChangePassword email={session?.user?.email} />
-      <PersonalInformation email={session?.user?.email} />
-    </div>
+    <>
+      <div>
+        <Text ml="23px">Settings</Text>
+        <Bar classN="justify-between">
+          <h1 className="font-mukta font-semibold text-xl">Settings</h1>
+          <Help
+            className="border p-1 h-[40px] w-[40px]"
+            color="#333333"
+            size={26}
+          />
+        </Bar>
+        <ChangePassword email={session?.user?.email} />
+        <PersonalInformation email={session?.user?.email} />
+      </div>
+    </>
   );
 };
 

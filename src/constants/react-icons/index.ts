@@ -10,6 +10,7 @@ import { BiTask as Task } from "react-icons/bi";
 import {
   MdOutlineSpaceDashboard as Dashboard,
   MdOutlineContactSupport as Support,
+  MdOutlineArrowCircleDown as Downgrade,
 } from "react-icons/md";
 import {
   IoSearch as Search,
@@ -52,5 +53,7 @@ export {
   IoIosArrowUp,
   IoIosArrowDown,
   AiOutlineDelete,
-  FiEdit
+  FiEdit,
+  Downgrade
 };
+

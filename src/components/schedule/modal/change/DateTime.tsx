@@ -13,14 +13,14 @@ type Value = ValuePiece | [ValuePiece, ValuePiece];
 const DateTime: React.FC<{
   onClick: () => void;
 }> = ({ onClick }) => {
-    const dispatch = useAppDispatch();
-    const [value, onChange] = useState<Value>(new Date());
-    const handleChange = ()=>{
-        dispatch(handleDateTime(value))
-        onChange;
-        onClick();
-    }
-    
+  const dispatch = useAppDispatch();
+  const [value, onChange] = useState<Value>(new Date());
+  const handleChange = () => {
+    dispatch(handleDateTime(value));
+    onChange;
+    onClick();
+  };
+
   return (
     <div className="flex flex-col absolute left-72 top-24 bg-white h-48 w-66 gap-3 p-7 border-2 border-black ">
       <DateTimePicker onChange={onChange} value={value} />

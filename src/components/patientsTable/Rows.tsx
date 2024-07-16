@@ -18,13 +18,13 @@ const Rows: React.FC<emailType> = ({ email }) => {
     return (
       <>
         <Table>
-        {show && <Modal handleShow={handleHiding} id={id} />}
+          {show && <Modal handleShow={handleHiding} id={id} />}
           <td colSpan={7}>
             <div className="overflow-y-auto overflow-x-hidden h-[625.64px] ">
               <table className="table-fixed w-[1122px]">
-              {loading ? (
-                <Loader />
-              ) : (
+                {loading ? (
+                  <Loader />
+                ) : (
                   <tbody>
                     {data.map((row) => (
                       <Row
@@ -41,7 +41,7 @@ const Rows: React.FC<emailType> = ({ email }) => {
                       />
                     ))}
                   </tbody>
-              )} 
+                )}
               </table>
             </div>
           </td>

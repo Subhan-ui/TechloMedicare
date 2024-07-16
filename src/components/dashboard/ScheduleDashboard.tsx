@@ -1,8 +1,7 @@
 import { emailType } from "@/models/types";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import {
   FaCircle,
-  IoIosArrowUp,
   IoIosArrowDown,
   AiOutlineDelete,
   Person,
@@ -26,10 +25,8 @@ function timeDurationManage(time: string, duration: string): string {
     totalMinutes = totalMinutes % 60;
   }
 
-  // Handle overflow for hours (more than 23)
   hours %= 24;
 
-  // Format the end time string with leading zeros
   return `${hours.toString().padStart(2, "0")}:${totalMinutes
     .toString()
     .padStart(2, "0")}`;
@@ -40,19 +37,18 @@ const ScheduleDashboard = ({ email }: emailType) => {
   const [hoveredId, setHoveredId] = useState<string>("0");
   const [clickedId, setClickedId] = useState<string>("0");
 
-  const handleShow = (id:string) => {
-    if(clickedId===id){
-        setClickedId('0')
+  const handleShow = (id: string) => {
+    if (clickedId === id) {
+      setClickedId("0");
     }
-    setClickedId(id)
+    setClickedId(id);
   };
 
   return (
     <div className="flex items-end flex-col gap-3 mt-[20px] mx-3">
       {data.map((item) => (
-        <>
+        <Fragment key={item.id}>
           <div
-            key={item.id}
             onMouseEnter={() => setHoveredId(item.id)}
             onMouseLeave={() => setHoveredId("0")}
             className={`v_center justify-between pl-3 pr-1 border-[#e0e0e0] rounded-md w-[272px] h-[25px] ${
@@ -74,7 +70,7 @@ const ScheduleDashboard = ({ email }: emailType) => {
             </div>
             <p
               className={`border-2 border-[#e0e0e0] rounded-md `}
-              onClick={()=>handleShow(item.id)}
+              onClick={() => handleShow(item.id)}
             >
               <IoIosArrowDown
                 size={12}
@@ -82,7 +78,7 @@ const ScheduleDashboard = ({ email }: emailType) => {
               />
             </p>
           </div>
-          {clickedId===item.id && (
+          {clickedId === item.id && (
             <>
               <div className="w-[273px] h-[121px] border-2 relative border-[#e0e0e0]">
                 <div className="flex font-mukta mx-[11.7px]  items-center">
@@ -132,7 +128,7 @@ const ScheduleDashboard = ({ email }: emailType) => {
               </div>
             </>
           )}
-        </>
+        </Fragment>
       ))}
     </div>
   );

@@ -85,7 +85,7 @@ const useTasks = ({ email }: { email: string | null | undefined }) => {
       setLoadAdd(false);
     }
   };
-  
+
   return {
     data,
     loading,

@@ -7,9 +7,7 @@ import { useAppDispatch } from "@/store/hooks";
 import useSettings from "@/hooks/usePassword";
 import { emailType } from "@/models/types";
 
-const ChangePassword: React.FC<emailType> = ({
-  email,
-}) => {
+const ChangePassword: React.FC<emailType> = ({ email }) => {
   const dispatch = useAppDispatch();
   const { handleShow, handleSubmit, loading, show, password } =
     useSettings(email);

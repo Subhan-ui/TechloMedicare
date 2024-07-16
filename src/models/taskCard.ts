@@ -1,5 +1,5 @@
 export type checkbox = {
-  checked?: boolean; // Optional initial checked state (defaults to false)
+  checked?: boolean; 
   handleChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 

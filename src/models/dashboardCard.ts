@@ -4,7 +4,6 @@ export type card = {
   number: number;
   percentage: string;
   image?: string;
-  width: number;
   total?: {
     total: number;
     male: number;

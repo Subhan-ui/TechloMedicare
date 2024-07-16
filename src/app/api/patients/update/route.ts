@@ -23,17 +23,6 @@ export const PATCH = async (req: Request) => {
       );
     }
     const name = firstName + " " + lastName;
-    // if (
-    //   patient.name === name ||
-    //   patient.dateOfBirth === dateOfBirth ||
-    //   patient.diagnosis === diagnosis ||
-    //   patient.phNo === phNo
-    // ) {
-    //   return NextResponse.json(
-    //     { message: "You changed nothing at all" },
-    //     { status: 412 }
-    //   );
-    // }
     const updatedPatient = await prisma.patient.update({
         where:{id:id},
         data:{

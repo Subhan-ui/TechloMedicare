@@ -15,11 +15,12 @@ const Cards = ({ email }: emailType) => {
     male: number;
     female: number;
   }>({ total: 0, male: 0, female: 0 });
-  const [loading,setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     (async () => {
       try {
-        setLoading(true)
+        setLoading(true);
         const totalPatient = await axios.get(
           `/api/patients/total?email=${email}`
         );
@@ -28,13 +29,14 @@ const Cards = ({ email }: emailType) => {
 
         setOffline(status.data.offline);
         setOnline(status.data.online);
-      } catch (error:any) {
-        toast.error(error.response.data.message)
-      } finally{
-        setLoading(false)
+      } catch (error: any) {
+        toast.error(error.response.data.message);
+      } finally {
+        setLoading(false);
       }
     })();
   }, []);
+
   const cardData: card[] = [
     {
       id: 1,
@@ -42,7 +44,6 @@ const Cards = ({ email }: emailType) => {
       number: offline,
       percentage: "+3.11%",
       image: "/assets/dashboard/chart1.svg",
-      width: 164,
       loading: loading,
     },
     {
@@ -51,7 +52,6 @@ const Cards = ({ email }: emailType) => {
       number: online,
       percentage: "-20.9%",
       image: "/assets/dashboard/chart2.svg",
-      width: 164,
       loading: loading,
     },
     {
@@ -59,7 +59,6 @@ const Cards = ({ email }: emailType) => {
       heading: "Total Patients",
       number: total.total,
       percentage: "",
-      width: 119,
       total: total,
       loading: loading,
     },
@@ -76,7 +75,6 @@ const Cards = ({ email }: emailType) => {
           number={cart.number}
           percentage={cart.percentage}
           image={cart?.image}
-          width={cart.width}
           total={total}
         />
       ))}

@@ -6,10 +6,12 @@ import { getServerSession } from "next-auth";
 const Patients = async () => {
   const session = await getServerSession(authOptions);
   return (
-    <div>
-      <Text ml="22.55px">Patient Register</Text>
-      <Rows email={session?.user?.email} />
-    </div>
+    <>
+      <div>
+        <Text ml="22.55px">Patient Register</Text>
+        <Rows email={session?.user?.email} />
+      </div>
+    </>
   );
 };
 

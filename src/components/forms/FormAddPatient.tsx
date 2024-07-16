@@ -14,10 +14,7 @@ import {
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { typeFormAddPatient } from "@/models/types";
 
-
-const FormAddPatient: React.FC<typeFormAddPatient> = ({
-  cross,
-}) => {
+const FormAddPatient: React.FC<typeFormAddPatient> = ({ cross }) => {
   const foreName = useAppSelector(selectForeName);
   const lastName = useAppSelector(selectLastName);
   const dateOFBirth = useAppSelector(selectDateOfBirth);

@@ -4,11 +4,8 @@ import {
   momentLocalizer,
 } from "react-big-calendar";
 import moment from "moment";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import Card from "../schedule/Card";
-import Col from "../schedule/Col";
-import { EventProps } from "react-big-calendar";
 import { emailType } from "@/models/types";
 import useMonth from "@/hooks/useMonth";
 import useAppointment from "@/hooks/useAppointment";

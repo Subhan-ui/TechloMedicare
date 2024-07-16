@@ -18,8 +18,8 @@ export const POST = async (req: Request, { params }: { params: { email: string }
 
     let nextDates: string = "";
     const patient = await prisma.patient.findMany({ where: { name: patientName } });
-    if(!patient.length){
-      return NextResponse.json({message: 'Patient not found on the record'});
+    if (!patient.length) {
+      return NextResponse.json({ message: 'Patient not found on the record' });
     }
     if (type === "Followup visit") {
       const existingAppointment = await prisma.appointment.findFirst({
@@ -34,7 +34,7 @@ export const POST = async (req: Request, { params }: { params: { email: string }
       nextDates = existingAppointment.nextDate;
       await prisma.appointment.delete({ where: { patientName, doctorEmail: email } });
     }
-    
+
     const timeAppointed = await prisma.appointment.findFirst({ where: { date, time, location } });
 
     if (timeAppointed) {

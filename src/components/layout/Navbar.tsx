@@ -46,7 +46,7 @@ const Navbar = async () => {
           <div className="gap-[34.9px] v_center">
             <Mail size={24} color="#828282" />
             <Bell size={24} color="#828282" />
-            <LogoutButton size={24}/>
+            <LogoutButton size={24} />
           </div>
         </div>
       </nav>

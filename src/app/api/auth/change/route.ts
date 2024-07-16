@@ -30,7 +30,6 @@ export const PATCH = async (req: Request) => {
 
     const matchedPassword = await bcrypt.compare(password, user.hashedPassword);
     if (matchedPassword) {
-        // throw new Error('YOu just typed your old password');
       return NextResponse.json(
         { message: "You just typed your old password" },
         { status: 422 }
@@ -45,8 +44,6 @@ export const PATCH = async (req: Request) => {
 
     return NextResponse.json(updatedUser, { status: 200 });
   } catch (error: any) {
-    console.log(error);
-    // throw new Error(error.message);
     return NextResponse.json({message: error.message},{status: 400})
   } finally {
     await prisma.$disconnect();

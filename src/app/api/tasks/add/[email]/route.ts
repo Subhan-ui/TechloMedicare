@@ -3,8 +3,8 @@ import prisma from '../../../../../../prisma';
 
 
 function formatDate(date: Date): string {
-    const day = date.getDate().toLocaleString('en-US', { minimumIntegerDigits: 2 }); // Ensures double-digit day format
-    const month = date.toLocaleString('en-US', { month: 'long' }); // Full month name
+    const day = date.getDate().toLocaleString('en-US', { minimumIntegerDigits: 2 }); 
+    const month = date.toLocaleString('en-US', { month: 'long' }); 
     const year = date.getFullYear();
   
     return `${day} ${month} ${year}`;

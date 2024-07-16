@@ -1,4 +1,3 @@
-import { connectToDB } from "@/helper/connectToDB";
 import { NextResponse } from "next/server";
 import prisma from "../../../../../prisma";
 import bcrypt from "bcrypt";
@@ -9,7 +8,6 @@ export const POST = async (req: Request) => {
     if (!name || !email || !password || !companyName || !industry || !eNumber) {
       return NextResponse.json({ message: "Missing Data" }, { status: 422 });
     }
-    // await connectToDB();
     const existedUser = await prisma.user.findFirst({
       where: { email: email },
     });

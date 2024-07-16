@@ -34,7 +34,7 @@ const UpcomingSchedule = ({
             />
           </div>
         </div>
-        <ScheduleDashboard email={email}/>
+        <ScheduleDashboard email={email} />
       </div>
     </>
   );

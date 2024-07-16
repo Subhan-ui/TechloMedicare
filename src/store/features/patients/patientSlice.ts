@@ -87,5 +87,4 @@ export const {
   selectImage,
   selectNumber,
 } = patientSlice.selectors;
-
 export default patientSlice.reducer;

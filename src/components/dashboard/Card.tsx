@@ -1,5 +1,5 @@
 import { card } from "@/models/dashboardCard";
-import { Options, Upgrade } from "@/constants/react-icons";
+import { Options, Upgrade, Downgrade } from "@/constants/react-icons";
 
 import Image from "next/image";
 import Chart from "../ui/Chart";
@@ -15,7 +15,7 @@ const Card: React.FC<card> = (props) => {
         <>
           <div className="v_center justify-between ">
             <h1 className="font-semibold font-mukta">{props.heading}</h1>
-            <Options  className="hidden med:inline"/>
+            <Options className="hidden med:inline" />
           </div>
           <div className="flex justify-between">
             <div>
@@ -23,11 +23,19 @@ const Card: React.FC<card> = (props) => {
 
               {props.percentage !== "" && (
                 <div className="absolute v_center bottom-8 gap-2">
-                  <Upgrade
-                    className={`bg-[#27AE60] text-white rounded-full`}
-                    style={{ backgroundColor: color }}
-                    size={21}
-                  />
+                  {props.percentage === "+3.11%" ? (
+                    <Upgrade
+                      className={`bg-[#27AE60] text-white rounded-full`}
+                      style={{ backgroundColor: color }}
+                      size={21}
+                    />
+                  ) : (
+                    <Downgrade
+                      className="bg-[#eb5757] h-[21px] w-[21px] text-white rounded-full"
+                      style={{ backgroundColor: color }}
+                      size={21}
+                    />
+                  )}
                   <p className={`text-[#27AE60]`} style={{ color: color }}>
                     {props.percentage}
                   </p>
@@ -38,14 +46,14 @@ const Card: React.FC<card> = (props) => {
               <Image
                 src={props.image}
                 alt="chart"
-                width={props.width}
+                width={164}
                 height={112}
-                className="md:hidden med:inline"
+                className="md:hidden med:inline w-auto h-auto"
               />
             ) : (
               <Chart
                 male={props.total?.male}
-                width={props.width}
+                width={119}
                 female={props.total?.female}
               />
             )}

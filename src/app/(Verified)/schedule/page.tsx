@@ -6,10 +6,12 @@ import { getServerSession } from "next-auth";
 const Schedule = async () => {
   const session = await getServerSession(authOptions);
   return (
-    <div>
-      <Text ml="29px">Schedule </Text>
-      <Table name={session?.user?.name} email={session?.user?.email} />
-    </div>
+    <>
+      <div>
+        <Text ml="29px">Schedule </Text>
+        <Table name={session?.user?.name} email={session?.user?.email} />
+      </div>
+    </>
   );
 };
 
