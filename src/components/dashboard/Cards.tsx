@@ -5,8 +5,9 @@ import Card from "./Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { emailType } from "@/models/types";
 
-const Cards = ({ email }: { email: string | undefined | null }) => {
+const Cards = ({ email }: emailType) => {
   const [offline, setOffline] = useState<number>(0);
   const [online, setOnline] = useState<number>(0);
   const [total, setTotal] = useState<{

@@ -55,11 +55,21 @@ const usePersonalInformation = (email: string | undefined | null) => {
       setLoading(false);
     }
   };
-  const handleChanges = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const handleChanges = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     dispatch(handleChange({ name, value }));
   }
-  return {handleSubmit,handleShow,show,loading,handleChanges,nameS,companyNameS,industryS,eNumberS};
+  return {
+    show,
+    loading,
+    nameS,
+    companyNameS,
+    industryS,
+    eNumberS,
+    handleSubmit,
+    handleShow,
+    handleChanges,
+  };
 };
 
 

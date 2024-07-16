@@ -7,8 +7,9 @@ import { useAppDispatch } from "@/store/hooks";
 import { handleNumber } from "@/store/features/patients/patientSlice";
 import usePatients from "@/hooks/usePatients";
 import Loader from "../ui/Loader";
+import { emailType } from "@/models/types";
 
-const Rows: React.FC<{ email: string | null | undefined }> = ({ email }) => {
+const Rows: React.FC<emailType> = ({ email }) => {
   const dispatch = useAppDispatch();
   const { handleHiding, handleShow, id, show, data, loading } =
     usePatients(email);

@@ -55,23 +55,27 @@
 // src/components/Card.tsx
 import React from 'react';
 import { Person, Clock, LocationI, Notes } from '@/constants/react-icons';
+import Modal from '../modals/Modal';
 
 type AppointmentProps = {
   event: {
     location: string;
-    name: string;
+    patientName: string;
     purpose: string;
     start: Date;
     end: Date;
   };
+  handleShow: ()=>void;
 };
 
-const Card: React.FC<AppointmentProps> = ({ event }) => {
+const Card: React.FC<AppointmentProps> = ({ event, handleShow }) => {
   const color = "#2f80ed";
-  const { location, name, purpose, start, end } = event;
+  const { location, patientName, purpose, start, end, } = event;
   console.log('card componetn')
 
   return (
+    <>
+    <Modal className='fixed' hiding={handleShow}>
     <div
       className="w-[187px] h-[119px] rounded-lg pt-1"
       style={{ backgroundColor: `${color}4f`, color: color }}
@@ -85,7 +89,7 @@ const Card: React.FC<AppointmentProps> = ({ event }) => {
       <div className="flex flex-col justify-around h-[99px]">
         <div className="v_center gap-3 ml-2 font-mukta font-normal text-xs">
           <Person size={10} />
-          {name}
+          {patientName}
         </div>
         <div className="v_center gap-3 ml-2 font-mukta font-normal text-xs">
           <Notes size={10} />
@@ -98,10 +102,12 @@ const Card: React.FC<AppointmentProps> = ({ event }) => {
         </div>
         <div className="v_center gap-3 ml-2 font-mukta font-normal text-xs">
           <LocationI size={10} />
-          {location}
+          Room {location}
         </div>
       </div>
     </div>
+    </Modal>
+    </>
   );
 };
 

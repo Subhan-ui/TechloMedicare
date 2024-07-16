@@ -8,7 +8,6 @@ const Add = async () => {
   return (
     <div>
       <Text ml="23px">Patient Register {">"} Add Patient</Text>
-
       <AddPatient email={session?.user?.email} />
     </div>
   );

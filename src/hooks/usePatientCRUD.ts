@@ -99,11 +99,11 @@ const usePatientCRUD = (id: string, handleShow: () => void, email?: string | nul
 
   const handleChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    const maxSize = 1024 * 1024 * 1; // 1 MB in bytes
+    const maxSize = 1024 * 1024 * 1;
 
     if (file && file.size > maxSize) {
       alert("File size is too large! Maximum size allowed is 1 MB.");
-      e.target.value = ""; // Clear the file selection
+      e.target.value = "";
     }
     setImage(e.target.files?.[0]);
   };
@@ -138,7 +138,19 @@ const usePatientCRUD = (id: string, handleShow: () => void, email?: string | nul
     }
   };
 
-  return { handleDelete, handleSubmit, loading, loadingPost, loadingDelete, handlePost, handleChangeImage, handleChangeUrl, image, urls, progress }
+  return {
+    loading,
+    loadingPost,
+    loadingDelete,
+    image,
+    urls,
+    progress,
+    handleDelete,
+    handleSubmit,
+    handlePost,
+    handleChangeImage,
+    handleChangeUrl,
+  }
 }
 
 export default usePatientCRUD;

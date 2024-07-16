@@ -1,74 +1,59 @@
-import { Calendar, momentLocalizer, EventProps, dateFnsLocalizer } from 'react-big-calendar';
-import moment from 'moment';
+import {
+  Calendar as BigCalendar,
+  CalendarProps,
+  momentLocalizer,
+} from "react-big-calendar";
+import moment from "moment";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import Card from "../schedule/Card";
-import 'react-big-calendar/lib/css/react-big-calendar.css';
-import format from 'date-fns/format'
-import parse from 'date-fns/parse'
-import startOfWeek from 'date-fns/startOfWeek'
-import getDay from 'date-fns/getDay'
-import enUS from 'date-fns/locale/en-US'
+import Col from "../schedule/Col";
+import { EventProps } from "react-big-calendar";
+import { emailType } from "@/models/types";
+import useMonth from "@/hooks/useMonth";
+import useAppointment from "@/hooks/useAppointment";
 
-const locales = {
-  'en-US': enUS,
+const localizer = momentLocalizer(moment);
+
+function Calendar(props: Omit<CalendarProps, "localizer">) {
+  return <BigCalendar {...props} localizer={localizer} />;
 }
 
-// type appointmentData = {
-//   title: string;
-//   event_id: string;
-//   location: string;
-//   time: string;
-//   nextDate: string;
-//   duration: string;
-//   name: string;
-//   purspose: string;
-//   online: boolean;
-//   start: Date;
-//   end: Date;
-// };
-type cardType = EventProps&{location:string,name:string,purpose:string,start:Date,end:Date}
+const date = new Date();
+const currentYear = date.getFullYear();
+const currentMonth = date.getMonth();
+const Month = `${useMonth(currentMonth.toString())} ${currentYear}`;
 
-const localizer = dateFnsLocalizer({
-  format,
-  parse,
-  startOfWeek,
-  getDay,
-  locales,
-})
+const components = {
+  toolbar: () => {
+    return (
+      <div className="center h-[60px]">
+        <p className="font-bold text-lg">{Month}</p>
+      </div>
+    );
+  },
+  event: (props: any) => {
+    const [show, setShow] = useState(false);
+    return (
+      <>
+        {show && (
+          <Card
+            event={props?.event}
+            handleShow={() => setShow((prev) => !prev)}
+          />
+        )}
+        <div
+          onClick={() => setShow((prev) => !prev)}
+          style={{ background: "black", color: "white", height: "100%" }}
+        >
+          {props?.event?.title}
+        </div>
+      </>
+    );
+  },
+};
 
-
-const Schedule:React.FC<{data:cardType[]}> = ({data})=>{
-  const eventStyleGetter = (event: EventProps, start: Date, end: Date, isSelected: boolean) => {
-    const style = {
-      backgroundColor: '#3174ad',
-      borderRadius: '5px',
-      opacity: 0.8,
-      color: 'white',
-      border: '0px',
-      display: 'block'
-    };
-    return { style };
-  };
-  
-  console.log(data)
-  const EventComponent = ({ event }: { event: cardType }) => <Card event={event} />;
-return(<>
-<div className="scheduler">
-      <Calendar
-        localizer={localizer}
-        events={data}
-        startAccessor="start"
-        endAccessor="end"
-        style={{ height: 600 }}
-        defaultView="week"
-        eventPropGetter={eventStyleGetter}
-        step={15}
-        timeslots={4}
-        components={{
-          event: EventComponent,
-        }}
-      />
-    </div>
-</>)
+export default function ControlCalendar({ email }: emailType) {
+  const data = useAppointment(email);
+  return <Calendar events={data} components={components} />;
 }
-
-export default Schedule;

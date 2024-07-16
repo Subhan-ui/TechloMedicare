@@ -23,8 +23,8 @@ const RootLayout = ({ children }: propsLayout) => {
           <NextAuthSessionProvider>
             <div className="center w-full ">
               {children}
-              <div className="w-[900px] h-[1024px] bg-blue v_center flex-col text-white">
-                <h1 className="font-mukta font-bold text-2xl mt-[137px]">
+              <div className="max:w-[900px] h-[1024px] med:w-[800px] bg-blue v_center flex-col md:flex hidden text-white">
+                <h1 className="font-mukta font-bold max:text-2xl med:text-xl md:text-lg mt-[137px]">
                   ALL IN ONE DASHBOARD
                 </h1>
                 <Image
@@ -32,9 +32,9 @@ const RootLayout = ({ children }: propsLayout) => {
                   alt="Dashboard"
                   height={475.73}
                   width={669}
-                  className="mt-14"
+                  className="mt-14 max:h-[475px] max:w-[669px] med:h-[400] md:w-[600px] md:h-[350px] med:w-[589px]"
                 />
-                <h2 className="font-mukta text-2xl  mt-20">
+                <h2 className="font-mukta max:text-2xl med:text-xl md:text-lg mt-20">
                   Keep track of all patient information in this section.
                 </h2>
                 <button className="bg-white text-blue p-4 rounded-lg text-xs mt-24">

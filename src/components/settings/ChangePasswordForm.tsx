@@ -5,8 +5,9 @@ import { handleChange } from "@/store/features/login/loginSlice";
 import Bar from "../commonContent/TopBar";
 import { useAppDispatch } from "@/store/hooks";
 import useSettings from "@/hooks/usePassword";
+import { emailType } from "@/models/types";
 
-const ChangePassword: React.FC<{ email: string | null | undefined }> = ({
+const ChangePassword: React.FC<emailType> = ({
   email,
 }) => {
   const dispatch = useAppDispatch();

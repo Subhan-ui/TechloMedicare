@@ -1,13 +1,12 @@
 "use client";
 
+import { emailType } from "@/models/types";
 import Bar from "../commonContent/TopBar";
 import Input from "../ui/Input";
 
 import usePersonalInformation from "@/hooks/usePersonalInformation";
 
-const PersonalInformation: React.FC<{
-  email: string | null | undefined;
-}> = ({ email }) => {
+const PersonalInformation: React.FC<emailType> = ({ email }) => {
   const {
     show,
     loading,

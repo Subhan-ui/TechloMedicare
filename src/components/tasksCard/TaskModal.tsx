@@ -1,13 +1,7 @@
 import Modal from "../modals/Modal";
 import Input from "../ui/Input";
+import { typeTaskModal } from "@/models/types";
 
-type typeTaskModal = {
-    title: string,
-    handleTitle: (e: React.ChangeEvent<HTMLInputElement>) => void,
-    handleShow: () => void,
-    handleSubmit: (e: React.ChangeEvent<HTMLFormElement>) => void,
-    loadAdd: boolean;
-  }
 
 const TaskModal = ({
   title,

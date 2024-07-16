@@ -3,6 +3,7 @@
 import { Add } from "@/constants/react-icons";
 import Modals from "@/components/schedule/modal/Modal";
 import { useState } from "react";
+import ScheduleDashboard from "./ScheduleDashboard";
 
 const UpcomingSchedule = ({
   name,
@@ -33,6 +34,7 @@ const UpcomingSchedule = ({
             />
           </div>
         </div>
+        <ScheduleDashboard email={email}/>
       </div>
     </>
   );

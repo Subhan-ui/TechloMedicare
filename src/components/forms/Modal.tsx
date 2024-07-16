@@ -3,20 +3,13 @@ import Backdrop from "../modals/ModalBackdrop";
 import { useEdgeStore } from "@/lib/edgestore";
 import { stringify } from "querystring";
 import Link from "next/link";
+import { typeModalForm } from "@/models/types";
 
-const Modal: React.FC<{
-  handleShow: () => void;
-  handleChange:(e: React.ChangeEvent<HTMLInputElement>) =>void
-  handleChangeUrl:()=>void;
-  image: File|undefined;
-  urls: string|undefined;
-  progress:number;
-}> = ({ handleShow,handleChange, handleChangeUrl, image,urls,progress }) => {
 
-  return (
+const Modal: React.FC<typeModalForm> = ({ handleShow,handleChange, handleChangeUrl, image,urls,progress }) => (
     <>
       <Backdrop hiding={handleShow} />
-      <div className="md:block hidden fixed z-[250] top-24 left-1/2 transform -translate-x-1/2 p-12  rounded-lg w-[45%] bg-white">
+      <div className="block fixed z-[250] top-24 left-1/2 transform -translate-x-1/2 p-12  rounded-lg md:w-[45%] w-[80%] bg-white">
         <h1 className="font-semibold text-2xl font-mukta mb-8">
           Choose Your Profile Image
         </h1>
@@ -57,7 +50,6 @@ const Modal: React.FC<{
               disabled={progress===100}
             >
               {progress===0?'Upload':progress<100?'Uploading...':'done'}
-              {/* {progress===0?'':'updloading'} */}
             </button>
             <button
             type="button"
@@ -69,20 +61,9 @@ const Modal: React.FC<{
           </div>
         </div>
         <div>
-        {/* {urls?.url && (
-          <Link href={urls.url} target="_blank">
-            URL
-          </Link>
-        )}
-        {urls?.thumbnailUrl && (
-          <Link href={urls.thumbnailUrl} target="_blank">
-            Thumbnail
-          </Link>
-        )} */}
         </div>
       </div>
     </>
   );
-};
 
 export default Modal;

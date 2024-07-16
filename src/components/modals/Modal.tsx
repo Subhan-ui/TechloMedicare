@@ -1,19 +1,19 @@
 
 import Backdrop from "./ModalBackdrop";
+import { typeModalModals } from "@/models/types";
 
-const Modal: React.FC<{ hiding: () => void; children: React.ReactNode, className:string,}> = ({
+
+const Modal: React.FC<typeModalModals> = ({
   hiding,
   children,
   className,
-}) => {
-  return (
+}) => (
     <div>
       <Backdrop hiding={hiding} />
-      <div className={`md:block hidden z-[250] top-24 left-1/2 transform -translate-x-1/2 p-12  rounded-lg  bg-white ${className}` }>
+      <div className={`block z-[250] top-24 left-1/2 transform -translate-x-1/2 p-12  rounded-lg  bg-white ${className}` }>
         {children}
       </div>
     </div>
   );
-};
 
 export default Modal;

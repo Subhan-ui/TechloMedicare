@@ -1,11 +1,6 @@
-type componentsProps = {
-  children: React.ReactNode;
-  classN: string;
-  onClick?: () => void;
-};
+import { componentsProps } from "@/models/types";
 
-const Bar: React.FC<componentsProps> = ({ children, classN, onClick }) => {
-  return (
+const Bar: React.FC<componentsProps> = ({ children, classN, onClick }) => (
     <>
       <div
         className={`bg-white h-[72.57px] max:w-[1122px] med:w-[780px] md:w-[550px] w-[90vw] mx-[22.55px] v_center px-[15px] med:px-[28.44px] ${classN}`}
@@ -15,6 +10,5 @@ const Bar: React.FC<componentsProps> = ({ children, classN, onClick }) => {
       </div>
     </>
   );
-};
 
 export default Bar;

@@ -1,16 +1,8 @@
 import { Cross } from "@/constants/react-icons";
+import { typeFormRow } from "@/models/types";
 
-const Row: React.FC<{
-  children: string;
-  top: string;
-  cross: boolean;
-  type: string;
-  value: string;
-  name: string
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>)=>void;
-  onChangeTextArea?: (e:React.ChangeEvent<HTMLTextAreaElement>)=>void;
-}> = ({ children, top, type, cross, value, onChange, name,onChangeTextArea  }) => {
-  return (
+
+const Row: React.FC<typeFormRow> = ({ children, top, type, cross, value, onChange, name,onChangeTextArea  }) => (
     <>
       <tr className="relative" style={{ top: top }}>
         <td className="">{children}</td>
@@ -44,6 +36,5 @@ const Row: React.FC<{
       </tr>
     </>
   );
-};
 
 export default Row;

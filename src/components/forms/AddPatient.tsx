@@ -6,8 +6,9 @@ import Link from "next/link";
 import Modal from "./Modal";
 import FormAddPatient from "./FormAddPatient";
 import usePatientCRUD from "@/hooks/usePatientCRUD";
+import { emailType } from "@/models/types";
 
-const AddPatient: React.FC<{ email: string | undefined | null }> = ({
+const AddPatient: React.FC<emailType> = ({
   email,
 }) => {
   const [show, setShow] = useState(false);
@@ -23,7 +24,6 @@ const AddPatient: React.FC<{ email: string | undefined | null }> = ({
     progress,
     loadingPost
   } = usePatientCRUD("", handleShow, email);
-
   return (
     <form onSubmit={handlePost}>
       {show && (
@@ -46,7 +46,7 @@ const AddPatient: React.FC<{ email: string | undefined | null }> = ({
             Cancel
           </Link>
           <button disabled={loadingPost} className=" border-2 disabled:bg-disabled bg-blue border-blue text-white font-mukta text-base py-1.5 px-3.5  rounded-lg">
-            Save
+            {loadingPost?"Saving":"Save"}
           </button>
         </div>
       </Bar>

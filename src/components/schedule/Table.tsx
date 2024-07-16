@@ -8,7 +8,6 @@ import Modals from "@/components/schedule/modal/Modal";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Something from "../ui/Something";
-import { EventProps } from "react-big-calendar";
 
 
 // location,time,duration,name,purpose
@@ -26,7 +25,6 @@ type appointmentData = {
   start: Date;
   end: Date;
 }
-type cardType = EventProps&{location:string,name:string,purpose:string,start:Date,end:Date}
 
 const calculateEndTime = (startDate: Date, duration: string): Date => {
   const endDate = new Date(startDate);
@@ -43,33 +41,7 @@ const convertToDateTime = (dateString: string, timeString: string): Date => {
 
 const Table:React.FC<{name:string|undefined|null,email:string|undefined|null}> = ({name,email}) => {
   const [show,setShow]=useState(false);
-  const [data,setData]=useState<cardType[]>([])
-
-  useEffect(() => {
-    (async () => {
-      if (email) {
-        try {
-          const response = await axios.get(`/api/appointment/get?email=${email}`);
-          const transformedData = response.data.map((appointment: appointmentData) => {
-            const start = convertToDateTime(appointment.nextDate, appointment.time);
-            const end = calculateEndTime(start, appointment.duration);
-
-            return {
-              ...appointment,
-              start: start,
-              end: end,
-              event_id: appointment.id,
-              title: appointment.name
-            };
-          });
-          
-          setData(transformedData);
-        } catch (error) {
-          console.error('Error fetching appointments:', error);
-        }
-      }
-    })();
-  }, [email]);
+ 
   
   const handleShowModal = ()=>{
     setShow(prev=>!prev);
@@ -87,7 +59,7 @@ const Table:React.FC<{name:string|undefined|null,email:string|undefined|null}> =
           <Help className="border p-1 h-[40px] w-[40px]" color="#333333" size={26} />
         </div>
       </Bar>
-      <Something data={data} />
+      <Something email={email}/>
     </>
   );
 };

@@ -3,17 +3,17 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import {
-    selectPassword,
-  } from "@/store/features/login/loginSlice";
-  import { useAppSelector } from "@/store/hooks";
+  selectPassword,
+} from "@/store/features/login/loginSlice";
+import { useAppSelector } from "@/store/hooks";
 
-const useSettings = (email:string|null|undefined)=>{
-    const router = useRouter();
-    
+const useSettings = (email: string | null | undefined) => {
+  const router = useRouter();
+
   const password = useAppSelector(selectPassword);
   const [show, setShow] = useState(true);
-  const [loading, setLoading] = useState(false); 
-  
+  const [loading, setLoading] = useState(false);
+
   const handleShow = () => {
     setShow((prev) => !prev);
   };
@@ -40,7 +40,13 @@ const useSettings = (email:string|null|undefined)=>{
     }
   };
 
-    return {handleShow,handleSubmit, loading,show,password}
+  return {
+    loading,
+    show,
+    password,
+    handleShow,
+    handleSubmit,
+  }
 }
 
 export default useSettings;

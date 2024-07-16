@@ -10,10 +10,13 @@ export default async function Home() {
   return (
     <div className="med:px-[28.4px] px-[20px]">
       <Text ml="">Dashboard {">"} Summary</Text>
-      <Cards email={session?.user?.email}/>
-      <div className="flex max:flex-row max:justify-between flex-col">
+      <Cards email={session?.user?.email} />
+      <div className="flex max:flex-row max:justify-between flex-col ">
         <Tasks email={session?.user?.email} />
-        <UpcomingSchedule email={session?.user?.email} name={session?.user?.name} />
+        <UpcomingSchedule
+          email={session?.user?.email}
+          name={session?.user?.name}
+        />
       </div>
     </div>
   );

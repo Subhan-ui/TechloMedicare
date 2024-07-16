@@ -4,13 +4,10 @@ import { signOut } from "next-auth/react";
 import Image from "next/image";
 import { Search, Bell, Mail, Options } from "@/constants/react-icons";
 import LogoutButton from "../ui/logoutButton";
-// import { useRouter } from "next/navigation";
 import SmallNavbar from "./SmallNavbar";
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions);
-
-  // const router = useRouter()
 
   return (
     <>

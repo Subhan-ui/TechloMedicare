@@ -55,4 +55,5 @@ const Card: React.FC<card> = (props) => {
     </div>
   );
 };
+
 export default Card;

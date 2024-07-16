@@ -12,8 +12,10 @@ import {
   selectSex,
 } from "@/store/features/patients/patientSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { typeFormAddPatient } from "@/models/types";
 
-const FormAddPatient: React.FC<{ handleShow: () => void; cross: boolean }> = ({
+
+const FormAddPatient: React.FC<typeFormAddPatient> = ({
   cross,
 }) => {
   const foreName = useAppSelector(selectForeName);

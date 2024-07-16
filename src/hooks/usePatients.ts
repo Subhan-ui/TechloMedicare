@@ -19,7 +19,7 @@ type datatype = {
 
 const usePatients = (email: string | null | undefined) => {
   const [data, setData] = useState<datatype[]>([]);
-  const [loading,setLoading]=useState(false)
+  const [loading, setLoading] = useState(false)
   const dispatch = useAppDispatch();
   const [show, setShow] = useState(false);
 
@@ -32,7 +32,7 @@ const usePatients = (email: string | null | undefined) => {
         setData(response.data as datatype[]);
       } catch (error) {
         console.log(error);
-      } finally{
+      } finally {
         setLoading(false)
       }
     })();
@@ -67,7 +67,14 @@ const usePatients = (email: string | null | undefined) => {
   const handleHiding = () => {
     setShow(false);
   };
-  return { handleHiding, handleShow, id, show, data, loading };
+  return {
+    id,
+    show,
+    data,
+    loading,
+    handleHiding,
+    handleShow,
+  };
 };
 
 export default usePatients;

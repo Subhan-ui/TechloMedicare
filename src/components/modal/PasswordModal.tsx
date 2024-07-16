@@ -8,7 +8,6 @@ import {
 import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { useRouter } from "next/navigation";
 
 type ModalProps = {
   hiding: () => void;
@@ -19,7 +18,6 @@ const PasswordModal: React.FC<ModalProps> = ({ hiding }) => {
   const email = useAppSelector(selectEmail);
   const password = useAppSelector(selectPassword);
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
