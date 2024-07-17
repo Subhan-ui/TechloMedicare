@@ -18,7 +18,6 @@ export const GET = async (
     }
     return NextResponse.json(patients, { status: 200 });
   } catch (error) {
-    console.log(error);
     return NextResponse.json({ message: "something wrong" }, { status: 400 });
   } finally {
     await prisma.$disconnect();

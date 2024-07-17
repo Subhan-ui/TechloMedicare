@@ -46,7 +46,6 @@ const useSignup = () => {
             toast.success("Successfully registered");
             router.push("/login");
         } catch (error: any) {
-            console.log(error);
             toast.error(error.message);
         } finally {
             setLoading(false);

@@ -30,7 +30,6 @@ const PasswordModal: React.FC<ModalProps> = ({ hiding }) => {
       toast.success("Successfully updated your password");
       hiding();
     } catch (error: any) {
-      console.log(error);
       if (error.response && error.response.data) {
         toast.error(error.response.data.message);
       } else {

@@ -40,7 +40,6 @@ export const POST = async (
 
     return NextResponse.json({ patient: newPatient }, { status: 201 });
   } catch (error) {
-    console.log(error);
     return NextResponse.json({ message: 'Some Error Occured' }, { status: 500 });
   } finally {
     await prisma.$disconnect();

@@ -26,7 +26,7 @@ const SideNav = () => (
       <SideNavBtn href="patients" name="Patients">
         <Peoples size={24} />
       </SideNavBtn>
-      <SideNavBtn href="/messages" name="Messages">
+      <SideNavBtn href="messages" name="Messages">
         <Mail size={24} />
       </SideNavBtn>
       <SideNavBtn href="analytics" name="Analytics">

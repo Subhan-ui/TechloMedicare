@@ -26,7 +26,6 @@ const useTasks = ({ email }: { email: string | null | undefined }) => {
         setData(response.data);
       } catch (error: any) {
         toast.error(error.response.data.message);
-        console.log(error);
       } finally {
         setLoading(false);
       }
@@ -53,7 +52,6 @@ const useTasks = ({ email }: { email: string | null | undefined }) => {
       setTrack((prev) => prev + 1);
     } catch (error: any) {
       toast.error(error.response.data.message);
-      console.log(error);
     }
   };
 
@@ -64,7 +62,6 @@ const useTasks = ({ email }: { email: string | null | undefined }) => {
       setTrack((prev) => prev + 1);
     } catch (error: any) {
       toast.error(error.response.data.message);
-      console.log(error);
     }
   };
 
@@ -79,7 +76,6 @@ const useTasks = ({ email }: { email: string | null | undefined }) => {
       setTrack((prev) => prev + 1);
       handleShow();
     } catch (error: any) {
-      console.log(error);
       toast.error(error.response.data.message);
     } finally {
       setLoadAdd(false);

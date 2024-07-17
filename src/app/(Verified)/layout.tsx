@@ -17,6 +17,14 @@ import 'react-big-calendar/lib/css/react-big-calendar.css'
 export const metadata: Metadata = {
   title: "Medicare || Subhan",
   description: "Do your daily appointments with your patients here.",
+  icons: {
+    icon: [
+      {
+        url:  '/assets/icon.png',
+        href: '/assets/icon.png',
+      },
+    ],
+  },
 };
 
 const mukta = Mukta({

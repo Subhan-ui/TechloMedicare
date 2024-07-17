@@ -36,7 +36,6 @@ export const PATCH = async (req: Request) => {
     })
     return NextResponse.json(updatedPatient,{status: 200})
   } catch (error) {
-    console.log(error)
     NextResponse.json({message: error})
   } finally{
     await prisma.$disconnect();

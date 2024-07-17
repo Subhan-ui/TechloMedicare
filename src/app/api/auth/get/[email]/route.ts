@@ -20,7 +20,7 @@ export const GET = async (req: Request, { params }: { params: Params }) => {
 
     return NextResponse.json(user, { status: 200 });
   } catch (error) {
-    console.log(error);
+    return NextResponse.json(error, {status:500})
   } finally {
     await prisma.$disconnect();
   }
@@ -46,7 +46,7 @@ export const PATCH = async (req: Request, { params }: { params: Params }) => {
     });
     return NextResponse.json(updatedUser,{status:200})
   } catch (error) {
-    console.log(error)
+    return NextResponse.json(error, {status:500})
   } finally{
     await prisma.$disconnect();
   }

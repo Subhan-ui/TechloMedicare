@@ -55,7 +55,6 @@ const usePatientCRUD = (id: string, handleShow: () => void, email?: string | nul
       handleShow();
       toast.success("Updated Successfully!");
     } catch (error: any) {
-      console.log(error);
       toast.error(error.response.data.message);
     } finally {
       setLoading(false);
@@ -73,7 +72,7 @@ const usePatientCRUD = (id: string, handleShow: () => void, email?: string | nul
         toast.success("Successfully removed");
         handleShow();
       } catch (error: any) {
-        console.log(error);
+        toast.error(error.response.data.message);
       } finally {
         setLoadingDelete(false);
       }

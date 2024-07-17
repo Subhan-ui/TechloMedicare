@@ -1,3 +1,4 @@
+import useMonth from "@/hooks/useMonth";
 import {
   Calendar as BigCalendar,
   CalendarProps,
@@ -5,14 +6,11 @@ import {
 } from "react-big-calendar";
 import moment from "moment";
 import { useState } from "react";
-import Card from "../schedule/Card";
-import { emailType } from "@/models/types";
-import useMonth from "@/hooks/useMonth";
-import useAppointment from "@/hooks/useAppointment";
+import Card from "../Card";
 
 const localizer = momentLocalizer(moment);
 
-function Calendar(props: Omit<CalendarProps, "localizer">) {
+export default function Calendar(props: Omit<CalendarProps, "localizer">) {
   return <BigCalendar {...props} localizer={localizer} />;
 }
 
@@ -21,7 +19,7 @@ const currentYear = date.getFullYear();
 const currentMonth = date.getMonth();
 const Month = `${useMonth(currentMonth.toString())} ${currentYear}`;
 
-const components = {
+export const components = {
   toolbar: () => {
     return (
       <div className="center h-[60px]">
@@ -49,8 +47,3 @@ const components = {
     );
   },
 };
-
-export default function ControlCalendar({ email }: emailType) {
-  const data = useAppointment(email);
-  return <Calendar events={data} components={components} />;
-}

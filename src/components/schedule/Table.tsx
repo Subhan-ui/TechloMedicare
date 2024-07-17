@@ -4,7 +4,7 @@ import Bar from "@/components/commonContent/TopBar";
 import { Print, Add, Filter, Help } from "@/constants/react-icons";
 import Modals from "@/components/schedule/modal/Modal";
 import { useState } from "react";
-import Something from "../ui/Something";
+import Something from "./Calender/Calender";
 
 const Table: React.FC<{
   name: string | undefined | null;
@@ -47,7 +47,9 @@ const Table: React.FC<{
           />
         </div>
       </Bar>
-      <Something email={email} />
+      <div className="w-[1139px] overflow-x-scroll">
+        <Something email={email} />
+      </div>
     </>
   );
 };

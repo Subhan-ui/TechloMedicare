@@ -16,7 +16,6 @@ export const DELETE = async (req: Request) => {
       { status: 200 }
     );
   } catch (error) {
-    console.log(error);
     return NextResponse.json(
       { message: "there might be a problem deleting the patient" },
       { status: 402 }
