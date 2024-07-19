@@ -6,7 +6,7 @@ import useAppointment from "@/hooks/useAppointment";
 export default function ControlCalendar({ email }: emailType) {
   const data = useAppointment(email);
   return (
-    <div className="w-[100vw] h-[750px]">
+    <div className="w-[1139px] h-[750px]">
       <Calendar events={data} components={components} />
     </div>
   );

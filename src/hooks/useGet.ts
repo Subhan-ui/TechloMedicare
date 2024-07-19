@@ -21,7 +21,7 @@ const useGet = () => {
         const response = await axios.get("/api/patients/get");
         setData(response.data);
       } catch (error) {
-        console.log(error);
+        return;
       }
     })();
   }, []);

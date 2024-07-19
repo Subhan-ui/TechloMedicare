@@ -8,6 +8,14 @@ import ToastProvider from "@/providers/ToastProvider";
 export const metadata: Metadata = {
   title: "Sign Up or Sign In",
   description: "For Medicare Company",
+  icons: {
+    icon: [
+      {
+        url:  '/assets/icon.png',
+        href: '/assets/icon.png',
+      },
+    ],
+  },
 };
 
 type propsLayout = {

@@ -19,35 +19,35 @@ const Table: React.FC<{
   return (
     <>
       {show && <Modals email={email} name={name} hiding={handleShowModal} />}
-      <Bar classN="justify-between">
-        <h1 className="font-mukta font-medium text-xl">
+      <Bar classN="sm:justify-between justify-center">
+        <h1 className="font-mukta font-medium med:text-xl md:text-lg sm:text-base text-sm">
           Weekly schedule from 25th to 1st November 2022
         </h1>
-        <div className="v_center gap-5">
+        <div className="v_center sm:gap-5 gap-2">
           <Add
             onClick={handleShowModal}
-            className="border p-1 h-[40px] w-[40px]"
+            className="border p-1 med:h-[40px] med:w-[40px] w-[30px] h-[30px] "
             color="#333333"
             size={18}
           />
           <Filter
-            className="border p-1 h-[40px] w-[40px]"
+            className="border p-1 med:h-[40px] med:w-[40px] w-[30px] h-[30px]"
             color="#333333"
             size={25}
           />
           <Print
-            className="border p-1 h-[40px] w-[40px]"
+            className="border p-1 med:h-[40px] med:w-[40px] w-[30px] h-[30px]"
             color="#333333"
             size={25}
           />
           <Help
-            className="border p-1 h-[40px] w-[40px]"
+            className="border p-1 med:h-[40px] med:w-[40px] w-[30px] h-[30px]"
             color="#333333"
             size={26}
           />
         </div>
       </Bar>
-      <div className="w-[1139px] overflow-x-scroll">
+      <div className="max:w-[1139px]  med:w-[780px] md:w-[550px] w-[90vw] overflow-x-scroll">
         <Something email={email} />
       </div>
     </>

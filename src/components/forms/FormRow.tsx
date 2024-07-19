@@ -21,7 +21,7 @@ const Row: React.FC<typeFormRow> = ({
             id={children}
             value={value}
             onChange={onChangeTextArea}
-            className="med:w-[415px] md:w-[345px] w-[300px] h-[103px] px-3 border-2 border-gray-300"
+            className="med:w-[415px] md:w-[345px] sm:w-[60vw] w-[65vw] h-[103px] px-3 border-2 border-gray-300"
           ></textarea>
         ) : (
           <input
@@ -29,13 +29,13 @@ const Row: React.FC<typeFormRow> = ({
             name={name}
             onChange={onChange}
             type={type}
-            className="med:w-[415px] md:w-[345px] w-[300px] px-3 h-[44px] border-2 border-gray-300"
+            className="med:w-[415px] md:w-[345px] sm:w-[60vw] w-[65vw] px-3 h-[44px] border-2 border-gray-300"
             placeholder=""
           />
         )}
         {cross && (
           <Cross
-            className="absolute med:right-56 right-28 bottom-[1.08rem]"
+            className="absolute med:right-56 md:right-28 right-16 bottom-[1.08rem]"
             color="#333333"
             size={12}
           />

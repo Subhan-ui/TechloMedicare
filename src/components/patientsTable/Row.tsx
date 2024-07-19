@@ -32,12 +32,12 @@ const Row: React.FC<tableContent> = (props) => {
         <td>{props.name}</td>
         <td>{props.diagnosis}</td>
         <td>
-          <div
+          <span
             className=" w-[140.23px] h-[25.5px] center rounded-full text-center font-mukta text-xs"
             style={{ backgroundColor: `${color}52`, color: color }}
           >
             {props.status}
-          </div>
+          </span>
         </td>
         <td>{props.last}</td>
         <td>{props.next}</td>

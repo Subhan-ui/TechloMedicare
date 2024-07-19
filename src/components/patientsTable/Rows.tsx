@@ -17,14 +17,14 @@ const Rows: React.FC<emailType> = ({ email }) => {
     dispatch(handleNumber(data.length));
     return (
       <>
-        <Table>
-          {show && <Modal handleShow={handleHiding} id={id} />}
-          <td colSpan={7}>
-            <div className="overflow-y-auto overflow-x-hidden h-[625.64px] ">
-              <table className="table-fixed w-[1122px]">
-                {loading ? (
-                  <Loader />
-                ) : (
+        {show && <Modal handleShow={handleHiding} id={id} />}
+        {loading ? (
+          <Loader />
+        ) : (
+          <Table>
+            <td colSpan={7}>
+              <span className="overflow-y-auto overflow-x-hidden h-[625.64px] ">
+                <table className="table-fixed w-[1122px]">
                   <tbody>
                     {data.map((row) => (
                       <Row
@@ -41,11 +41,11 @@ const Rows: React.FC<emailType> = ({ email }) => {
                       />
                     ))}
                   </tbody>
-                )}
-              </table>
-            </div>
-          </td>
-        </Table>
+                </table>
+              </span>
+            </td>
+          </Table>
+        )}
       </>
     );
   }

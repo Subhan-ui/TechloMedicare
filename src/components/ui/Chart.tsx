@@ -16,7 +16,7 @@ const Chart = ({ male, female, width }: typeChart) => {
     );
   }
   return (
-    <div className="relative">
+    <div className="relative md:hidden med:block">
       <div className="absolute top-[2.7rem] left-[2.2rem]">
         <p className="text-[#000000] text-xs font-normal font-mukta">
           {female}{" "}

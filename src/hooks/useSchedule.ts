@@ -71,7 +71,6 @@ const useSchedule = (email: string | null | undefined) => {
             if (error.response) {
                 toast.error(error.response.data.message);
             } else {
-                console.error("Error creating appointment:", error);
                 toast.error("An unexpected error occurred.");
             }
         } finally {

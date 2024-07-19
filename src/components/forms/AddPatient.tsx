@@ -53,7 +53,7 @@ const AddPatient: React.FC<emailType> = ({ email }) => {
         </div>
       </Bar>
       <div className="h_center pt-[43px] w-full">
-        <div className="med:w-[783px] md:w-[550px] h-[800px] bg-white">
+        <div className="med:w-[783px] md:w-[550px] sm:w-[80vw] w-[90vw] h-[800px] bg-white">
           <table className="table-auto  med:ml-[41px] md:ml-[25px] w-full mt-[58px]">
             <tbody className="">
               <tr className=" font-mukta med:text-lg md:text-sm text-[#4f4f4f]">

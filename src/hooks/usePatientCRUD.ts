@@ -130,7 +130,6 @@ const usePatientCRUD = (id: string, handleShow: () => void, email?: string | nul
       toast.success("Patient Successfully added.");
       router.push("/patients");
     } catch (error: any) {
-      console.error("Error during submission:", error);
       toast.error(error.response.data.message);
     } finally {
       setLoadingPost(false);

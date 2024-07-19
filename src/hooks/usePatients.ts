@@ -31,7 +31,7 @@ const usePatients = (email: string | null | undefined) => {
         const response = await axios.get(`/api/patients/get/${email}`);
         setData(response.data as datatype[]);
       } catch (error) {
-        console.log(error);
+        return;
       } finally {
         setLoading(false)
       }

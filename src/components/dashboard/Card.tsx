@@ -22,7 +22,7 @@ const Card: React.FC<card> = (props) => {
               <h1 className="text-4xl font-bold mt-6">{props.number}</h1>
 
               {props.percentage !== "" && (
-                <div className="absolute v_center bottom-8 gap-2">
+                <div className="absolute v_center bottom-8 gap-2 ">
                   {props.percentage === "+3.11%" ? (
                     <Upgrade
                       className={`bg-[#27AE60] text-white rounded-full`}
@@ -48,6 +48,7 @@ const Card: React.FC<card> = (props) => {
                 alt="chart"
                 width={164}
                 height={112}
+                priority
                 className="md:hidden med:inline w-auto h-auto"
               />
             ) : (

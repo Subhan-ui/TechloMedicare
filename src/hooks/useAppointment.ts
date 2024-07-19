@@ -76,7 +76,7 @@ const useAppointment = (email: string | null | undefined) => {
 
           setData(transformedData);
         } catch (error) {
-          console.error("Error fetching appointments:", error);
+          return ;
         }
       }
     })();

@@ -14,7 +14,7 @@ const Modal: React.FC<{ handleShow: () => void; id: string }> = ({
   return (
     <Modals
       hiding={handleShow}
-      className="absolute w-[783.2px] h-[800px] ml-[41px]"
+      className="absolute med:w-[783.2px] md:w-[670px] w-[500px] h-[800px] ml-[41px]"
     >
       <form onSubmit={handleSubmit} className="table-auto ">
         <table>
