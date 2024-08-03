@@ -33,17 +33,20 @@ const useSignup = () => {
   const handleRegister = async () => {
     try {
       setLoading(true);
-      await axios.post("/api/auth/register", {
-        name,
-        companyName,
-        email,
-        industry,
-        password,
-        eNumber,
-      });
-
-      toast.success("Successfully registered");
-      router.push("/login");
+      if (email.includes("@")) {
+        await axios.post("/api/auth/register", {
+          name,
+          companyName,
+          email,
+          industry,
+          password,
+          eNumber,
+        });
+        toast.success("Successfully registered");
+        router.push("/login");
+      } else {
+        toast.error("Please add correct email");
+      }
     } catch (error: any) {
       toast.error(error?.message);
     } finally {

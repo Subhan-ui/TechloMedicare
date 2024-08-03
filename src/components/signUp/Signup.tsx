@@ -16,6 +16,7 @@ const Signup = () => {
       {values.map((value) => (
         <Input
           name={value.name}
+          key={value.id}
           placeholder={value.placeholder}
           value={value.value}
           onChange={value.onChange}

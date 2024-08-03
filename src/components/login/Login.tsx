@@ -24,6 +24,7 @@ const Login = () => {
       </p>
       {values.map((value)=>(
         <Input
+        key={value.id}
         name={value.name}
         placeholder={value.placeholder}
         value={value.value}
