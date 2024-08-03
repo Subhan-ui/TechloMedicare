@@ -18,7 +18,17 @@ const config: Config = {
       },
       colors:{
         'blue':'#0000ac',
-        'disabled':'#0000ac96'
+        'disabled':'#0000ac96',
+        'green': '#27AE60',
+        'mutedRed': '#EB5757',
+        'grey':'#4f4f4f',
+        'darkGrey':'#333333',
+        'lightGrey':'#e0e0e0',
+        'lightSlate': '#828282',
+        'shadow':'#000000bf',
+        'awaiting': "#2f80ed",
+        'orange':'#ff9939',
+        'back':'#f5f5f5'
       },
       screens:{
         'med':'1000px',
@@ -26,7 +36,7 @@ const config: Config = {
       }
     },
     fontFamily: {
-      mukta: [ "Mukta", 'sans-serif'],
+      mukta: ['--font-mukta'],
     },
     
   },

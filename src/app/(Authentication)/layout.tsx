@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import Image from "next/image";
-import StoreProvider from "../StoreProvider";
+import StoreProvider from "../../providers/StoreProvider";
 import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
 import ToastProvider from "@/providers/ToastProvider";
+import { Mukta } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Sign Up or Sign In",
@@ -18,6 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
+const mukta = Mukta({
+  weight:  ["200" , "300" , "400" , "500" , "600" , "700" , "800" ],
+  subsets: ['latin'],
+  variable: '--font-mukta'
+}
+);
+
 type propsLayout = {
   children: React.ReactNode;
 };
@@ -25,7 +33,7 @@ type propsLayout = {
 const RootLayout = ({ children }: propsLayout) => {
   return (
     <html>
-      <body>
+      <body className={mukta.variable}>
         <StoreProvider>
           <ToastProvider />
           <NextAuthSessionProvider>
@@ -36,11 +44,12 @@ const RootLayout = ({ children }: propsLayout) => {
                   ALL IN ONE DASHBOARD
                 </h1>
                 <Image
+                priority
                   src="/assets/signup/image.png"
                   alt="Dashboard"
                   height={475.73}
                   width={669}
-                  className="mt-14 max:h-[475px] max:w-[669px] med:h-[400] md:w-[600px] md:h-[350px] med:w-[589px]"
+                  className="mt-14 max:w-[669px]  md:w-[600px] h-auto med:w-[589px]"
                 />
                 <h2 className="font-mukta max:text-2xl med:text-xl md:text-lg mt-20">
                   Keep track of all patient information in this section.

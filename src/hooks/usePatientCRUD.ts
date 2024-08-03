@@ -17,7 +17,7 @@ import { useRouter } from "next/navigation";
 import { useEdgeStore } from "@/lib/edgestore";
 
 
-const usePatientCRUD = (id: string, handleShow: () => void, email?: string | null | undefined) => {
+const usePatientCRUD = (id: string, handleShow:()=>void,email?: string | null | undefined ,) => {
   const foreName = useAppSelector(selectForeName);
   const lastName = useAppSelector(selectLastName);
   const dateOfBirth = useAppSelector(selectDateOfBirth);

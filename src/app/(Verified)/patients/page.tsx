@@ -1,5 +1,5 @@
-import Text from "@/components/commonContent/TopText";
-import Rows from "@/components/patientsTable/Rows";
+import Text from "@/components/text/TopText";
+import Rows from "@/components/rows/Rows";
 import { authOptions } from "@/lib/AuthOptions";
 import { getServerSession } from "next-auth";
 

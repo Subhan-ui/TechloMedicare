@@ -1,7 +1,7 @@
-import Text from "@/components/commonContent/TopText";
-import Cards from "@/components/dashboard/Cards";
-import UpcomingSchedule from "@/components/dashboard/UpcomingSchedule";
-import Tasks from "@/components/tasksCard/Tasks";
+import Text from "@/components/text/TopText";
+import Cards from "@/components/cards/Cards";
+import UpcomingSchedule from "@/components/upcomingSchedule/UpcomingSchedule";
+import Tasks from "@/components/tasks/Tasks";
 import { authOptions } from "@/lib/AuthOptions";
 import { getServerSession } from "next-auth";
 

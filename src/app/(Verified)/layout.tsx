@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import "../globals.css";
-import Navbar from "@/components/layout/Navbar";
-import SideNav from "@/components/layout/SideNav";
-import Head from "next/head";
-import StoreProvider from "../StoreProvider";
+import Navbar from "@/components/layout/navbar/Navbar";
+import SideNav from "@/components/layout/sideNav/SideNav";
+import StoreProvider from "../../providers/StoreProvider";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/AuthOptions";
 import { redirect } from "next/navigation";
@@ -29,7 +28,8 @@ export const metadata: Metadata = {
 
 const mukta = Mukta({
   weight:  ["200" , "300" , "400" , "500" , "600" , "700" , "800" ],
-  subsets: ['latin']
+  subsets: ['latin'],
+  variable: '--font-mukta'
 }
 );
 
@@ -45,15 +45,7 @@ export default async function RootLayout({
   return (
     <StoreProvider>
       <html lang="en">
-        <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
-          />
-        </Head>
-        <body className={`bg-[#F5F5F5] v_center flex-col box-border`} >
+        <body className={`bg-back v_center flex-col box-border ${mukta.variable}`} >
           <ToastProvider />
           <div className="max:w-[1412px] med:w-[1000px] md:w-[768px] w-full">
             <Navbar />

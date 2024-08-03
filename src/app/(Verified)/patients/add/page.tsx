@@ -1,5 +1,5 @@
-import Text from "@/components/commonContent/TopText";
-import AddPatient from "@/components/forms/AddPatient";
+import Text from "@/components/text/TopText";
+import AddPatient from "@/components/addPatient/AddPatient";
 import { authOptions } from "@/lib/AuthOptions";
 import { getServerSession } from "next-auth";
 

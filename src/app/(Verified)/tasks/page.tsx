@@ -1,7 +1,5 @@
-import Bar from "@/components/commonContent/TopBar";
-import Text from "@/components/commonContent/TopText";
-import Tasks from "@/components/tasksCard/Tasks";
-import { Add } from "@/constants/react-icons";
+import Text from "@/components/text/TopText";
+import Tasks from "@/components/tasks/Tasks";
 import { authOptions } from "@/lib/AuthOptions";
 import { getServerSession } from "next-auth";
 
