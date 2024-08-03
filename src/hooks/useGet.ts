@@ -2,24 +2,18 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { patientType } from "../types/patientGetType";
 
 const useGet = () => {
-  const [data, setData] = useState<
-    {
-      id: string;
-      name: string;
-      diagnosis: string;
-      image: string;
-      phNo: string;
-      dateOfBirth: string;
-    }[]
-  >([{id:'', name: "", diagnosis: "", image: "", phNo: "", dateOfBirth: "" }]);
+  const [data, setData] = useState<patientType[]>([
+    { id: "", name: "", diagnosis: "", image: "", phNo: "", dateOfBirth: "" },
+  ]);
 
   useEffect(() => {
     (async () => {
       try {
         const response = await axios.get("/api/patients/get");
-        setData(response.data);
+        setData(response?.data);
       } catch (error) {
         return;
       }

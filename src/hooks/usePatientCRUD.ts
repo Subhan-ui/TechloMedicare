@@ -16,8 +16,11 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useEdgeStore } from "@/lib/edgestore";
 
-
-const usePatientCRUD = (id: string, handleShow:()=>void,email?: string | null | undefined ,) => {
+const usePatientCRUD = (
+  id: string,
+  handleShow: () => void,
+  email?: string | null | undefined
+) => {
   const foreName = useAppSelector(selectForeName);
   const lastName = useAppSelector(selectLastName);
   const dateOfBirth = useAppSelector(selectDateOfBirth);
@@ -55,7 +58,7 @@ const usePatientCRUD = (id: string, handleShow:()=>void,email?: string | null | 
       handleShow();
       toast.success("Updated Successfully!");
     } catch (error: any) {
-      toast.error(error.response.data.message);
+      toast.error(error?.response?.data?.message);
     } finally {
       setLoading(false);
     }
@@ -72,7 +75,7 @@ const usePatientCRUD = (id: string, handleShow:()=>void,email?: string | null | 
         toast.success("Successfully removed");
         handleShow();
       } catch (error: any) {
-        toast.error(error.response.data.message);
+        toast.error(error?.response?.data?.message);
       } finally {
         setLoadingDelete(false);
       }
@@ -88,10 +91,10 @@ const usePatientCRUD = (id: string, handleShow:()=>void,email?: string | null | 
         },
       });
       setUrls({
-        url: res.url,
-        thumbnailUrl: res.thumbnailUrl,
+        url: res?.url,
+        thumbnailUrl: res?.thumbnailUrl,
       });
-      dispatch(handleChangeImages(urls?.url))
+      dispatch(handleChangeImages(urls?.url));
       handleShow();
     }
   };
@@ -130,7 +133,7 @@ const usePatientCRUD = (id: string, handleShow:()=>void,email?: string | null | 
       toast.success("Patient Successfully added.");
       router.push("/patients");
     } catch (error: any) {
-      toast.error(error.response.data.message);
+      toast.error(error?.response?.data?.message);
     } finally {
       setLoadingPost(false);
     }
@@ -148,7 +151,7 @@ const usePatientCRUD = (id: string, handleShow:()=>void,email?: string | null | 
     handlePost,
     handleChangeImage,
     handleChangeUrl,
-  }
-}
+  };
+};
 
 export default usePatientCRUD;

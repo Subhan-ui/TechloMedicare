@@ -1,13 +1,10 @@
-import { useAppDispatch } from "@/store/hooks";
 import Input from "../ui/input/Input";
-import { handleChange } from "@/store/features/login/loginSlice";
 
 import { ModalProps } from "@/types/modalTypes";
 import usePasswordChange from "@/hooks/usePasswordChange";
 
 const PasswordModal: React.FC<ModalProps> = ({ hiding }) => {
-  const dispatch = useAppDispatch();
-  const { loading, handleSubmit, email, password } = usePasswordChange(hiding);
+  const { loading, handleSubmit, inputs } = usePasswordChange(hiding);
   return (
     <>
       <form
@@ -17,24 +14,15 @@ const PasswordModal: React.FC<ModalProps> = ({ hiding }) => {
         <h2 className="font-mukta text-2xl font-bold text-center ">
           Please Provide Your Credentials to change your password.
         </h2>
-        <Input
-          placeholder="Email"
-          name="email"
-          value={email}
-          onChange={(e) => {
-            const { name, value } = e.target;
-            dispatch(handleChange({ name, value }));
-          }}
-        />
-        <Input
-          placeholder="Your new Password"
-          name="password"
-          value={password}
-          onChange={(e) => {
-            const { name, value } = e.target;
-            dispatch(handleChange({ name, value }));
-          }}
-        />
+        {inputs.map((input) => (
+          <Input
+            key={input.id}
+            placeholder={input.placeholder}
+            name={input.name}
+            value={input.value}
+            onChange={input.onChange}
+          />
+        ))}
         <div className="h_center gap-24">
           <button
             type="submit"

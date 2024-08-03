@@ -1,15 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { emailType, typeTasks } from "@/types/types";
 
-type typeTasks = {
-  id: string;
-  task: string;
-  date: string;
-  completed: boolean;
-}[];
 
-const useTasks = ({ email }: { email: string | null | undefined }) => {
+const useTasks = ({ email }: emailType) => {
   const [loadAdd, setLoadAdd] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -23,9 +18,9 @@ const useTasks = ({ email }: { email: string | null | undefined }) => {
       try {
         setLoading(true);
         const response = await axios.get(`/api/tasks/get?email=${email}`);
-        setData(response.data);
+        setData(response?.data);
       } catch (error: any) {
-        toast.error(error.response.data.message);
+        toast.error(error?.response?.data?.message);
       } finally {
         setLoading(false);
       }
@@ -51,7 +46,7 @@ const useTasks = ({ email }: { email: string | null | undefined }) => {
       toast.success("Successfully updated task");
       setTrack((prev) => prev + 1);
     } catch (error: any) {
-      toast.error(error.response.data.message);
+      toast.error(error?.response?.data?.message);
     }
   };
 
@@ -61,11 +56,11 @@ const useTasks = ({ email }: { email: string | null | undefined }) => {
       toast.success("Task deleted successfully");
       setTrack((prev) => prev + 1);
     } catch (error: any) {
-      toast.error(error.response.data.message);
+      toast.error(error?.response?.data?.message);
     }
   };
 
-  const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       setLoadAdd(true);
@@ -76,7 +71,7 @@ const useTasks = ({ email }: { email: string | null | undefined }) => {
       setTrack((prev) => prev + 1);
       handleShow();
     } catch (error: any) {
-      toast.error(error.response.data.message);
+      toast.error(error?.response?.data?.message);
     } finally {
       setLoadAdd(false);
     }

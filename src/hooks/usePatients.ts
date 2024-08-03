@@ -5,21 +5,11 @@ import {
 } from "@/store/features/patients/patientSlice";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-type datatype = {
-  id: string;
-  name: string;
-  diagnosis: string;
-  image: string;
-  phNo: string;
-  dateOfBirth: string;
-  sex: string;
-  notes: string;
-};
+import { patientType as datatype } from "@/types/patientGetType";
 
 const usePatients = (email: string | null | undefined) => {
   const [data, setData] = useState<datatype[]>([]);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const dispatch = useAppDispatch();
   const [show, setShow] = useState(false);
 
@@ -27,28 +17,28 @@ const usePatients = (email: string | null | undefined) => {
   useEffect(() => {
     (async () => {
       try {
-        setLoading(true)
+        setLoading(true);
         const response = await axios.get(`/api/patients/get/${email}`);
-        setData(response.data as datatype[]);
+        setData(response?.data as datatype[]);
       } catch (error) {
         return;
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     })();
   }, []);
   const handleShow = (id: string) => {
-    const content = data.find((dat) => dat.id === id);
+    const content = data?.find((dat) => dat.id === id);
     dispatch(
       handleChangePatient({
         name: "foreName",
-        value: content?.name.split(" ")[0],
+        value: content?.name?.split(" ")[0],
       })
     );
     dispatch(
       handleChangePatient({
         name: "lastName",
-        value: content?.name.split(" ")[1],
+        value: content?.name?.split(" ")[1],
       })
     );
     dispatch(
@@ -67,7 +57,7 @@ const usePatients = (email: string | null | undefined) => {
   const handleHiding = () => {
     setShow(false);
   };
-  
+
   return {
     id,
     show,

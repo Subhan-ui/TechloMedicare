@@ -45,7 +45,7 @@ const Tasks: React.FC<emailType> = ({ email }) => {
         </div>
         {!loading ? (
           <div className="flex flex-col gap-4">
-            {data.map((task) => (
+            {data?.map((task) => (
               <Task
                 handleChange={handleChange}
                 key={task?.id}

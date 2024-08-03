@@ -1,22 +1,12 @@
 "use client";
 
 import { tableContent } from "@/types/table";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 import { Options } from "@/constants/react-icons";
-import { awaiting, recover, treat } from "@/constants/colors";
+import Image from "next/image";
+import useChooseColor from "@/hooks/useChooseColor";
 
 const Row: React.FC<tableContent> = (props) => {
-  const [color, setColor] = useState(recover);
-  useEffect(() => {
-    if (props.status === "Recovered") {
-      setColor(recover);
-    } else if (props.status === "Awaiting Surgery") {
-      setColor(awaiting);
-    } else if ("On Treatment") {
-      setColor(treat);
-    }
-  }, [props.status]);
+  const { color } = useChooseColor(props.status);
 
   return (
     <>

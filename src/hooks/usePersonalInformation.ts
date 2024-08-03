@@ -9,13 +9,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-
-type data = {
-  name: string;
-  companyName: string;
-  industry: string;
-  eNumber: string;
-};
+import { data } from "../types/types";
 
 const usePersonalInformation = (email: string | undefined | null) => {
   const [show, setShow] = useState(true);
@@ -28,11 +22,11 @@ const usePersonalInformation = (email: string | undefined | null) => {
   useEffect(() => {
     (async () => {
       const response = await axios.get(`/api/auth/get/${email}`);
-      const data = response.data as data;
-      dispatch(handleChange({ name: "name", value: data.name }));
-      dispatch(handleChange({ name: "companyName", value: data.companyName }));
-      dispatch(handleChange({ name: "industry", value: data.industry }));
-      dispatch(handleChange({ name: "eNumber", value: data.eNumber }));
+      const data = response?.data as data;
+      dispatch(handleChange({ name: "name", value: data?.name }));
+      dispatch(handleChange({ name: "companyName", value: data?.companyName }));
+      dispatch(handleChange({ name: "industry", value: data?.industry }));
+      dispatch(handleChange({ name: "eNumber", value: data?.eNumber }));
     })();
   }, []);
   const handleShow = () => {
@@ -50,7 +44,7 @@ const usePersonalInformation = (email: string | undefined | null) => {
       });
       toast.success("Successfully updated your data");
     } catch (error: any) {
-      toast.error(error.message);
+      toast.error(error?.message);
     } finally {
       setLoading(false);
     }
@@ -58,7 +52,7 @@ const usePersonalInformation = (email: string | undefined | null) => {
   const handleChanges = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     dispatch(handleChange({ name, value }));
-  }
+  };
   return {
     show,
     loading,
@@ -71,6 +65,5 @@ const usePersonalInformation = (email: string | undefined | null) => {
     handleChanges,
   };
 };
-
 
 export default usePersonalInformation;

@@ -41,7 +41,7 @@ const useSchedule = (email: string | null | undefined) => {
     dispatch(handleChange({ name, value }));
   };
 
-  const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
@@ -65,11 +65,11 @@ const useSchedule = (email: string | null | undefined) => {
       if (response.status === 201) {
         toast.success("Successfully added appointment");
       } else {
-        toast.error(response.data.message || "Failed to add appointment");
+        toast.error(response?.data?.message || "Failed to add appointment");
       }
     } catch (error: any) {
-      if (error.response) {
-        toast.error(error.response.data.message);
+      if (error?.response) {
+        toast.error(error?.response?.data?.message);
       } else {
         toast.error("An unexpected error occurred.");
       }
@@ -91,12 +91,77 @@ const useSchedule = (email: string | null | undefined) => {
   };
 
   const durations = [
-    { id: 1, name: "duration", value: duration, num: "10'" },
-    { id: 2, name: "duration", value: duration, num: "30'" },
-    { id: 3, name: "duration", value: duration, num: "45'" },
-    { id: 4, name: "duration", value: duration, num: "60'" },
-    { id: 5, name: "duration", value: duration, num: "90'" },
-    { id: 6, name: "duration", value: duration, num: "120'" },
+    {
+      id: 1,
+      name: "duration",
+      value: duration,
+      num: "10'",
+      onChange: () => handleChangeInput("duration", "10"),
+    },
+    {
+      id: 2,
+      name: "duration",
+      value: duration,
+      num: "30'",
+      onChange: () => handleChangeInput("duration", "30"),
+    },
+    {
+      id: 3,
+      name: "duration",
+      value: duration,
+      num: "45'",
+      onChange: () => handleChangeInput("duration", "45"),
+    },
+    {
+      id: 4,
+      name: "duration",
+      value: duration,
+      num: "60'",
+      onChange: () => handleChangeInput("duration", "60"),
+    },
+    {
+      id: 5,
+      name: "duration",
+      value: duration,
+      num: "90'",
+      onChange: () => handleChangeInput("duration", "90"),
+    },
+    {
+      id: 6,
+      name: "duration",
+      value: duration,
+      num: "120'",
+      onChange: () => handleChangeInput("duration", "120"),
+    },
+  ];
+
+  const statuses = [
+    {
+      id: 1,
+      value: status,
+      child: "Confirmation Reuired",
+      onChange: () => handleChangeInput("status", "Confirmation Required"),
+    },
+    {
+      id: 2,
+      value: status,
+      child: "Confirmed",
+      onChange: () => handleChangeInput("status", "Confirmed"),
+    },
+  ];
+  const types = [
+    {
+      id: 1,
+      value: type,
+      child: "First time",
+      onchange: () => handleChangeInput("type", "First time"),
+    },
+    {
+      id: 2,
+      value: type,
+      child: "Followup visit",
+      onchange: () => handleChangeInput("type", "Followup visit"),
+    },
   ];
 
   return {
@@ -107,9 +172,9 @@ const useSchedule = (email: string | null | undefined) => {
     location,
     patient,
     purpose,
-    status,
+    statuses,
     durations,
-    type,
+    types,
     online,
     loading,
     setDateTimeFalse,
@@ -119,52 +184,8 @@ const useSchedule = (email: string | null | undefined) => {
     handleSubmit,
     handleChanges,
     handleChangeText,
-    handleChangeInput,
     handleChangeToggle,
   };
 };
 
 export default useSchedule;
-
-// <Button
-//             name="duration"
-//             value={duration}
-//             onChange={() => handleChangeInput("duration", "10'")}
-//           >
-//             10'
-//           </Button>
-//           <Button
-//             name="duration"
-//             value={duration}
-//             onChange={() => handleChangeInput("duration", "30'")}
-//           >
-//             30'
-//           </Button>
-//           <Button
-//             name="duration"
-//             value={duration}
-//             onChange={() => handleChangeInput("duration", "45'")}
-//           >
-//             45'
-//           </Button>
-//           <Button
-//             name="duration"
-//             value={duration}
-//             onChange={() => handleChangeInput("duration", "60'")}
-//           >
-//             60'
-//           </Button>
-//           <Button
-//             name="duration"
-//             value={duration}
-//             onChange={() => handleChangeInput("duration", "90'")}
-//           >
-//             90'
-//           </Button>
-//           <Button
-//             name="duration"
-//             value={duration}
-//             onChange={() => handleChangeInput("duration", "120'")}
-//           >
-//             120'
-//           </Button>

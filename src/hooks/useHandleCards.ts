@@ -21,13 +21,12 @@ const useHandleCards = ({email}:emailType)=>{
         const totalPatient = await axios.get(
           `/api/patients/total?email=${email}`
         );
-        setTotal(totalPatient.data);
+        setTotal(totalPatient?.data);
         const status = await axios.get(`/api/appointment/total?email=${email}`);
-
-        setOffline(status.data.offline);
-        setOnline(status.data.online);
+        setOffline(status?.data?.offline);
+        setOnline(status?.data?.online);
       } catch (error: any) {
-        toast.error(error.response.data.message);
+        toast.error(error?.response?.data?.message);
       } finally {
         setLoading(false);
       }

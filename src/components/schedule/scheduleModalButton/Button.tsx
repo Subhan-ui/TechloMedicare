@@ -5,7 +5,7 @@ const Button: React.FC<buttonType> = ({ children, name, value, onChange }) => {
   return (
     <button
       className={`px-3 py-2 rounded-lg ${
-        active ? "bg-blue text-white" : "bg-[#fafafa] text-[#333333]"
+        active ? "bg-blue text-white" : "bg-white text-darkGrey"
       }`}
       type="button"
       name={name}

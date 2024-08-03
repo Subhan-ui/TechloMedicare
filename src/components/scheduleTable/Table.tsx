@@ -6,11 +6,9 @@ import Modals from "@/components/schedule/scheduleModal/Modal";
 import { useState } from "react";
 import Something from "../calender/Calender";
 import { darkGrey } from "@/constants/colors";
+import { emailType } from "@/types/types";
 
-const Table: React.FC<{
-  name: string | undefined | null;
-  email: string | undefined | null;
-}> = ({ name, email }) => {
+const Table: React.FC<emailType> = ({ name, email }) => {
   const [show, setShow] = useState(false);
 
   const handleShowModal = () => {

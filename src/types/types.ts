@@ -1,67 +1,81 @@
 export type componentsProps = {
-    children: React.ReactNode;
-    classN: string;
-    onClick?: () => void;
+  children: React.ReactNode;
+  classN: string;
+  onClick?: () => void;
 };
 
 export type TextType = {
-    children: string[] | string;
-    ml: string;
-}
+  children: string[] | string;
+  ml: string;
+};
 
 export type emailType = {
-    email: string | null | undefined;
-}
+  email: string | null | undefined;
+  name?: string | null | undefined;
+};
 
 export type typeFormAddPatient = {
-    cross: boolean;
-    handleShow: () => void;
-}
+  cross: boolean;
+  handleShow: () => void;
+};
 
 export type typeFormRow = {
-    children: string;
-    top: string;
-    cross: boolean;
-    type: string;
-    value: string;
-    name: string
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    onChangeTextArea?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-}
+  children: string;
+  top: string;
+  cross: boolean;
+  type: string;
+  value: string;
+  name: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangeTextArea?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+};
 
 export type typeModalForm = {
-    image: File | undefined;
-    urls: string | undefined;
-    progress: number;
-    handleShow: () => void;
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    handleChangeUrl: () => void;
-}
-
+  image: File | undefined;
+  urls: string | undefined;
+  progress: number;
+  handleShow: () => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChangeUrl: () => void;
+};
 
 export type typeModalModals = {
-    children: React.ReactNode;
-    className: string;
-    hiding: () => void;
-}
+  children: React.ReactNode;
+  className: string;
+  hiding: () => void;
+};
 
 export type typeTaskModal = {
-    title: string;
-    loadAdd: boolean;
-    handleTitle: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    handleShow: () => void;
-    handleSubmit: (e: React.ChangeEvent<HTMLFormElement>) => void;
-}
+  title: string;
+  loadAdd: boolean;
+  handleTitle: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleShow: () => void;
+  handleSubmit: (e: React.ChangeEvent<HTMLFormElement>) => void;
+};
 
 export type typeChart = {
-    width: number;
-    male: number | undefined;
-    female: number | undefined;
-}
+  width: number;
+  male: number | undefined;
+  female: number | undefined;
+};
 
 export type typeLogout = {
-    placeholder: string;
-    name: string;
-    value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+  placeholder: string;
+  name: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+export type data = {
+  name: string;
+  companyName: string;
+  industry: string;
+  eNumber: string;
+};
+
+export type typeTasks = {
+  id: string;
+  task: string;
+  date: string;
+  completed: boolean;
+}[];

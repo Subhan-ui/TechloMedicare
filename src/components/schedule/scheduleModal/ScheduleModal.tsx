@@ -16,9 +16,9 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
     location,
     patient,
     purpose,
-    status,
+    statuses,
     durations,
-    type,
+    types,
     online,
     loading,
     setDateTimeFalse,
@@ -28,7 +28,6 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
     handleSubmit,
     handleChanges,
     handleChangeText,
-    handleChangeInput,
     handleChangeToggle,
   } = useSchedule(email);
 
@@ -104,22 +103,16 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
       <div className="mt-4 relative left-10 v_center">
         Appointment Status
         <div className="ml-[70px] flex gap-3">
-          <Button
-            name="status"
-            value={status}
-            onChange={() =>
-              handleChangeInput("status", "Confirmation Required")
-            }
-          >
-            Confirmation Required
-          </Button>
-          <Button
-            name="status"
-            value={status}
-            onChange={() => handleChangeInput("status", "Confirmed")}
-          >
-            Confirmed
-          </Button>
+          {statuses.map((status) => (
+            <Button
+              name="status"
+              value={status.value}
+              onChange={status.onChange}
+              key={status.id}
+            >
+              {status.child}
+            </Button>
+          ))}
         </div>
       </div>
       <div className="mt-4 relative left-10 v_center">
@@ -127,9 +120,10 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
         <div className="ml-[150px] flex gap-3">
           {durations.map((duration) => (
             <Button
+              key={duration.id}
               name={duration.name}
               value={duration.value}
-              onChange={() => handleChangeInput(duration.name, duration.num)}
+              onChange={duration.onChange}
             >
               {duration.num}
             </Button>
@@ -139,20 +133,16 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
       <div className="mt-4 relative left-10 v_center">
         Appointment Type
         <div className="ml-[83px] flex gap-3">
-          <Button
-            name="type"
-            value={type}
-            onChange={() => handleChangeInput("type", "First time")}
-          >
-            First time
-          </Button>
-          <Button
-            name="type"
-            value={type}
-            onChange={() => handleChangeInput("type", "Followup visit")}
-          >
-            Followup visit
-          </Button>
+          {types.map((type) => (
+            <Button
+              name="type"
+              value={type.value}
+              onChange={type.onchange}
+              key={type.id}
+            >
+              {type.child}
+            </Button>
+          ))}
         </div>
       </div>
       <div className="mt-4 relative left-10 v_center">
@@ -183,7 +173,10 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           >
             Begin Appointment
           </button>
-          <button disabled={loading} className="disabled:bg-disabled font-mukta font-medium text-base py-2 px-3 text-blue rounded-lg border-2 border-blue">
+          <button
+            disabled={loading}
+            className="disabled:bg-disabled font-mukta font-medium text-base py-2 px-3 text-blue rounded-lg border-2 border-blue"
+          >
             {loading ? "Saving..." : "Save"}
           </button>
         </div>

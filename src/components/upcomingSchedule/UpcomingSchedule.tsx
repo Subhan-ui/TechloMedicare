@@ -5,14 +5,9 @@ import Modals from "@/components/schedule/scheduleModal/Modal";
 import { useState } from "react";
 import ScheduleDashboard from "../scheduleDashboard/ScheduleDashboard";
 import { blue } from "@/constants/colors";
+import { emailType } from "@/types/types";
 
-const UpcomingSchedule = ({
-  name,
-  email,
-}: {
-  name: string | undefined | null;
-  email: string | null | undefined;
-}) => {
+const UpcomingSchedule = ({ name, email }: emailType) => {
   const [show, setShow] = useState(false);
   const handleShow = () => {
     setShow((prev) => !prev);

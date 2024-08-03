@@ -41,10 +41,6 @@ const patientSlice = createSlice({
         sex: action.payload,
       };
     },
-    handlePatientFromAPI: (
-      state,
-      action: PayloadAction<{ name: string; diagnosis: string }>
-    ) => {},
     handleChangeImages: (state, action: PayloadAction<string|undefined>) => {
       if(action.payload){
         state.image = action.payload;
@@ -71,7 +67,6 @@ const patientSlice = createSlice({
 export const {
   handleChangePatient,
   handleGender,
-  handlePatientFromAPI,
   handleChangeImages,
   handleNumber,
 } = patientSlice.actions;

@@ -30,8 +30,8 @@ const useSettings = (email: string | null | undefined) => {
       toast.success("Successfully updated your password");
       router.push("/");
     } catch (error: any) {
-      if (error.response && error.response.data) {
-        toast.error(error.response.data.message);
+      if (error?.response && error?.response?.data) {
+        toast.error(error?.response?.data?.message);
       } else {
         toast.error("An error occurred. Please try again.");
       }
