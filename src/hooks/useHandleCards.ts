@@ -1,4 +1,4 @@
-import { card } from "../types/dashboardCard";
+import { card } from "../types/types";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";

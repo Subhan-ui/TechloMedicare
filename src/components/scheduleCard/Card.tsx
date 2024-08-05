@@ -1,7 +1,7 @@
 import React from "react";
 import { Person, Clock, LocationI, Notes } from "@/constants/react-icons";
 import Modal from "../modals/modal/Modal";
-import {AppointmentProps} from '@/types/scheduleCardType'
+import {AppointmentProps} from '@/types/types'
 import { awaiting } from "@/constants/colors";
 
 const Card: React.FC<AppointmentProps> = ({ event, handleShow }) => {

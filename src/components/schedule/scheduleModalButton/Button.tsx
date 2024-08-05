@@ -1,4 +1,4 @@
-import { buttonType } from "@/types/typeButton";
+import { buttonType } from "@/types/types";
 
 const Button: React.FC<buttonType> = ({ children, name, value, onChange }) => {
   const active = children === value;

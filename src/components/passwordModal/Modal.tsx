@@ -1,6 +1,6 @@
 import Backdrop from "../modals/backdrop/ModalBackdrop";
 import OnlyModal from "./PasswordModal";
-import {ModalProps} from '@/types/modalTypes'
+import {ModalProps} from '@/types/types'
 
 const Modals: React.FC<ModalProps> = (props) => (
     <div className="animate_animated animate__backInUp">

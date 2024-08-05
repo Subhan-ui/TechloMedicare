@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import {sideBtnType} from '@/types/sideNavBtnType'
+import {sideBtnType} from '@/types/types'
 
 const SideNavButton = ({
   children,

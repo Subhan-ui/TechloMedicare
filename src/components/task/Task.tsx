@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Checkbox from "../ui/checkbox/Checkbox";
 import { Options } from "@/constants/react-icons";
-import { task } from "@/types/taskCard";
+import { task } from "@/types/types";
 
 const Task: React.FC<task> = (props) => {
   const [showButton, setShowButton] = useState(false);

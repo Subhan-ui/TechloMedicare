@@ -1,4 +1,4 @@
-import { checkbox } from "@/types/taskCard";
+import { checkbox } from "@/types/types";
 import React from "react";
 
 const Checkbox: React.FC<checkbox> = (props) => (

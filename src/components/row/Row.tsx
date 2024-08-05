@@ -1,6 +1,6 @@
 "use client";
 
-import { tableContent } from "@/types/table";
+import { tableContent } from "@/types/types";
 import { Options } from "@/constants/react-icons";
 import Image from "next/image";
 import useChooseColor from "@/hooks/useChooseColor";

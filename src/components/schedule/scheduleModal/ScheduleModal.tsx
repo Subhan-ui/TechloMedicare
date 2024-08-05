@@ -4,7 +4,7 @@ import Toggle from "@/components/ui/scheduleModalToggle/ScheduleModalToggle";
 import DateTime from "../changeDateTime/DateTime";
 import Location from "../changeLocation/Location";
 import useSchedule from "@/hooks/useSchedule";
-import { ModalProps } from "@/types/modalTypes";
+import { ModalProps } from "@/types/types";
 import { awaiting, darkGrey } from "@/constants/colors";
 
 const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {

@@ -79,3 +79,113 @@ export type typeTasks = {
   date: string;
   completed: boolean;
 }[];
+
+export type buttonType = {
+  children: string;
+  name: string;
+  value: string;
+  onChange: () => void;
+};
+
+export type checkbox = {
+  checked?: boolean; 
+  handleChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+export type task = {
+  id: string;
+  date: string;
+  title: string;
+  checked: boolean;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>, id: string) => void;
+  handleDelete: (id: string) => void;
+};
+
+export type tableContent = {
+  id: string;
+  image: string;
+  name: string;
+  diagnosis: string;
+  status: "On Treatment" | "Recovered" | "Awaiting Surgery";
+  last: string;
+  next: string;
+  handleShow: (id: string) => void;
+  handleHiding: () => void;
+};
+
+export type sideBtnType = {
+  children: React.ReactNode;
+  href: string;
+  name: string;
+  disable?: boolean;
+}
+
+export type AppointmentProps = {
+  event: {
+    location: string;
+    patientName: string;
+    purpose: string;
+    start: Date;
+    end: Date;
+  };
+  handleShow: () => void;
+};
+
+export type patientType = {
+  id: string;
+  name: string;
+  diagnosis: string;
+  image: string;
+  phNo: string;
+  dateOfBirth: string;
+  sex?: string;
+  notes?: string;
+};
+
+export type ModalProps = {
+  hiding: () => void;
+  name?: string | null | undefined;
+  email?: string | null | undefined;
+};
+
+export type card = {
+  id: number;
+  heading: string;
+  number: number;
+  percentage: string;
+  image?: string;
+  total?: {
+    total: number;
+    male: number;
+    female: number;
+  },
+  loading: boolean;
+};
+
+import { EventProps } from "react-big-calendar";
+
+export type cardType = EventProps & {
+    location: string;
+    patientName: string;
+    purpose: string;
+    start: Date;
+    end: Date;
+    time: string;
+    id: string;
+    duration: string;
+  };
+
+export type appointmentData = {
+    id: string;
+    event_id: string;
+    title: string;
+    location: string;
+    time: string;
+    nextDate: string;
+    duration: string;
+    patientName: string;
+    purspose: string;
+    online: boolean;
+    start: Date;
+    end: Date;
+  };

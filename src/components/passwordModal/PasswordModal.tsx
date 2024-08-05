@@ -1,6 +1,6 @@
 import Input from "../ui/input/Input";
 
-import { ModalProps } from "@/types/modalTypes";
+import { ModalProps } from "@/types/types";
 import usePasswordChange from "@/hooks/usePasswordChange";
 
 const PasswordModal: React.FC<ModalProps> = ({ hiding }) => {

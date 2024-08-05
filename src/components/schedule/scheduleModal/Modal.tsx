@@ -1,4 +1,4 @@
-import { ModalProps } from "@/types/modalTypes";
+import { ModalProps } from "@/types/types";
 import Backdrop from "../../modals/backdrop/ModalBackdrop";
 import OnlyModal from "./ScheduleModal";
 

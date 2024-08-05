@@ -5,7 +5,7 @@ import {
 } from "@/store/features/patients/patientSlice";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { patientType as datatype } from "@/types/patientGetType";
+import { patientType as datatype } from "@/types/types";
 
 const usePatients = (email: string | null | undefined) => {
   const [data, setData] = useState<datatype[]>([]);

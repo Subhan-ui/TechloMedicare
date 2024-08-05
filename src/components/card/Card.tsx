@@ -1,4 +1,4 @@
-import { card } from "@/types/dashboardCard";
+import { card } from "@/types/types";
 import { Options, Upgrade, Downgrade } from "@/constants/react-icons";
 
 import Image from "next/image";
