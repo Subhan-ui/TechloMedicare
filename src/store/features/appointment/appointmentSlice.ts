@@ -25,6 +25,7 @@ const initialState = {
   duration: "",
   type: "",
   online: false,
+  number : 0,
 };
 
 const appointmentSlice = createSlice({
@@ -59,6 +60,9 @@ const appointmentSlice = createSlice({
         state.time = time;
       }
     },
+    handleNumber: (state, action:PayloadAction<number>)=>{
+      state.number = action.payload;
+    }
   },
   selectors: {
     selectDate: (data) => data.date,
@@ -70,10 +74,11 @@ const appointmentSlice = createSlice({
     selectDuration: (data) => data.duration,
     selectType: (data) => data.type,
     selectOnline: (data) => data.online,
+    selectNumber: (data) => data.number,
   },
 });
 
-export const { handleChange, handleOnline,handleDateTime, } = appointmentSlice.actions;
+export const { handleChange, handleOnline,handleDateTime,handleNumber } = appointmentSlice.actions;
 export const {
   selectDate,
   selectDuration,
@@ -84,6 +89,7 @@ export const {
   selectStatus,
   selectTime,
   selectType,
+  selectNumber,
 } = appointmentSlice.selectors;
 
 export default appointmentSlice.reducer;

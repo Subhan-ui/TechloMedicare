@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import {sideBtnType} from '@/types/types'
+import { useAppSelector } from "@/store/hooks";
+import { selectNumber } from "@/store/features/appointment/appointmentSlice";
 
 const SideNavButton = ({
   children,
@@ -12,6 +14,8 @@ const SideNavButton = ({
   disable,
 }: sideBtnType) => {
   const router = usePathname();
+  const message = href==='messages'
+  const number = useAppSelector(selectNumber)
   return (
     <>
       <li
@@ -35,6 +39,7 @@ const SideNavButton = ({
             {name}
           </Link>
         )}
+        {message&&<p className="absolute right-2 text-white bg-mutedRed rounded-full w-[18px] h-[18px] center text-xs font-normal">{number}</p>}
       </li>
     </>
   );

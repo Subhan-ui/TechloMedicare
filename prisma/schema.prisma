@@ -60,3 +60,10 @@ model Tasks {
   completed   Boolean
   date        String
 }
+
+model Message {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  email   String
+  message String
+  time    String
+}

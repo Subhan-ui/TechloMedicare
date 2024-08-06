@@ -15,6 +15,7 @@ import {
   handleOnline,
 } from "@/store/features/appointment/appointmentSlice";
 import { useState } from "react";
+import useHandleMessage from "./useHandleMessage";
 
 const useSchedule = (email: string | null | undefined) => {
   const date = useAppSelector(selectDate);
@@ -29,6 +30,7 @@ const useSchedule = (email: string | null | undefined) => {
   const [dateTime, setDateTime] = useState(false);
   const [locations, setLocation] = useState(false);
   const [loading, setLoading] = useState(false);
+  const notification = useHandleMessage();
 
   const dispatch = useAppDispatch();
 
@@ -64,6 +66,7 @@ const useSchedule = (email: string | null | undefined) => {
       );
       if (response.status === 201) {
         toast.success("Successfully added appointment");
+        notification(email,`Successfully registered ${patient} appointment`)
       } else {
         toast.error(response?.data?.message || "Failed to add appointment");
       }
@@ -96,42 +99,42 @@ const useSchedule = (email: string | null | undefined) => {
       name: "duration",
       value: duration,
       num: "10'",
-      onChange: () => handleChangeInput("duration", "10"),
+      onChange: () => handleChangeInput("duration", "10'"),
     },
     {
       id: 2,
       name: "duration",
       value: duration,
       num: "30'",
-      onChange: () => handleChangeInput("duration", "30"),
+      onChange: () => handleChangeInput("duration", "30'"),
     },
     {
       id: 3,
       name: "duration",
       value: duration,
       num: "45'",
-      onChange: () => handleChangeInput("duration", "45"),
+      onChange: () => handleChangeInput("duration", "45'"),
     },
     {
       id: 4,
       name: "duration",
       value: duration,
       num: "60'",
-      onChange: () => handleChangeInput("duration", "60"),
+      onChange: () => handleChangeInput("duration", "60'"),
     },
     {
       id: 5,
       name: "duration",
       value: duration,
       num: "90'",
-      onChange: () => handleChangeInput("duration", "90"),
+      onChange: () => handleChangeInput("duration", "90'"),
     },
     {
       id: 6,
       name: "duration",
       value: duration,
       num: "120'",
-      onChange: () => handleChangeInput("duration", "120"),
+      onChange: () => handleChangeInput("duration", "120'"),
     },
   ];
 
@@ -139,7 +142,7 @@ const useSchedule = (email: string | null | undefined) => {
     {
       id: 1,
       value: status,
-      child: "Confirmation Reuired",
+      child: "Confirmation Required",
       onChange: () => handleChangeInput("status", "Confirmation Required"),
     },
     {

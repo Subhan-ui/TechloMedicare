@@ -15,6 +15,7 @@ import {
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useEdgeStore } from "@/lib/edgestore";
+import useHandleMessage from "./useHandleMessage";
 
 const usePatientCRUD = (
   id: string,
@@ -40,6 +41,7 @@ const usePatientCRUD = (
   const [loading, setLoading] = useState(false);
   const [loadingDelete, setLoadingDelete] = useState(false);
   const router = useRouter();
+  const notification = useHandleMessage();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -129,7 +131,7 @@ const usePatientCRUD = (
         `/api/patients/add/${email}`,
         patientData
       );
-
+      notification(email, `${foreName} ${lastName} was added.`)
       toast.success("Patient Successfully added.");
       router.push("/patients");
     } catch (error: any) {

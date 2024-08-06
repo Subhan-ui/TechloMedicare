@@ -42,7 +42,7 @@ export const sideNavbtns = [
       id: 5,
       href: "messages",
       name: "Messages",
-      disable: true,
+      disable: false,
       Component: <Mail size={24} />,
     },
     {

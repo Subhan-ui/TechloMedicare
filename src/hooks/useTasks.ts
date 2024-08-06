@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { emailType, typeTasks } from "@/types/types";
+import useHandleMessage from "./useHandleMessage";
 
 
 const useTasks = ({ email }: emailType) => {
@@ -12,6 +13,7 @@ const useTasks = ({ email }: emailType) => {
   const [loading, setLoading] = useState(false);
   const [track, setTrack] = useState(0);
   const [data, setData] = useState<typeTasks>([]);
+  const notification = useHandleMessage();
 
   useEffect(() => {
     (async () => {
@@ -69,6 +71,7 @@ const useTasks = ({ email }: emailType) => {
       });
       toast.success("Successfully added Your Task");
       setTrack((prev) => prev + 1);
+      notification(email, `task added successfully...`)
       handleShow();
     } catch (error: any) {
       toast.error(error?.response?.data?.message);
