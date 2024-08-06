@@ -3,12 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useAppDispatch } from "@/store/hooks";
 import { handleNumber } from "@/store/features/appointment/appointmentSlice";
-
-type message = {
-  message: string;
-  time: string;
-  id: string;
-};
+import { message } from "../types/types";
 
 const useGetMessage = (email: string | null | undefined) => {
   const [data, setData] = useState<message[]>([]);

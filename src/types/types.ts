@@ -88,7 +88,7 @@ export type buttonType = {
 };
 
 export type checkbox = {
-  checked?: boolean; 
+  checked?: boolean;
   handleChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -118,7 +118,7 @@ export type sideBtnType = {
   href: string;
   name: string;
   disable?: boolean;
-}
+};
 
 export type AppointmentProps = {
   event: {
@@ -158,34 +158,40 @@ export type card = {
     total: number;
     male: number;
     female: number;
-  },
+  };
   loading: boolean;
 };
 
 import { EventProps } from "react-big-calendar";
 
 export type cardType = EventProps & {
-    location: string;
-    patientName: string;
-    purpose: string;
-    start: Date;
-    end: Date;
-    time: string;
-    id: string;
-    duration: string;
-  };
+  location: string;
+  patientName: string;
+  purpose: string;
+  start: Date;
+  end: Date;
+  time: string;
+  id: string;
+  duration: string;
+};
 
 export type appointmentData = {
-    id: string;
-    event_id: string;
-    title: string;
-    location: string;
-    time: string;
-    nextDate: string;
-    duration: string;
-    patientName: string;
-    purspose: string;
-    online: boolean;
-    start: Date;
-    end: Date;
-  };
+  id: string;
+  event_id: string;
+  title: string;
+  location: string;
+  time: string;
+  nextDate: string;
+  duration: string;
+  patientName: string;
+  purspose: string;
+  online: boolean;
+  start: Date;
+  end: Date;
+};
+
+export type message = {
+  message: string;
+  time: string;
+  id: string;
+};
