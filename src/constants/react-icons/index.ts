@@ -24,6 +24,7 @@ import {
 } from "react-icons/io5";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { FiEdit } from "react-icons/fi";
+import { GiHamburgerMenu as Burger } from "react-icons/gi";
 
 export {
   Help,
@@ -54,6 +55,7 @@ export {
   IoIosArrowDown,
   AiOutlineDelete,
   FiEdit,
-  Downgrade
+  Downgrade, 
+  Burger,
 };
 

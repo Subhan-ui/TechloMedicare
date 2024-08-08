@@ -11,7 +11,7 @@ const Navbar = async () => {
 
   return (
     <>
-      <nav className="md:flex hidden v_center max:gap-4 med:gap-20 bg-white border-b-2 border-gray-300 h-[92.18px] md:gap-7 gap-5 box-border">
+      <nav className="md:flex hidden v_center max:gap-4 med:gap-5 bg-white border-b-2 border-gray-300 h-[92.18px] md:sticky md:top-0 z-[5000] md:gap-7 gap-5 box-border">
         <div className="center max:w-[244.18px] med:w-[200px] md:w-[190px] border-r-2 border-gray-300 h-[92.18px] gap-3">
           <Image
             src="/assets/logo.svg"
@@ -24,11 +24,11 @@ const Navbar = async () => {
             Medicare
           </h1>
         </div>
-        <div className="max:gap-12 med:gap-24 md:gap-20 flex">
-          <form className=" v_center max:flex hidden  relative">
+        <div className="max:gap-12 max:justify-start max:w-auto med:w-[calc(100vw-250px)] md:w-[calc(100vw-290px)] md:justify-between flex">
+          <form className=" v_center med:flex hidden  relative">
             <input
               type="text"
-              className="pl-3 rounded-md border-2 border-gray-300 h-[40.21px] w-[580px] "
+              className="max:pl-3 rounded-md border-2 border-gray-300 h-[40.21px] max:w-[580px] med:w-[240px]"
             />
             <button type="submit" className="absolute right-7">
               <Search size={24} color={lightSlate} />

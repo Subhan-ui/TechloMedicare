@@ -46,7 +46,7 @@ const Table: React.FC<emailType> = ({ name, email }) => {
           />
         </div>
       </Bar>
-      <div className="max:w-[1139px]  med:w-[780px] md:w-[550px] w-[90vw] overflow-x-scroll">
+      <div className="max:w-[1139px] med:w-[calc(100vw-250px)] md:w-[calc(100vw-240px)] w-[90vw] overflow-x-scroll">
         <Something email={email} />
       </div>
     </>

@@ -8,7 +8,7 @@ const TaskPage = async () => {
   return (
     <div>
       <Text ml="23px">Dashboard {">"} Tasks</Text>
-      <div className="font-mukta w-full center h-[80vh] ml-[23px] mt-[23px]">
+      <div className="font-mukta md:w-[calc(100vw-260px)] max:w-[1116px] w-[calc(100vw-34px)] h_center h-[80vh] ml-[23px] -pt-">
         <Tasks email={session?.user?.email} />
       </div>
     </div>

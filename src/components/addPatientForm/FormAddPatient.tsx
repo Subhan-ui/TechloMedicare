@@ -23,7 +23,7 @@ const FormAddPatient: React.FC<typeFormAddPatient> = ({ cross }) => {
       ))}
       <tr className="relative top-[125px]">
         <td>Sex</td>
-        <td className="relative left-10 flex gap-3">
+        <td className="relative md:-left-8 flex gap-3">
           {sex === "male" ? (
             <button className="genderBtn bg-blue text-white" type="button">
               Male

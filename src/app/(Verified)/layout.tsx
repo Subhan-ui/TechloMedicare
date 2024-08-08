@@ -47,7 +47,7 @@ export default async function RootLayout({
       <html lang="en">
         <body className={`bg-back v_center flex-col box-border ${mukta.variable}`} >
           <ToastProvider />
-          <div className="max:w-[1412px] med:w-[1000px] md:w-[768px] w-full">
+          <div className="max:w-[1412px]  w-full">
             <Navbar />
             <div className="flex">
               <SideNav />

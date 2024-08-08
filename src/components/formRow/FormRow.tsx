@@ -15,7 +15,7 @@ const Row: React.FC<typeFormRow> = ({
   <>
     <tr className="relative" style={{ top: top }}>
       <td className="">{children}</td>
-      <td className="relative med:left-10 left-5 ">
+      <td className="relative md:-left-8 ">
         {type === "textarea" ? (
           <textarea
             name="notes"
@@ -25,6 +25,7 @@ const Row: React.FC<typeFormRow> = ({
             className="med:w-[415px] md:w-[345px] sm:w-[60vw] w-[65vw] h-[103px] px-3 border-2 border-gray-300"
           ></textarea>
         ) : (
+          <div className="relative med:w-[415px] md:w-[345px] sm:w-[60vw] w-[65vw]">
           <input
             value={value}
             name={name}
@@ -33,13 +34,14 @@ const Row: React.FC<typeFormRow> = ({
             className="med:w-[415px] md:w-[345px] sm:w-[60vw] w-[65vw] px-3 h-[44px] border-2 border-gray-300"
             placeholder=""
           />
-        )}
         {cross && (
           <Cross
-            className="absolute med:right-56 md:right-28 right-16 bottom-[1.08rem]"
-            color={darkGrey}
-            size={12}
+          className="absolute  right-[18px] bottom-[1.08rem]"
+          color={darkGrey}
+          size={12}
           />
+        )}
+        </div>
         )}
       </td>
     </tr>

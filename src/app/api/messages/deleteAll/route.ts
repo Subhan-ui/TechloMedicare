@@ -12,7 +12,7 @@ export const DELETE = async (req:Request)=>{
             where: {email:email}
         })
         return NextResponse.json({message: 'Successfull'})
-    } catch (error) {
+    } catch (error:any) {
         return NextResponse.json({message: error?.message})
     } finally{
         await prisma.$disconnect();

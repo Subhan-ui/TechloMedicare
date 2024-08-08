@@ -59,24 +59,24 @@ const AddPatient: React.FC<emailType> = ({ email }) => {
             <tbody className="">
               <tr className=" font-mukta med:text-lg md:text-sm text-grey">
                 <td>Record Number</td>
-                <td className="text-darkGrey relative med:left-10 left-5">
+                <td className="text-darkGrey relative md:-left-8">
                   Record Number will be assigned automatically when you save.
                 </td>
               </tr>
               <tr>
                 <td></td>
-                <td className="relative med:left-10 left-5">
-                  <button className=" mt-2 border-2 border-lightGrey py-2 px-3 text-darkGrey text-lg font-bold">
+                <td className="relative md:-left-8 ">
+                  <button className=" mt-2 border-2 w-[152px] h-[44px] center border-lightGrey  text-darkGrey text-lg font-bold">
                     Assign manually
                   </button>
                 </td>
               </tr>
               <tr className=" font-mukta med:text-lg md:text-sm text-grey">
                 <td>Profile Image</td>
-                <td className="relative med:left-10 left-5">
+                <td className="relative md:-left-8">
                   <button
                     type="button"
-                    className="border-2 hover:bg-slate-400 hover:text-white p-2  bg-white"
+                    className="border-2  hover:bg-slate-400 hover:text-white p-2  bg-white"
                     onClick={handleShow}
                   >
                     Upload your profile Image

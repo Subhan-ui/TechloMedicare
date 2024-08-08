@@ -10,7 +10,7 @@ const Modal: React.FC<typeModalForm> = ({
 }) => (
   <>
     <Backdrop hiding={handleShow} />
-    <div className="block fixed z-[250] top-24 left-1/2 transform -translate-x-1/2 p-12  rounded-lg md:w-[45%] w-[80%] bg-white">
+    <div className="block fixed z-[6000] top-24 left-1/2 transform -translate-x-1/2 p-12  rounded-lg md:w-[45%] w-[80%] bg-white">
       <h1 className="font-semibold text-2xl font-mukta mb-8">
         Choose Your Profile Image
       </h1>
@@ -39,7 +39,7 @@ const Modal: React.FC<typeModalForm> = ({
             hidden
           />
         </label>
-        <div className="flex gap-3">
+        <div className="flex gap-3 flex-wrap">
           <button
             type="button"
             className="bg-white text-black py-2 border-2 hover:bg-black hover:text-white rounded-lg px-5 hover:opacity-80 disabled:bg-slate-400"

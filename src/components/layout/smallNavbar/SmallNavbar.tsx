@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Options, Bell } from "@/constants/react-icons";
+import { Burger, Bell } from "@/constants/react-icons";
 import LogoutButton from "../../ui/logoutButton/logoutButton";
 import { useState } from "react";
 import ModalSide from "../modalSide/ModalSide";
@@ -14,8 +14,9 @@ const SmallNavbar = () => {
   };
   return (
     <>
-      {show && <ModalSide handleShow={handleShow} />}
-      <nav className="md:hidden flex font-mukta h-[64px] w-full border-b-2 border-gray-300 bg-white items-center justify-around">
+      {show && <ModalSide show={show} handleShow={handleShow} />}
+      <nav className="md:hidden flex font-mukta sticky top-0 z-[5000] h-[64px] w-full border-b-2 border-gray-300 bg-white items-center justify-between pl-5 pr-10">
+          <Burger size={20} color={lightSlate} onClick={handleShow} />
         <div className="center h-full gap-3">
           <Image
             src="/assets/logo.svg"
@@ -27,8 +28,7 @@ const SmallNavbar = () => {
         </div>
 
         <div className="gap-[34.9px] v_center">
-          <Options size={20} color={lightSlate} onClick={handleShow} />
-          <Bell size={20} color={lightSlate} />
+          
           <LogoutButton size={20} />
         </div>
       </nav>

@@ -19,25 +19,27 @@ const Rows: React.FC<emailType> = ({ email }) => {
       <>
         {show && <Modal handleShow={handleHiding} id={id} />}
         {loading ? (
-          <Loader />
+          <div className="w-[65vw] h-[75vh] center">
+            <Loader />
+          </div>
         ) : (
           <Table>
             <td colSpan={7}>
-              <span className="overflow-y-auto overflow-x-hidden h-[625.64px] ">
-                <table className="table-fixed w-[1122px]">
+              <span className="overflow-y-auto overflow-x-hidden h-[625.64px] block min-w-[1122px] ">
+                <table className="table-fixed min-w-[1122px] w-full">
                   <tbody>
-                    {data.map((row) => (
+                    {data?.map((row) => (
                       <Row
                         handleHiding={handleHiding}
                         handleShow={handleShow}
-                        key={row.id}
-                        id={row.id}
-                        image={row.image}
-                        name={row.name}
+                        key={row?.id}
+                        id={row?.id}
+                        image={row?.image}
+                        name={row?.name}
                         status="Recovered"
-                        last={row.phNo}
-                        next={row.dateOfBirth}
-                        diagnosis={row.diagnosis}
+                        last={row?.phNo}
+                        next={row?.dateOfBirth}
+                        diagnosis={row?.diagnosis}
                       />
                     ))}
                   </tbody>

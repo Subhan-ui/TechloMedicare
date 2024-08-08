@@ -38,9 +38,10 @@ const Table: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           />
         </div>
       </Bar>
-      <table className="mx-[22.55px] bg-white mt-[17px] table-fixed w-[1122px]">
-        <thead className="h-[65.7px] border-b-2 border-gray-300">
-          <tr className="font-mukta text-lg text-lightSlate text-center">
+      <div className="max:w-[1122px] med:w-[calc(100vw-250px)] md:w-[calc(100vw-240px)] w-[94vw] bg-white mx-[22.55px] overflow-x-scroll mt-[17px]">
+      <table className=" w-full min-w-[1122px] table-fixed">
+        <thead className="h-[65.7px] border-b-2  overflow-x-scroll border-gray-300">
+          <tr className="font-mukta text-lg text-lightSlate  text-center">
             <td>Profile</td>
             <td>Name</td>
             <td>Diagnosis</td>
@@ -54,6 +55,7 @@ const Table: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <tr>{children}</tr>
         </tbody>
       </table>
+      </div>
     </>
   );
 };
