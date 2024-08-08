@@ -34,7 +34,7 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="block absolute z-[250] top-16 left-1/2 transform -translate-x-1/2 rounded-lg w-[760.2px] bg-white"
+      className="block absolute z-[6000] top-16 left-1/2 transform -translate-x-1/2 rounded-lg w-[760.2px] bg-white"
     >
       {dateTime && <DateTime onClick={setDateTimeFalse} />}
       {locations && <Location onClick={setLocationFalse} />}
