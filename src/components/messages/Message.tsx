@@ -12,7 +12,7 @@ const Message = ({ email }: { email: string | null | undefined }) => {
     <>
       {data?.length === 0 ? (
         <div className="w-[75vw] h-[75vh] center ">
-        <Loader />
+        <h1>No Notifications here yet...</h1>
         </div>
       ) : (
         <>
