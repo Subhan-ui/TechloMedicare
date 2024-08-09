@@ -14,7 +14,7 @@ const Navbar = async () => {
       <nav className="md:flex hidden v_center max:gap-4 med:gap-5 bg-white border-b-2 border-gray-300 h-[92.18px] md:sticky md:top-0 z-[5000] md:gap-7 gap-5 box-border">
         <div className="center max:w-[244.18px] med:w-[200px] md:w-[190px] border-r-2 border-gray-300 h-[92.18px] gap-3">
           <Image
-            src="/assets/logo.svg"
+            src="/assets/icon.png"
             height={47.07}
             width={47.07}
             alt="logo"

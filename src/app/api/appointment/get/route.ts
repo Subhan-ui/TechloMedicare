@@ -14,7 +14,7 @@ export const GET = async (req: Request, { params }: { params: { email: string } 
     });
 
     if (appointments.length === 0) {
-      return NextResponse.json({ message: 'You have no appointments so far.' }, { status: 404 });
+      return NextResponse.json({ message: 'You have no appointments so far.' });
     }
 
     return NextResponse.json(appointments, { status: 200 });

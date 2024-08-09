@@ -19,7 +19,7 @@ const Rows: React.FC<emailType> = ({ email }) => {
       <>
         {show && <Modal handleShow={handleHiding} id={id} />}
         {loading ? (
-          <div className="w-[65vw] h-[75vh] center">
+          <div className="w-[55vw] h-[75vh] center">
             <Loader />
           </div>
         ) : (

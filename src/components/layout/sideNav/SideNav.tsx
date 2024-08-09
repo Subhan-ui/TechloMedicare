@@ -23,7 +23,12 @@ const SideNav = () => (
     <h5 className="text-lightSlate text-[12px] mt-[30px] ml-[20px]">General</h5>
     <ul className="flex flex-col gap-4">
       {belowSideNavBtns.map((btn) => (
-        <SideNavBtn href={btn.href} name={btn.name} key={btn.id}>
+        <SideNavBtn
+          href={btn.href}
+          disable={btn.disable}
+          name={btn.name}
+          key={btn.id}
+        >
           {btn.Component}
         </SideNavBtn>
       ))}

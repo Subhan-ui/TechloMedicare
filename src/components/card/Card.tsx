@@ -5,6 +5,7 @@ import Image from "next/image";
 import Chart from "../ui/chart/Chart";
 import Loader from "../ui/loader/Loader";
 import { green, mutedRed } from "@/constants/colors";
+import { totalmem } from "os";
 
 const Card: React.FC<card> = (props) => {
   const color: string = props.percentage === "+3.11%" ? green : mutedRed;
@@ -50,14 +51,16 @@ const Card: React.FC<card> = (props) => {
                 width={164}
                 height={112}
                 priority
-                className="md:hidden med:inline w-auto h-auto"
+                className="md:hidden w-[164px] h-[112px] med:inline "
+              />
+            ) : props?.total?.male ? (
+              <Chart
+                male={props?.total?.male}
+                width={119}
+                female={props?.total?.female}
               />
             ) : (
-              <Chart
-                male={props.total?.male}
-                width={119}
-                female={props.total?.female}
-              />
+              <></>
             )}
           </div>
         </>

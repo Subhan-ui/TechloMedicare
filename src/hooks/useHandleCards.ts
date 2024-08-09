@@ -39,7 +39,7 @@ const useHandleCards = ({email}:emailType)=>{
       heading: "Offline Consultations",
       number: offline,
       percentage: "+3.11%",
-      image: "/assets/dashboard/chart1.svg",
+      image: "/assets/dashboard/chart1.png",
       loading: loading,
     },
     {
@@ -47,7 +47,7 @@ const useHandleCards = ({email}:emailType)=>{
       heading: "Online Consultations",
       number: online,
       percentage: "-20.9%",
-      image: "/assets/dashboard/chart2.svg",
+      image: "/assets/dashboard/chart2.png",
       loading: loading,
     },
     {

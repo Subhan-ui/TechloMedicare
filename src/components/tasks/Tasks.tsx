@@ -43,7 +43,9 @@ const Tasks: React.FC<emailType> = ({ email }) => {
             New Tasks <Add size={24} />
           </h4>
         </div>
-        {!loading ? (
+        {data?.length === 0 ? (
+          <p className="h_center">You don't have any task yet..</p>
+        ) : !loading ? (
           <div className="flex flex-col gap-4">
             {data?.map((task) => (
               <Task
@@ -60,13 +62,15 @@ const Tasks: React.FC<emailType> = ({ email }) => {
         ) : (
           <Loader />
         )}
-        <p className="font-mukta text-blue v_center justify-end py-9 gap-3">
-          View all
-          <Right
-            className="border-2 ml-1 border-gray-300 h-[17.6px] w-[17.6px]"
-            size={17}
-          />
-        </p>
+        {data?.length !== 0 && (
+          <p className="font-mukta text-blue v_center justify-end py-9 gap-3">
+            View all
+            <Right
+              className="border-2 ml-1 border-gray-300 h-[17.6px] w-[17.6px]"
+              size={17}
+            />
+          </p>
+        )}
       </div>
     </>
   );

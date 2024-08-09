@@ -30,7 +30,7 @@ const useAppointment = (email: string | null | undefined) => {
           const response = await axios.get(
             `/api/appointment/get?email=${email}`
           );
-          const transformedData = response.data?.map(
+          const transformedData = response?.data?.map(
             (appointment: appointmentData) => {
               const start = convertToDateTime(
                 appointment?.nextDate,
