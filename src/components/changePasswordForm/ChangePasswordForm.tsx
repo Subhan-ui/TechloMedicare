@@ -2,7 +2,7 @@
 
 import Input from "../ui/input/Input";
 import { handleChange } from "@/store/features/login/loginSlice";
-import Bar from "../bar/TopBar";
+import Bar from "../topBar/TopBar";
 import { useAppDispatch } from "@/store/hooks";
 import useSettings from "@/hooks/usePassword";
 import { emailType } from "@/types/types";

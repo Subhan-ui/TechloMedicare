@@ -1,6 +1,6 @@
 "use client";
 
-import Modals from "@/components/passwordModal/Modal";
+import Modals from "@/components/passwordModal/modal/Modal";
 import Input from "@/components/ui/input/Input";
 import useLogin from "@/hooks/useLogin";
 import Link from "next/link";

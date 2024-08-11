@@ -1,9 +1,9 @@
 "use client";
 
-import Bar from "@/components/bar/TopBar";
+import Bar from "@/components/topBar/TopBar";
 import Link from "next/link";
-import Modal from "../profileImageModal/Modal";
-import FormAddPatient from "../addPatientForm/FormAddPatient";
+import Modal from "../profileImageModal/ProfileImageModal";
+import FormAddPatient from "../formAddPatient/FormAddPatient";
 import usePatientCRUD from "@/hooks/usePatientCRUD";
 import { emailType } from "@/types/types";
 import { useState } from "react";

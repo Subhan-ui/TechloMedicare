@@ -1,7 +1,7 @@
 "use client";
 
 import { emailType } from "@/types/types";
-import Bar from "../bar/TopBar";
+import Bar from "../topBar/TopBar";
 import Input from "../ui/input/Input";
 
 import usePersonalInformation from "@/hooks/usePersonalInformation";

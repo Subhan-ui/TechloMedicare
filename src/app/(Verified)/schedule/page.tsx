@@ -1,5 +1,5 @@
-import Text from "@/components/text/TopText";
-import Table from "@/components/scheduleTable/Table";
+import Text from "@/components/topText/TopText";
+import Table from "@/components/scheduleTable/ScheduleTable";
 import { authOptions } from "@/lib/AuthOptions";
 import { getServerSession } from "next-auth";
 

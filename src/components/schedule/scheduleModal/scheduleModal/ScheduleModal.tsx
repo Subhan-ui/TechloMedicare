@@ -1,8 +1,8 @@
 import { Cross, Person, Clock, LocationI, Bell } from "@/constants/react-icons";
-import Button from "../scheduleModalButton/Button";
+import Button from "../../button/Button";
 import Toggle from "@/components/ui/scheduleModalToggle/ScheduleModalToggle";
-import DateTime from "../changeDateTime/DateTime";
-import Location from "../changeLocation/Location";
+import DateTime from "../../dateTime/DateTime";
+import Location from "../../location/Location";
 import useSchedule from "@/hooks/useSchedule";
 import { ModalProps } from "@/types/types";
 import { awaiting, darkGrey } from "@/constants/colors";

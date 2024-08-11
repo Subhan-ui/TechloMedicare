@@ -1,4 +1,4 @@
-import Text from "@/components/text/TopText";
+import Text from "@/components/topText/TopText";
 import Rows from "@/components/rows/Rows";
 import { authOptions } from "@/lib/AuthOptions";
 import { getServerSession } from "next-auth";

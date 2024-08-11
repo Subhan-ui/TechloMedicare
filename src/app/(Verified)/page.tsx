@@ -1,4 +1,4 @@
-import Text from "@/components/text/TopText";
+import Text from "@/components/topText/TopText";
 import Cards from "@/components/cards/Cards";
 import UpcomingSchedule from "@/components/upcomingSchedule/UpcomingSchedule";
 import Tasks from "@/components/tasks/Tasks";

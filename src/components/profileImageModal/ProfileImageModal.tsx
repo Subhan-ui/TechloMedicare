@@ -1,4 +1,4 @@
-import Backdrop from "../modals/backdrop/ModalBackdrop";
+import Backdrop from "../modals/backdrop/Backdrop";
 import { typeModalForm } from "@/types/types";
 
 const Modal: React.FC<typeModalForm> = ({

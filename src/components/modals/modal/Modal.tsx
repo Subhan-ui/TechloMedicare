@@ -1,4 +1,4 @@
-import Backdrop from "../backdrop/ModalBackdrop";
+import Backdrop from "../backdrop/Backdrop";
 import { typeModalModals } from "@/types/types";
 
 const Modal: React.FC<typeModalModals> = ({ hiding, children, className }) => (

@@ -1,6 +1,6 @@
 "use client";
 
-import Bar from "../bar/TopBar";
+import Bar from "../topBar/TopBar";
 import { Cross } from "../../constants/react-icons";
 import useGetMessage from "../../hooks/useGetMessage";
 import Loader from "../ui/loader/Loader";

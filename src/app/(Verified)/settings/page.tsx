@@ -1,6 +1,6 @@
-import Bar from "@/components/bar/TopBar";
+import Bar from "@/components/topBar/TopBar";
 import { Help } from "@/constants/react-icons";
-import Text from "@/components/text/TopText";
+import Text from "@/components/topText/TopText";
 import ChangePassword from "@/components/changePasswordForm/ChangePasswordForm";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/AuthOptions";

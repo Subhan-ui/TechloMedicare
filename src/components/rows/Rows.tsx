@@ -2,7 +2,7 @@
 
 import Row from "../row/Row";
 import Table from "../table/Table";
-import Modal from "../patientsTableModal/Modal";
+import Modal from "../patientsTableModal/PatientTableModal";
 import { useAppDispatch } from "@/store/hooks";
 import { handleNumber } from "@/store/features/patients/patientSlice";
 import usePatients from "@/hooks/usePatients";

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Help, Add, Search, Filter } from "@/constants/react-icons";
-import Bar from "@/components/bar/TopBar";
+import Bar from "@/components/topBar/TopBar";
 import { selectNumber } from "@/store/features/patients/patientSlice";
 import { useAppSelector } from "@/store/hooks";
 import { darkGrey } from "@/constants/colors";

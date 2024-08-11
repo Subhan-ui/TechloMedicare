@@ -1,6 +1,6 @@
 import React from "react";
 import Modals from "../modals/modal/Modal";
-import FormAddPatient from "../addPatientForm/FormAddPatient";
+import FormAddPatient from "../formAddPatient/FormAddPatient";
 import usePatientCRUD from "@/hooks/usePatientCRUD";
 
 const Modal: React.FC<{ handleShow: () => void; id: string }> = ({

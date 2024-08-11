@@ -1,4 +1,4 @@
-import Input from "../ui/input/Input";
+import Input from "../../ui/input/Input";
 
 import { ModalProps } from "@/types/types";
 import usePasswordChange from "@/hooks/usePasswordChange";

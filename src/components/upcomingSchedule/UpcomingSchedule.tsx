@@ -1,7 +1,7 @@
 "use client";
 
 import { Add } from "@/constants/react-icons";
-import Modals from "@/components/schedule/scheduleModal/Modal";
+import Modals from "@/components/schedule/scheduleModal/modal/Modal";
 import { useState } from "react";
 import ScheduleDashboard from "../scheduleDashboard/ScheduleDashboard";
 import { blue } from "@/constants/colors";

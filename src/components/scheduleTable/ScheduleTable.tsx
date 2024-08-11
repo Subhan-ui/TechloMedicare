@@ -1,8 +1,8 @@
 "use client";
 
-import Bar from "@/components/bar/TopBar";
+import Bar from "@/components/topBar/TopBar";
 import { Print, Add, Filter, Help } from "@/constants/react-icons";
-import Modals from "@/components/schedule/scheduleModal/Modal";
+import Modals from "@/components/schedule/scheduleModal/modal/Modal";
 import { useState } from "react";
 import Something from "../calender/Calender";
 import { darkGrey } from "@/constants/colors";

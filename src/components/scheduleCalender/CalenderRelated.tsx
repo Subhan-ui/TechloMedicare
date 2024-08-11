@@ -6,7 +6,7 @@ import {
 } from "react-big-calendar";
 import moment from "moment";
 import { useState } from "react";
-import Card from "../scheduleCard/Card";
+import Card from "../scheduleCard/ScheduleCard";
 
 const localizer = momentLocalizer(moment);
 

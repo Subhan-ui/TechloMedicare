@@ -1,4 +1,4 @@
-import Backdrop from "../../modals/backdrop/ModalBackdrop";
+import Backdrop from "../../modals/backdrop/Backdrop";
 import {
   sideNavbtns,
   belowSideNavBtns,

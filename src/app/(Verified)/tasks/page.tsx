@@ -1,4 +1,4 @@
-import Text from "@/components/text/TopText";
+import Text from "@/components/topText/TopText";
 import Tasks from "@/components/tasks/Tasks";
 import { authOptions } from "@/lib/AuthOptions";
 import { getServerSession } from "next-auth";
