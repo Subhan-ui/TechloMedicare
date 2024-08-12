@@ -5,6 +5,9 @@ import StoreProvider from "../../providers/StoreProvider";
 import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
 import ToastProvider from "@/providers/ToastProvider";
 import { Mukta } from "next/font/google";
+import { authOptions } from "@/lib/AuthOptions";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Sign Up or Sign In",
@@ -30,7 +33,11 @@ type propsLayout = {
   children: React.ReactNode;
 };
 
-const RootLayout = ({ children }: propsLayout) => {
+const RootLayout = async ({ children }: propsLayout) => {
+  const session = await getServerSession(authOptions);
+  if (session?.user?.email) {
+    redirect("/");
+  }
   return (
     <html>
       <body className={mukta.variable}>
