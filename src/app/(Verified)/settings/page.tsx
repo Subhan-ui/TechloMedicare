@@ -13,7 +13,7 @@ const Setting = async () => {
     <>
       <div>
         <Text ml="23px">Settings</Text>
-        <Bar classN="justify-between">
+        <Bar classN="justify-between ml-[26px]">
           <h1 className="font-mukta font-semibold text-xl">Settings</h1>
           <Help
             className="border p-1 h-[40px] w-[40px]"

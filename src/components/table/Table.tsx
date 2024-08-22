@@ -9,11 +9,11 @@ const Table: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const number = useAppSelector(selectNumber);
   return (
     <>
-      <Bar classN="justify-between">
+      <Bar classN="justify-between mx-[22.5px]">
         <h1 className="font-mukta font-semibold text-xl">
           Total Patients <span className="text-lightSlate">({number})</span>
         </h1>
-        <div className="v_center gap-5">
+        <div className="v_center med:gap-[25px]">
           <Link href="/patients/add">
             <Add
               className="border p-1 h-[40px] w-[40px]"

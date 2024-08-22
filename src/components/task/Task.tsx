@@ -19,7 +19,7 @@ const Task: React.FC<task> = (props) => {
             checked={props?.checked}
             handleChange={(e) => props.handleChange(e, props?.id)}
           />
-          <div className="flex ml-[17px] flex-col gap-2 mt-1">
+          <div className="flex ml-[17px] flex-col gap-[9px] mt-1">
             <h4 className="text-base font-mukta font-medium">
               {props?.checked
                 ? "Task completed Successfully"
@@ -33,7 +33,7 @@ const Task: React.FC<task> = (props) => {
         </p>
         <Options
           size={24}
-          className="relative bottom-8 border-2 p-1 w-[30px] rounded-md h-[30px] border-gray-300"
+          className="relative bottom-7 border-2 p-1 w-[30px] rounded-md h-[30px] border-gray-300"
           onClick={handleShowButton}
         />
         {showButton && (

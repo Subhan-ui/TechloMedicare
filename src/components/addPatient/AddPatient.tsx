@@ -71,7 +71,7 @@ const AddPatient: React.FC<emailType> = ({ email }) => {
                   </button>
                 </td>
               </tr>
-              <tr className=" font-mukta med:text-lg md:text-sm text-grey">
+              <tr className=" font-mukta med:text-lg relative top-[15px] md:text-sm text-grey">
                 <td>Profile Image</td>
                 <td className="relative md:-left-8">
                   <button

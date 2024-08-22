@@ -15,13 +15,13 @@ const Card: React.FC<card> = (props) => {
         <Loader />
       ) : (
         <>
-          <div className="v_center justify-between ">
-            <h1 className="font-semibold font-mukta">{props.heading}</h1>
+          <div className="v_center justify-between mt-[2px]">
+            <h1 className="font-semibold font-mukta ">{props.heading}</h1>
             <Options className="hidden med:inline" />
           </div>
           <div className="flex justify-between">
             <div>
-              <h1 className="text-4xl font-bold mt-6">{props.number}</h1>
+              <h1 className="text-4xl font-bold mt-4">{props.number}</h1>
 
               {props.percentage !== "" && (
                 <div className="absolute v_center bottom-8 gap-2 ">

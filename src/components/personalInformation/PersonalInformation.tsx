@@ -21,7 +21,7 @@ const PersonalInformation: React.FC<emailType> = ({ email }) => {
   return (
     <>
       {show ? (
-        <Bar classN="justify-between mt-9 cursor-pointer" onClick={handleShow}>
+        <Bar classN="justify-between mt-9 cursor-pointer ml-[26px]" onClick={handleShow}>
           <h1 className="font-mukta font-semibold text-xl">
             Change Personal Info
           </h1>

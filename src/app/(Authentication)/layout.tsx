@@ -56,12 +56,12 @@ const RootLayout = async ({ children }: propsLayout) => {
                   alt="Dashboard"
                   height={475.73}
                   width={669}
-                  className="mt-14 max:w-[669px]  md:w-[600px] h-auto med:w-[589px]"
+                  className="mt-[22px] max:w-[669px]  md:w-[600px] max:h-[475px] h-auto med:w-[589px]"
                 />
-                <h2 className="font-mukta max:text-2xl med:text-xl md:text-lg mt-20">
+                <h2 className="font-mukta max:text-2xl med:text-xl md:text-lg mt-[66px]">
                   Keep track of all patient information in this section.
                 </h2>
-                <button className="bg-white text-blue p-4 rounded-lg text-xs mt-24">
+                <button className="bg-white text-blue p-4 rounded-lg text-xs mt-[81px]">
                   Learn more
                 </button>
               </div>

@@ -18,7 +18,7 @@ const Table: React.FC<emailType> = ({ name, email }) => {
   return (
     <>
       {show && <Modals email={email} name={name} hiding={handleShowModal} />}
-      <Bar classN="sm:justify-between justify-center">
+      <Bar classN="max:mx-[27px] max:w-[1112px] sm:justify-between justify-center">
         <h1 className="font-mukta font-medium med:text-xl md:text-lg sm:text-base text-sm">
           Weekly schedule from 25th to 1st November 2022
         </h1>

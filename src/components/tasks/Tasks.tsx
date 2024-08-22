@@ -33,8 +33,8 @@ const Tasks: React.FC<emailType> = ({ email }) => {
           loadAdd={loadAdd}
         />
       )}
-      <div className="bg-white mt-[17px] max:w-[709px] overflow-y-scroll h-[611px] w-full px-[16.67px]">
-        <div className="v_center justify-between h-[61.78px]">
+      <div className="bg-white mt-[17px] max:w-[709px] overflow-y-scroll h-[611px] w-full ">
+        <div className="v_center justify-between h-[61.78px] pl-[22px] pr-[16px]">
           <h5 className="font-bold text-base font-mukta">Tasks</h5>
           <h4
             onClick={handleShow}
@@ -46,7 +46,7 @@ const Tasks: React.FC<emailType> = ({ email }) => {
         {data?.length === 0 ? (
           <p className="h_center">You don't have any task yet..</p>
         ) : !loading ? (
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col max:gap-[19px] gap-4 px-[16.65px]">
             {data?.map((task) => (
               <Task
                 handleChange={handleChange}
@@ -62,8 +62,8 @@ const Tasks: React.FC<emailType> = ({ email }) => {
         ) : (
           <Loader />
         )}
-        {data?.length !== 0 && (
-          <p className="font-mukta text-blue v_center justify-end py-9 gap-3">
+        {data?.length > 5 && (
+          <p className="font-mukta mr-[16px] text-blue v_center justify-end pt-8 pb-9 gap-3">
             View all
             <Right
               className="border-2 ml-1 border-gray-300 h-[17.6px] w-[17.6px]"
