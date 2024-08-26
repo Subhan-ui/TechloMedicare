@@ -11,6 +11,7 @@ const Cards = ({ email }: emailType) => {
     <div className="flex max:gap-[17px] med:gap-[13px] md:gap-[15px] md:flex-row flex-col w-[100vw-44px] gap-8">
       {cardData.map((cart) => (
         <Card
+          email={email}
           loading={cart.loading}
           key={cart.id}
           id={cart.id}

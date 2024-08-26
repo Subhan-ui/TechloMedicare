@@ -15,7 +15,7 @@ const Login = () => {
   } = useLogin();
 
   return (
-    <div className="w-[544px] h-[1025px] ">
+    <form className="w-[544px] h-[1025px] " onSubmit={handleSubmit}>
       <h1 className="mt-[125px] font-mukta md:px-[47px] px-[22px] font-normal med:text-4xl md:text-2xl text-3xl">
         Welcome to Medicare
       </h1>
@@ -47,7 +47,6 @@ const Login = () => {
       )}
       <div className="md:ml-[42px] mx-[23px] md:mr-[46px]">
       <button
-        onClick={handleSubmit}
         className="w-full font-mukta bg-blue text-white  py-[15px] rounded-xl disabled:bg-disabled"
         disabled={loading}
       >
@@ -60,7 +59,7 @@ const Login = () => {
           Sign Up
         </Link>
       </p>
-    </div>
+    </form>
   );
 };
 

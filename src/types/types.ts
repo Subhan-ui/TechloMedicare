@@ -160,6 +160,7 @@ export type card = {
     female: number;
   };
   loading: boolean;
+  email?:string|null|undefined;
 };
 
 import { EventProps } from "react-big-calendar";
@@ -174,6 +175,7 @@ export type cardType = EventProps & {
   time: string;
   id: string;
   duration: string;
+  online?:boolean;
 };
 
 export type appointmentData = {

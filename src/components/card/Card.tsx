@@ -1,16 +1,16 @@
 import { card } from "@/types/types";
 import { Options, Upgrade, Downgrade } from "@/constants/react-icons";
 
-import Image from "next/image";
-import Chart from "../ui/chart/Chart";
+import Chart from "../ui/chart/donutChart/DocutChart";
 import Loader from "../ui/loader/Loader";
 import { green, mutedRed } from "@/constants/colors";
-import { totalmem } from "os";
+import OnlineChart from "../ui/chart/onlineChart/OnlineChart";
+import OfflineChart from "../ui/chart/offlineChart/OfflineChart";
 
 const Card: React.FC<card> = (props) => {
   const color: string = props.percentage === "+3.11%" ? green : mutedRed;
   return (
-    <div className="max:w-[358.91px] med:w-[calc(calc(100vw-260px)/3)] md:w-[calc(calc(100vw-260px)/3)] w-[calc(100vw-44px)] h-[191.22px] bg-white max:p-[22px] med:p-[14px] md:p-[7px] p-[22px] relative">
+    <div className="max:w-[358.91px] med:w-[calc(calc(100vw-260px)/3)] md:w-[calc(calc(100vw-260px)/3)] w-[calc(100vw-44px)] h-[191.22px] bg-white max:p-[22px] med:p-[14px] md:p-[7px] p-[17px] relative">
       {props.loading ? (
         <Loader />
       ) : (
@@ -46,21 +46,24 @@ const Card: React.FC<card> = (props) => {
             </div>
 
             {props.image ? (
-              <Image
-                src={props.image}
-                alt="chart"
-                width={164}
-                height={112}
-                priority
-                className="md:hidden w-[164px] h-[112px] med:inline "
-              />
+             
+              props.percentage === "+3.11%" ? (
+                <div className="h-[112px] w-[164px]">
+                  <OfflineChart email={props.email} />
+                </div>
+              ) : (
+                <div className="h-[112px] w-[164px]">
+                <OnlineChart email={props.email} />
+                </div>
+              )
             ) : props?.total?.male ? (
               <div className="mr-[41px]">
-              <Chart
-                male={props?.total?.male}
-                width={119}
-                female={props?.total?.female}
-              /></div>
+                <Chart
+                  male={props?.total?.male}
+                  width={119}
+                  female={props?.total?.female}
+                />
+              </div>
             ) : (
               <></>
             )}

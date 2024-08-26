@@ -32,18 +32,21 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
   } = useSchedule(email);
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="block absolute z-[6000] top-16 left-1/2 transform -translate-x-1/2 rounded-lg w-[760.2px] bg-white"
+    <><form
+      onSubmit={(e) => {
+        handleSubmit(e);
+        hiding();
+      }}
+      className="block absolute z-[6000] top-16 left-1/2 transform -translate-x-1/2 rounded-lg md:w-[760.2px] w-[calc(100%-32px)] bg-white"
     >
       {dateTime && <DateTime onClick={setDateTimeFalse} />}
       {locations && <Location onClick={setLocationFalse} />}
       <div className="text-white bg-blue w-full h-[82px] v_center justify-between px-6">
-        <h2 className="font-mukta font-bold text-2xl ">New Appointment</h2>
+        <h2 className="font-mukta font-bold md:text-2xl text-lg ">New Appointment</h2>
         <Cross size={24} onClick={hiding} className="cursor-pointer" />
       </div>
       <div className="mt-7 flex justify-around">
-        <div className="v_center gap-1 flex-col">
+        <div className="v_center gap-1 flex-col md:flex hidden">
           <Person size={24} color={awaiting} />
           <h2 className="font-mukta text-lg text-awaiting">Practitioner</h2>
           <p className="font-mukta text-base">{name}</p>
@@ -74,35 +77,35 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           </p>
         </div>
       </div>
-      <div className="relative left-10 mt-20 v_center">
-        Patient
+      <div className="relative md:left-10 left-3 mt-20 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">
+        <p className="md:text-[18px] text-sm font-mukta">Patient</p>
         <input
           value={patient}
           name="patient"
           onChange={handleChanges}
           type="text"
-          className="w-[415px] px-3 h-[44px] ml-40 border-2 border-gray-300"
+          className="md:w-[415px] sm:w-[50%] w-[100%-120px] px-3 md:h-[44px] h-[32px] md:ml-40 sm:ml-32 ml-7 border-2 border-gray-300"
           placeholder=""
         />
         <Cross
-          className="absolute right-40 bottom-[1.08rem]"
+          className="absolute right-40 bottom-[1.08rem] md:block hidden"
           color={darkGrey}
           size={12}
         />
       </div>
-      <div className="relative left-10 mt-4 v_center">
-        Purpose of Visit
+      <div className="relative md:left-10 left-3 mt-4 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">
+      <p className="md:text-[18px] text-sm font-mukta">Purpose of Visit</p>
         <textarea
           name="purpose"
           value={purpose}
           onChange={handleChangeText}
           id="notes"
-          className="w-[415px] ml-[98px] h-[103px] px-3 border-2 border-gray-300"
+          className="md:w-[415px] sm:w-[50%] w-[100%-120px] md:ml-[98px] sm:ml-[66px] ml-4 md:h-[103px] h-[70px] px-3 border-2 border-gray-300"
         ></textarea>
       </div>
-      <div className="mt-4 relative left-10 v_center">
-        Appointment Status
-        <div className="ml-[70px] flex gap-3">
+      <div className="mt-4 relative md:left-10 left-3 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">
+      <p className="md:text-[18px] text-sm font-mukta">Appointment Status</p>
+        <div className="md:ml-[70px] sm:ml-[29px] ml-[6px] flex md:gap-3 gap-1">
           {statuses.map((status) => (
             <Button
               name="status"
@@ -115,9 +118,9 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           ))}
         </div>
       </div>
-      <div className="mt-4 relative left-10 v_center">
-        Duration
-        <div className="ml-[150px] flex gap-3">
+      <div className="mt-4 relative md:left-10 left-3 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">
+      <p className="md:text-[18px] text-sm font-mukta">Duration</p>
+        <div className="md:ml-[150px] sm:ml-[100px] ml-[6px] flex md:gap-3 gap-1">
           {durations.map((duration) => (
             <Button
               key={duration.id}
@@ -130,9 +133,9 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           ))}
         </div>
       </div>
-      <div className="mt-4 relative left-10 v_center">
-        Appointment Type
-        <div className="ml-[83px] flex gap-3">
+      <div className="mt-4 relative md:left-10 left-3 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">
+      <p className="md:text-[18px] text-sm font-mukta">Appointment Type</p>
+        <div className="md:ml-[83px] sm:ml-[48px] ml-[12px] flex md:gap-3 gap-1">
           {types.map((type) => (
             <Button
               name="type"
@@ -145,8 +148,8 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           ))}
         </div>
       </div>
-      <div className="mt-4 relative left-10 v_center">
-        Online Consultations
+      <div className="mt-4 relative md:left-10 left-3 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-100px)] ">
+      <p className="md:text-[18px] text-sm font-mukta">Online Consultations</p>
         <Toggle isChecked={online} handleChange={handleChangeToggle} />
       </div>
       <div>
@@ -159,7 +162,7 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           sent to clinic SMS notification settings.
         </p>
 
-        <div className="v_center justify-end mx-20 gap-5 my-12">
+        <div className="md:v_center flex flex-col md:flex-row  justify-end md:mx-20 mx-12 gap-5 my-12">
           <button
             type="button"
             onClick={hiding}
@@ -169,19 +172,21 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           </button>
           <button
             type="button"
-            className="font-mukta font-medium text-base py-2 px-3 bg-blue text-white rounded-lg border-2 border-blue"
+            className="font-mukta md:font-medium font-normal md:text-base text-sm py-2 md:px-3 px-2 bg-blue text-white rounded-lg border-2 border-blue"
           >
             Begin Appointment
           </button>
           <button
             disabled={loading}
-            className="disabled:bg-disabled font-mukta font-medium text-base py-2 px-3 text-blue rounded-lg border-2 border-blue"
+            className="font-mukta font-medium text-base py-2 px-3 text-blue rounded-lg border-2 border-blue"
           >
             {loading ? "Saving..." : "Save"}
           </button>
         </div>
       </div>
     </form>
+    <form className=""></form>
+    </>
   );
 };
 

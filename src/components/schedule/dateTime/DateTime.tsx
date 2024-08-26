@@ -7,7 +7,7 @@ const DateTime: React.FC<{
   const { onChange, handleChange, value } = useDateTime(onClick);
 
   return (
-    <div className="flex flex-col absolute left-72 top-24 bg-white h-48 w-66 gap-3 p-7 border-2 border-black ">
+    <div className="flex flex-col absolute left-72 top-24 bg-white h-48 w-64 gap-3 p-7 border-2 border-black ">
       <DateTimePicker onChange={onChange} value={value} />
       <button
         type="button"

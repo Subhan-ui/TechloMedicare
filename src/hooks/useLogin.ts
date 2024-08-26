@@ -21,7 +21,8 @@ const useLogin = () => {
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     try {
       setLoading(true);
       const login = await signIn("credentials", {
