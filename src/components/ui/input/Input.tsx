@@ -9,7 +9,7 @@ const Input: React.FC<typeLogout> = ({
   const type = name.toLowerCase();
 
   return (
-    <div className="relative my-10">
+    <div className="relative md:my-12 my-10">
       <input
         name={name}
         value={value}

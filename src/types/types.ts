@@ -166,6 +166,7 @@ import { EventProps } from "react-big-calendar";
 
 export type cardType = EventProps & {
   location: string;
+  title?: string;
   patientName: string;
   purpose: string;
   start: Date;
@@ -194,4 +195,18 @@ export type message = {
   message: string;
   time: string;
   id: string;
+};
+
+export type some = {
+  email: string | null | undefined;
+  view: "week" | "month";
+};
+
+export type scheduleDashboardType = {
+  clickedId: string;
+  id: string;
+  patientName: string;
+  time: string;
+  duration: string;
+  purpose: string;
 };

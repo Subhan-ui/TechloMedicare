@@ -19,10 +19,10 @@ const Login = () => {
       <h1 className="mt-[125px] font-mukta md:px-[47px] px-[22px] font-normal med:text-4xl md:text-2xl text-3xl">
         Welcome to Medicare
       </h1>
-      <p className="font-mukta font-medium med:text-xl md:px-[47px] px-[22px] md:text-lg text-grey mt-2">
+      <p className="font-mukta font-medium med:text-xl md:px-[47px] px-[22px]  md:text-lg text-grey mt-2">
         Login In here
       </p>
-      <div className="md:pl-[44px] md:pr-[48px] px-[22px]">
+      <div className="md:pl-[44px] md:pr-[48px] md:mt-[55px] px-[22px]">
       {values.map((value)=>(
         <Input
         key={value.id}
@@ -48,7 +48,7 @@ const Login = () => {
       <div className="md:ml-[42px] mx-[23px] md:mr-[46px]">
       <button
         onClick={handleSubmit}
-        className="w-full font-mukta bg-blue text-white  py-4 rounded-xl disabled:bg-disabled"
+        className="w-full font-mukta bg-blue text-white  py-[15px] rounded-xl disabled:bg-disabled"
         disabled={loading}
       >
         {loading ? "Loading..." : "Login"}

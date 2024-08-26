@@ -7,22 +7,29 @@ import { useState } from "react";
 import Something from "../calender/Calender";
 import { darkGrey } from "@/constants/colors";
 import { emailType } from "@/types/types";
+import useMonth from "@/hooks/useMonth";
+import ScheduleTableHeader from "../scheduleTableHeader/ScheduleTableHeader";
 
 const Table: React.FC<emailType> = ({ name, email }) => {
   const [show, setShow] = useState(false);
+  const [view, setView] = useState<"week" | "month">("week");
 
   const handleShowModal = () => {
     setShow((prev) => !prev);
   };
+  const date = new Date();
+  const currentYear = date.getFullYear();
+  const currentMonth = date.getMonth();
+  const Month = `${useMonth(currentMonth.toString())} ${currentYear}`;
 
   return (
     <>
       {show && <Modals email={email} name={name} hiding={handleShowModal} />}
-      <Bar classN="max:mx-[27px] max:w-[1112px] sm:justify-between justify-center">
+      <Bar classN="max:ml-[27px] max:mr-[19px] max:w-[1112px] sm:justify-between justify-center">
         <h1 className="font-mukta font-medium med:text-xl md:text-lg sm:text-base text-sm">
-          Weekly schedule from 25th to 1st November 2022
+          Schedule of {Month}
         </h1>
-        <div className="v_center sm:gap-5 gap-2">
+        <div className="v_center  sm:gap-5 gap-2">
           <Add
             onClick={handleShowModal}
             className="border p-1 med:h-[40px] med:w-[40px] w-[30px] h-[30px] "
@@ -46,8 +53,13 @@ const Table: React.FC<emailType> = ({ name, email }) => {
           />
         </div>
       </Bar>
+      <ScheduleTableHeader
+        Month={Month}
+        week={() => setView("week")}
+        month={() => setView("month")}
+      />
       <div className="max:w-[1139px] med:w-[calc(100vw-250px)] md:w-[calc(100vw-240px)] w-[90vw] overflow-x-scroll">
-        <Something email={email} />
+        <Something view={view} email={email} />
       </div>
     </>
   );

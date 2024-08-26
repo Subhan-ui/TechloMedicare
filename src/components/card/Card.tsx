@@ -44,6 +44,7 @@ const Card: React.FC<card> = (props) => {
                 </div>
               )}
             </div>
+
             {props.image ? (
               <Image
                 src={props.image}
@@ -54,11 +55,12 @@ const Card: React.FC<card> = (props) => {
                 className="md:hidden w-[164px] h-[112px] med:inline "
               />
             ) : props?.total?.male ? (
+              <div className="mr-[41px]">
               <Chart
                 male={props?.total?.male}
                 width={119}
                 female={props?.total?.female}
-              />
+              /></div>
             ) : (
               <></>
             )}

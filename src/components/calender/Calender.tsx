@@ -1,13 +1,13 @@
 import { components } from "../scheduleCalender/CalenderRelated";
 import Calendar from "../scheduleCalender/CalenderRelated";
-import { emailType } from "@/types/types";
+import { some } from "@/types/types";
 import useAppointment from "@/hooks/useAppointment";
 
-export default function ControlCalendar({ email }: emailType) {
+export default function ControlCalendar({ email, view }: some) {
   const data = useAppointment(email);
   return (
-    <div className="w-[1139px] h-[750px]">
-      <Calendar events={data} components={components} />
+    <div className="w-[1463px] h-[750px]">
+      <Calendar step={5}  view={view} events={data} components={components} />
     </div>
   );
 }

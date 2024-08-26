@@ -13,7 +13,7 @@ const Signup = () => {
       <p className="font-mukta font-medium text-xl text-grey mt-2 md:px-[47px] px-[22px]">
         Tell us about your company
       </p>
-      <div className="md:pl-[44px] md:pr-[48px] px-[22px]">
+      <div className="md:pl-[44px] md:mt-[55px] md:pr-[48px] px-[22px]">
       {values.map((value) => (
         <Input
           name={value.name}

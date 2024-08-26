@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
 import { cardType, appointmentData } from "../types/types";
+import toast from "react-hot-toast";
 
 const calculateEndTime = (startDate: Date, duration: string): Date => {
   const endDate = new Date(startDate);
@@ -20,6 +21,15 @@ const convertToDateTime = (dateString: string, timeString: string): Date => {
 
   return moment(time).toDate();
 };
+
+export const deletingAppointment = async (id:string)=>{
+  try {
+    await axios.delete(`/api/appointment/delete?id=${id}`)
+    toast.success('Removed Appointment successfully')
+  } catch (error:any) {
+    toast.error(error?.response?.data?.message)
+  }
+} 
 
 const useAppointment = (email: string | null | undefined) => {
   const [data, setData] = useState<cardType[]>([]);
@@ -47,8 +57,11 @@ const useAppointment = (email: string | null | undefined) => {
               };
             }
           );
+          const sortedData = transformedData.sort(
+            (a:cardType, b:cardType) => a.start.getTime() - b.start.getTime()
+          );
 
-          setData(transformedData);
+          setData(sortedData);
         } catch (error) {
           return;
         }
