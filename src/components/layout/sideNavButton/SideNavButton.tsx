@@ -19,7 +19,7 @@ const SideNavButton = ({
   return (
     <>
       <li
-        className={`sideButton cursor-pointer ${
+        className={`sideButton cursor-pointer gap-2 ${
           router === `/${href}` ? "text-blue" : "text-lightSlate"
         }`}
       >
@@ -39,7 +39,7 @@ const SideNavButton = ({
             {name}
           </Link>
         )}
-        {message&&<p className="absolute right-2 text-white bg-mutedRed rounded-full w-[18px] h-[18px] center text-xs font-normal">{number}</p>}
+        {message&&<p className="absolute med:right-[30px] right-2 text-white bg-mutedRed rounded-full w-[18px] h-[18px] center text-xs font-normal">{number}</p>}
       </li>
     </>
   );
