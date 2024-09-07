@@ -1,7 +1,8 @@
 import React from "react";
+
 import Row from "../formRow/FormRow";
-import { typeFormAddPatient } from "@/types/types";
 import useFormAddPatient from "@/hooks/useFormAddPatient";
+import { typeFormAddPatient } from "@/types/types";
 
 const FormAddPatient: React.FC<typeFormAddPatient> = ({ cross }) => {
   const { detailBelow, detailTop, sex, handleChangeSex } =

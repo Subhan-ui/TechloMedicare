@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { Help, Add, Search, Filter } from "@/constants/react-icons";
+
 import Bar from "@/components/topBar/TopBar";
 import { selectNumber } from "@/store/features/patients/patientSlice";
 import { useAppSelector } from "@/store/hooks";
+import { Help, Add, Search, Filter } from "@/constants/react-icons";
 import { darkGrey } from "@/constants/colors";
 
 const Table: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -10,7 +11,7 @@ const Table: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <>
       <Bar classN="justify-between mx-[22.5px]">
-        <h1 className="font-mukta font-semibold text-xl">
+        <h1 className="font-semibold text-xl">
           Total Patients <span className="text-lightSlate">({number})</span>
         </h1>
         <div className="v_center med:gap-[25px]">
@@ -41,7 +42,7 @@ const Table: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <div className="max:w-[1122px] med:w-[calc(100vw-250px)] md:w-[calc(100vw-240px)] w-[94vw] bg-white mx-[22.55px] overflow-x-scroll mt-[12.75px]">
       <table className=" w-full min-w-[1122px] table-fixed">
         <thead className="h-[65.7px] border-b-2  overflow-x-scroll border-gray-300">
-          <tr className="font-mukta text-lg text-lightSlate  text-center">
+          <tr className="text-lg text-lightSlate  text-center">
             <td>Profile</td>
             <td>Name</td>
             <td>Diagnosis</td>

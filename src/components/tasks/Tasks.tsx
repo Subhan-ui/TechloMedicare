@@ -1,11 +1,10 @@
 "use client";
 
-import Task from "../task/Task";
-import { Add, Right } from "@/constants/react-icons";
-
 import useTasks from "@/hooks/useTasks";
+import Task from "../task/Task";
 import TaskModal from "../tasksModal/TaskModal";
 import Loader from "../ui/loader/Loader";
+import { Add, Right } from "@/constants/react-icons";
 import { emailType } from "@/types/types";
 
 const Tasks: React.FC<emailType> = ({ email }) => {
@@ -35,10 +34,10 @@ const Tasks: React.FC<emailType> = ({ email }) => {
       )}
       <div className="bg-white mt-[20px] max:w-[709px] overflow-y-scroll h-[611px] w-full ">
         <div className="v_center justify-between h-[61.78px] pl-[22px] pr-[16px]">
-          <h5 className="font-bold text-base font-mukta">Tasks</h5>
+          <h5 className="font-bold text-base">Tasks</h5>
           <h4
             onClick={handleShow}
-            className="v_center gap-2 font-mukta text-blue font-semibold text-sm cursor-pointer"
+            className="v_center gap-2 text-blue font-semibold text-sm cursor-pointer"
           >
             New Tasks <Add size={24} />
           </h4>
@@ -63,7 +62,7 @@ const Tasks: React.FC<emailType> = ({ email }) => {
           <Loader />
         )}
         {data?.length > 5 && (
-          <p className="font-mukta mr-[16px] text-blue v_center justify-end pt-8 pb-9 gap-3">
+          <p className="mr-[16px] text-blue v_center justify-end pt-8 pb-9 gap-3">
             View all
             <Right
               className="border-2 ml-1 border-gray-300 h-[17.6px] w-[17.6px]"

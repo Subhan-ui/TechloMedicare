@@ -1,8 +1,5 @@
 "use client";
 
-import { green } from "@/constants/colors";
-import useAppointment from "@/hooks/useAppointment";
-import { cardType } from "@/types/types";
 import {
   CategoryScale,
   ChartData,
@@ -18,6 +15,10 @@ import {
 } from "chart.js";
 import React, { useRef } from "react";
 import { Line } from "react-chartjs-2";
+
+import { green } from "@/constants/colors";
+import useAppointment from "@/hooks/useAppointment";
+import { cardType } from "@/types/types";
 
 ChartJS.register(
   CategoryScale,

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import prisma from "../../../../../prisma";
 
-export const PATCH = async (req: Request) => {
+export const PUT = async (req: Request) => {
   try {
     const { email, password } = await req.json();
     if (!email) {

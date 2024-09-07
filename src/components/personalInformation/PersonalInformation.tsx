@@ -1,10 +1,9 @@
 "use client";
 
-import { emailType } from "@/types/types";
 import Bar from "../topBar/TopBar";
 import Input from "../ui/input/Input";
-
 import usePersonalInformation from "@/hooks/usePersonalInformation";
+import { emailType } from "@/types/types";
 
 const PersonalInformation: React.FC<emailType> = ({ email }) => {
   const {
@@ -22,13 +21,13 @@ const PersonalInformation: React.FC<emailType> = ({ email }) => {
     <>
       {show ? (
         <Bar classN="justify-between mt-9 cursor-pointer ml-[26px]" onClick={handleShow}>
-          <h1 className="font-mukta font-semibold text-xl">
+          <h1 className="font-semibold text-xl">
             Change Personal Info
           </h1>
         </Bar>
       ) : (
         <>
-          <h2 className="font-mukta med:text-3xl text-lg font-semibold text-center mt-10">
+          <h2 className="med:text-3xl text-lg font-semibold text-center mt-10">
             Change Information for {email}
           </h2>
           <form className="med:mx-24 md:mx-8 " onSubmit={handleSubmit}>

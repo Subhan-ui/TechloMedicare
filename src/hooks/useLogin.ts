@@ -1,13 +1,14 @@
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import toast from "react-hot-toast";
+
 import {
   handleChange,
   selectEmail,
   selectPassword,
 } from "@/store/features/login/loginSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import toast from "react-hot-toast";
 
 const useLogin = () => {
   const navigate = useRouter();

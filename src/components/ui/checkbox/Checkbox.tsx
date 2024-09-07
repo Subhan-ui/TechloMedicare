@@ -1,5 +1,6 @@
-import { checkbox } from "@/types/types";
 import React from "react";
+
+import { checkbox } from "@/types/types";
 
 const Checkbox: React.FC<checkbox> = (props) => (
   <div>

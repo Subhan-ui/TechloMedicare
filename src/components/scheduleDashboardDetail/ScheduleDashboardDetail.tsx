@@ -1,5 +1,5 @@
-import { timeManagement, timeDurationManage } from "@/hooks/timeManagement";
 import { AiOutlineDelete, Person, FiEdit } from "@/constants/react-icons";
+import { timeManagement, timeDurationManage } from "@/hooks/timeManagement";
 import { deletingAppointment } from "@/hooks/useAppointment";
 import { scheduleDashboardType } from "@/types/types";
 
@@ -15,7 +15,7 @@ const ScheduleDashboardDetail = ({
   clickedId === id && (
     <>
       <div className="w-[273px]  h-[121px] border-2 relative border-lightGrey">
-        <div className="flex font-mukta mx-[11.7px]  items-center">
+        <div className="flex mx-[11.7px]  items-center">
           <p className="font-semibold text-[10.79px] text-black mt-[7.85px]">
             Patient
           </p>
@@ -23,7 +23,7 @@ const ScheduleDashboardDetail = ({
             {patientName}
           </p>
         </div>
-        <div className="flex font-mukta mx-[11.7px]  items-center">
+        <div className="flex mx-[11.7px]  items-center">
           <p className="font-semibold text-[10.79px] text-black mt-[7.85px]">
             Time
           </p>
@@ -31,7 +31,7 @@ const ScheduleDashboardDetail = ({
             {timeManagement(time) + " - " + timeDurationManage(time, duration)}
           </p>
         </div>
-        <div className="flex font-mukta mx-[11.7px]  items-center">
+        <div className="flex mx-[11.7px]  items-center">
           <p className="font-semibold text-[10.79px] text-black mt-[7.85px]">
             Purpose
           </p>
@@ -52,7 +52,7 @@ const ScheduleDashboardDetail = ({
               <FiEdit color="blue" size={8} />
             </p>
           </div>
-          <button className="font-mukta font-medium text-[10px] text-white h-[25px] w-[100px] bg-blue rounded-sm absolute left-[162px]">
+          <button className="font-medium text-[10px] text-white h-[25px] w-[100px] bg-blue rounded-sm absolute left-[162px]">
             Begin Appointment
           </button>
         </div>

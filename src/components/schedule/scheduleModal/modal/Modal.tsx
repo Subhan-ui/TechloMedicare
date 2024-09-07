@@ -1,6 +1,6 @@
-import { ModalProps } from "@/types/types";
 import Backdrop from "../../../modals/backdrop/Backdrop";
 import OnlyModal from "../scheduleModal/ScheduleModal";
+import { ModalProps } from "@/types/types";
 
 const Modals: React.FC<ModalProps> = (props) => {
   return (

@@ -1,9 +1,10 @@
 "use client";
 
+import Link from "next/link";
+
 import Modals from "@/components/passwordModal/modal/Modal";
 import Input from "@/components/ui/input/Input";
 import useLogin from "@/hooks/useLogin";
-import Link from "next/link";
 
 const Login = () => {
   const {
@@ -16,10 +17,10 @@ const Login = () => {
 
   return (
     <form className="w-[544px] h-[1025px] " onSubmit={handleSubmit}>
-      <h1 className="mt-[125px] font-mukta md:px-[47px] px-[22px] font-normal med:text-4xl md:text-2xl text-3xl">
+      <h1 className="mt-[125px] md:px-[47px] px-[22px] font-normal med:text-4xl md:text-2xl text-3xl">
         Welcome to Medicare
       </h1>
-      <p className="font-mukta font-medium med:text-xl md:px-[47px] px-[22px]  md:text-lg text-grey mt-2">
+      <p className="font-medium med:text-xl md:px-[47px] px-[22px]  md:text-lg text-grey mt-2">
         Login In here
       </p>
       <div className="md:pl-[44px] md:pr-[48px] md:mt-[55px] px-[22px]">
@@ -40,20 +41,20 @@ const Login = () => {
       ) : (
         <p
           onClick={handleShow}
-          className="cursor-pointer md:pl-[42px] md:pr-[46px] mx-[23px] font-mukta text-grey text-end hover:text-blue font-semibold"
+          className="cursor-pointer md:pl-[42px] md:pr-[46px] mx-[23px] text-grey text-end hover:text-blue font-semibold"
         >
           Forgot Password?
         </p>
       )}
       <div className="md:ml-[42px] mx-[23px] md:mr-[46px]">
       <button
-        className="w-full font-mukta bg-blue text-white  py-[15px] rounded-xl disabled:bg-disabled"
+        className="w-full bg-blue text-white  py-[15px] rounded-xl disabled:bg-disabled"
         disabled={loading}
       >
         {loading ? "Loading..." : "Login"}
       </button>
       </div>
-      <p className="text-center mt-3 font-mukta font-medium text-xl text-grey">
+      <p className="text-center mt-3 font-medium text-xl text-grey">
         Don't have an account?{" "}
         <Link href="/signup" className="text-blue">
           Sign Up

@@ -1,10 +1,11 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 import { useAppDispatch } from "@/store/hooks";
 import {
   handleChangeImages,
   handleChangePatient,
 } from "@/store/features/patients/patientSlice";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { patientType as datatype } from "@/types/types";
 
 const usePatients = (email: string | null | undefined) => {

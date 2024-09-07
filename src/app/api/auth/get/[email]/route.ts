@@ -26,7 +26,7 @@ export const GET = async (req: Request, { params }: { params: Params }) => {
   }
 };
 
-export const PATCH = async (req: Request, { params }: { params: Params }) => {
+export const PUT = async (req: Request, { params }: { params: Params }) => {
   try {
     const { email } = params;
     const { name, companyName, industry, eNumber } = await req.json();

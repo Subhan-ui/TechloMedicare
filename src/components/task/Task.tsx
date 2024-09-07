@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import Checkbox from "../ui/checkbox/Checkbox";
 import { Options } from "@/constants/react-icons";
 import { task } from "@/types/types";
@@ -20,12 +21,12 @@ const Task: React.FC<task> = (props) => {
             handleChange={(e) => props.handleChange(e, props?.id)}
           />
           <div className="flex ml-[17px] flex-col gap-[9px] mt-1">
-            <h4 className="text-base font-mukta font-medium">
+            <h4 className="text-base font-medium">
               {props?.checked
                 ? "Task completed Successfully"
                 : "Task not completed"}
             </h4>
-            <p className="text-xs font-mukta ">{props?.title}</p>
+            <p className="text-xs ">{props?.title}</p>
           </div>
         </div>
         <p className="md:absolute md:right-[97px] md:bottom-[40px] ">

@@ -1,6 +1,10 @@
 import { useState } from "react";
 
 import axios from "axios";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+
+import useHandleMessage from "./useHandleMessage";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import {
   handleChangeImages,
@@ -12,10 +16,7 @@ import {
   selectPhNo,
   selectSex,
 } from "@/store/features/patients/patientSlice";
-import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
 import { useEdgeStore } from "@/lib/edgestore";
-import useHandleMessage from "./useHandleMessage";
 
 const usePatientCRUD = (
   id: string,
@@ -47,7 +48,7 @@ const usePatientCRUD = (
     e.preventDefault();
     try {
       setLoading(true);
-      await axios.patch("/api/patients/update", {
+      await axios.put("/api/patients/update", {
         id: id,
         firstName: foreName,
         lastName,

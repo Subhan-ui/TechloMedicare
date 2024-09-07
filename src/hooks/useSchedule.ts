@@ -1,5 +1,7 @@
+import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
+
 import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import {
   selectDate,
@@ -14,7 +16,6 @@ import {
   handleChange,
   handleOnline,
 } from "@/store/features/appointment/appointmentSlice";
-import { useState } from "react";
 import useHandleMessage from "./useHandleMessage";
 
 const useSchedule = (email: string | null | undefined) => {

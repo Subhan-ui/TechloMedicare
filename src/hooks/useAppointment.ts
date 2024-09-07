@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
-import { cardType, appointmentData } from "../types/types";
 import toast from "react-hot-toast";
+
+import { cardType, appointmentData } from "../types/types";
 
 const calculateEndTime = (startDate: Date, duration: string): Date => {
   const endDate = new Date(startDate);

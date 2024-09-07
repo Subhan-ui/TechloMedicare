@@ -1,4 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
+
 import loginSlice from "./features/login/loginSlice";
 import patientSlice from "./features/patients/patientSlice";
 import appointmentSlice from "./features/appointment/appointmentSlice";

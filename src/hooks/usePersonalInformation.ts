@@ -1,3 +1,7 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+
 import {
   handleChange,
   selectCompanyName,
@@ -6,9 +10,6 @@ import {
   selectName,
 } from "@/store/features/login/loginSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 import { data } from "../types/types";
 
 const usePersonalInformation = (email: string | undefined | null) => {
@@ -36,7 +37,7 @@ const usePersonalInformation = (email: string | undefined | null) => {
     e.preventDefault();
     try {
       setLoading(true);
-      await axios.patch(`/api/auth/get/${email}`, {
+      await axios.put(`/api/auth/get/${email}`, {
         name: nameS,
         companyName: companyNameS,
         industry: industryS,

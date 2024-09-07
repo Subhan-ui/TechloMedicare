@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "../../../../../prisma";
 
-export const PATCH = async (req: Request) => {
+export const PUT = async (req: Request) => {
   try {
     const {
       id,

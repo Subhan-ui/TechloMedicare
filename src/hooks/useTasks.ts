@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { emailType, typeTasks } from "@/types/types";
+
 import useHandleMessage from "./useHandleMessage";
+import { emailType, typeTasks } from "@/types/types";
 
 
 const useTasks = ({ email }: emailType) => {
@@ -42,7 +43,7 @@ const useTasks = ({ email }: emailType) => {
     id: string
   ) => {
     try {
-      await axios.patch(`/api/tasks/update/${id}`, {
+      await axios.put(`/api/tasks/update/${id}`, {
         checked: event.target.checked,
       });
       toast.success("Successfully updated task");

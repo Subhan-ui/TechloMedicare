@@ -1,6 +1,7 @@
+import React from "react";
+
 import { handleChange } from "@/store/features/appointment/appointmentSlice";
 import { useAppDispatch } from "@/store/hooks";
-import React from "react";
 
 const Location: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   const dispatch = useAppDispatch();
@@ -13,7 +14,7 @@ const Location: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   const row2 = ["3", "4"];
 
   return (
-    <div className="font-mukta center flex-col  absolute right-16 top-24 bg-white h-52 w-52 gap-3 p-7 border-2 border-black ">
+    <div className="center flex-col  absolute right-16 top-24 bg-white h-52 w-52 gap-3 p-7 border-2 border-black ">
       <p className="">Select Room no</p>
       <div className="flex justify-around ">
         {row.map((r) => (

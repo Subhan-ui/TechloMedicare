@@ -1,3 +1,5 @@
+import { EventProps } from "react-big-calendar";
+
 export type componentsProps = {
   children: React.ReactNode;
   classN: string;
@@ -6,7 +8,8 @@ export type componentsProps = {
 
 export type TextType = {
   children: string[] | string;
-  ml: string;
+  ml?: string;
+  cls?:string;
 };
 
 export type emailType = {
@@ -128,7 +131,7 @@ export type AppointmentProps = {
     start: Date;
     end: Date;
   };
-  handleShow: () => void;
+  handleShow?: () => void;
 };
 
 export type patientType = {
@@ -163,7 +166,6 @@ export type card = {
   email?:string|null|undefined;
 };
 
-import { EventProps } from "react-big-calendar";
 
 export type cardType = EventProps & {
   location: string;
@@ -201,7 +203,7 @@ export type message = {
 
 export type some = {
   email: string | null | undefined;
-  view: "week" | "month";
+  view?: "week" | "month";
 };
 
 export type scheduleDashboardType = {

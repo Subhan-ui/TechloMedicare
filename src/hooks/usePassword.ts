@@ -2,9 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import {
-  selectPassword,
-} from "@/store/features/login/loginSlice";
+
+import { selectPassword } from "@/store/features/login/loginSlice";
 import { useAppSelector } from "@/store/hooks";
 
 const useSettings = (email: string | null | undefined) => {
@@ -22,7 +21,7 @@ const useSettings = (email: string | null | undefined) => {
     e.preventDefault();
     try {
       setLoading(true);
-      await axios.patch("/api/auth/change", {
+      await axios.put("/api/auth/change", {
         email: email,
         password: password,
       });
@@ -46,7 +45,7 @@ const useSettings = (email: string | null | undefined) => {
     password,
     handleShow,
     handleSubmit,
-  }
-}
+  };
+};
 
 export default useSettings;

@@ -1,15 +1,15 @@
 "use client";
 
-import Bar from "@/components/topBar/TopBar";
+import { useState } from "react";
 import Link from "next/link";
-import Modal from "../profileImageModal/ProfileImageModal";
-import FormAddPatient from "../formAddPatient/FormAddPatient";
+
+import Bar from "@/components/topBar/TopBar";
 import usePatientCRUD from "@/hooks/usePatientCRUD";
 import { emailType } from "@/types/types";
-import { useState } from "react";
+import FormAddPatient from "../formAddPatient/FormAddPatient";
+import Modal from "../profileImageModal/ProfileImageModal";
 
 const AddPatient: React.FC<emailType> = ({ email }) => {
-  
   const [show, setShow] = useState(false);
   const handleShow = () => {
     setShow((prev) => !prev);
@@ -22,7 +22,7 @@ const AddPatient: React.FC<emailType> = ({ email }) => {
     urls,
     progress,
     loadingPost,
-  } = usePatientCRUD("",handleShow, email);
+  } = usePatientCRUD("", handleShow, email);
 
   return (
     <form onSubmit={handlePost}>
@@ -37,17 +37,17 @@ const AddPatient: React.FC<emailType> = ({ email }) => {
         />
       )}
       <Bar classN="justify-between">
-        <h1 className="font-mukta font-semibold text-xl">Add New Patients</h1>
+        <h1 className="font-semibold text-xl">Add New Patients</h1>
         <div className="flex gap-4">
           <Link
             href="/patients"
-            className="border-2  border-blue text-blue font-mukta text-base center px-2 rounded-lg"
+            className="border-2  border-blue text-blue text-base center px-2 rounded-lg"
           >
             Cancel
           </Link>
           <button
             disabled={loadingPost}
-            className=" border-2 disabled:bg-disabled bg-blue border-blue text-white font-mukta text-base py-1.5 px-3.5  rounded-lg"
+            className=" border-2 disabled:bg-disabled bg-blue border-blue text-white text-base py-1.5 px-3.5  rounded-lg"
           >
             {loadingPost ? "Saving" : "Save"}
           </button>
@@ -57,7 +57,7 @@ const AddPatient: React.FC<emailType> = ({ email }) => {
         <div className="med:w-[783px] md:w-[550px] sm:w-[80vw] w-[90vw] h-[800px] bg-white">
           <table className="table-auto  med:ml-[41px] md:ml-[25px] w-full mt-[58px]">
             <tbody className="">
-              <tr className=" font-mukta med:text-lg md:text-sm text-grey">
+              <tr className=" med:text-lg md:text-sm text-grey">
                 <td>Record Number</td>
                 <td className="text-darkGrey relative md:-left-8">
                   Record Number will be assigned automatically when you save.
@@ -71,7 +71,7 @@ const AddPatient: React.FC<emailType> = ({ email }) => {
                   </button>
                 </td>
               </tr>
-              <tr className=" font-mukta med:text-lg relative top-[15px] md:text-sm text-grey">
+              <tr className=" med:text-lg relative top-[15px] md:text-sm text-grey">
                 <td>Profile Image</td>
                 <td className="relative md:-left-8">
                   <button

@@ -1,16 +1,17 @@
 "use client";
 
+import Image from "next/image";
+
+import useChooseColor from "@/hooks/useChooseColor";
 import { tableContent } from "@/types/types";
 import { Options } from "@/constants/react-icons";
-import Image from "next/image";
-import useChooseColor from "@/hooks/useChooseColor";
 
 const Row: React.FC<tableContent> = (props) => {
   const { color } = useChooseColor(props.status);
 
   return (
     <>
-      <tr className="h-[72.57px] font-mukta text-lg text-black text-center cursor-pointer">
+      <tr className="h-[72.57px] text-lg text-black text-center cursor-pointer">
         <td className="">
           <Image
             src={props.image}
@@ -24,7 +25,7 @@ const Row: React.FC<tableContent> = (props) => {
         <td>{props.diagnosis}</td>
         <td>
           <span
-            className=" w-[140.23px] h-[25.5px] center rounded-full text-center font-mukta text-xs"
+            className=" w-[140.23px] h-[25.5px] center rounded-full text-center text-xs"
             style={{ backgroundColor: `${color}52`, color: color }}
           >
             {props.status}

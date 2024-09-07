@@ -11,7 +11,7 @@ const Modal: React.FC<typeModalForm> = ({
   <>
     <Backdrop hiding={handleShow} />
     <div className="block fixed z-[6000] top-24 left-1/2 transform -translate-x-1/2 p-12  rounded-lg md:w-[45%] w-[80%] bg-white">
-      <h1 className="font-semibold text-2xl font-mukta mb-8">
+      <h1 className="font-semibold text-2xl mb-8">
         Choose Your Profile Image
       </h1>
       <div className="v_center justify-between">

@@ -1,12 +1,13 @@
+import { useState } from "react";
+import toast from "react-hot-toast";
+import axios from "axios";
+
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import {
   handleChange,
   selectEmail,
   selectPassword,
 } from "../store/features/login/loginSlice";
-import { useState } from "react";
-import toast from "react-hot-toast";
-import axios from "axios";
 
 const usePasswordChange = (hiding: () => void) => {
   const dispatch = useAppDispatch();
@@ -17,9 +18,9 @@ const usePasswordChange = (hiding: () => void) => {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await axios.patch("/api/auth/change", {
-        email: email,
-        password: password,
+      await axios.put("/api/auth/change", {
+        email,
+        password,
       });
 
       toast.success("Successfully updated your password");
@@ -34,6 +35,7 @@ const usePasswordChange = (hiding: () => void) => {
       setLoading(false);
     }
   };
+
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

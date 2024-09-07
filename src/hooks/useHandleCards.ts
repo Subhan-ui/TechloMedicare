@@ -1,8 +1,8 @@
-import { card } from "../types/types";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { emailType } from "../types/types";
+
+import { card, emailType } from "../types/types";
 
 const useHandleCards = ({email}:emailType)=>{
     const [offline, setOffline] = useState<number>(0);

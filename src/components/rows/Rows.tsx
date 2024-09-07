@@ -3,10 +3,10 @@
 import Row from "../row/Row";
 import Table from "../table/Table";
 import Modal from "../patientsTableModal/PatientTableModal";
-import { useAppDispatch } from "@/store/hooks";
-import { handleNumber } from "@/store/features/patients/patientSlice";
 import usePatients from "@/hooks/usePatients";
 import Loader from "../ui/loader/Loader";
+import { useAppDispatch } from "@/store/hooks";
+import { handleNumber } from "@/store/features/patients/patientSlice";
 import { emailType } from "@/types/types";
 
 const Rows: React.FC<emailType> = ({ email }) => {
@@ -19,7 +19,7 @@ const Rows: React.FC<emailType> = ({ email }) => {
       <>
         {show && <Modal handleShow={handleHiding} id={id} />}
         {loading ? (
-          <div className="w-[55vw] h-[75vh] center">
+          <div className="w-[85vw] h-[75vh] center">
             <Loader />
           </div>
         ) : (

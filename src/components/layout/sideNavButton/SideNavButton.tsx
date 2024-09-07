@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React from "react";
+
+import { usePathname } from "next/navigation";
 import {sideBtnType} from '@/types/types'
 import { useAppSelector } from "@/store/hooks";
 import { selectNumber } from "@/store/features/appointment/appointmentSlice";
@@ -30,11 +31,11 @@ const SideNavButton = ({
         />
         {children}
         {disable ? (
-          <p className="text-[16px] font-mukta font-normal leading-3">{name}</p>
+          <p className="text-[16px] font-normal leading-3">{name}</p>
         ) : (
           <Link
             href={`/${href}`}
-            className="text-[16px]  font-mukta font-normal leading-3"
+            className="text-[16px]  font-normal leading-3"
           >
             {name}
           </Link>

@@ -13,13 +13,13 @@ const ScheduleTableHeader = ({
     <div className="flex gap-2">
       <button
         onClick={week}
-        className="border-2 px-2 py-1 font-mukta font-semibold hover:bg-black hover:text-white rounded-lg"
+        className="border-2 px-2 py-1 font-semibold hover:bg-black hover:text-white rounded-lg"
       >
         Week
       </button>
       <button
         onClick={month}
-        className="border-2 px-2 py-1 font-mukta font-semibold hover:bg-black hover:text-white rounded-lg"
+        className="border-2 px-2 py-1 font-semibold hover:bg-black hover:text-white rounded-lg"
       >
         Month
       </button>

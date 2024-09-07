@@ -1,8 +1,8 @@
 "use client";
 
 import Card from "../card/Card";
-import { emailType } from "@/types/types";
 import useHandleCards from '@/hooks/useHandleCards'
+import { emailType } from "@/types/types";
 
 const Cards = ({ email }: emailType) => {
  const {cardData, total} = useHandleCards({email});

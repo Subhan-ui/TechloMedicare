@@ -1,11 +1,10 @@
-import { card } from "@/types/types";
-import { Options, Upgrade, Downgrade } from "@/constants/react-icons";
-
 import Chart from "../ui/chart/donutChart/DocutChart";
 import Loader from "../ui/loader/Loader";
-import { green, mutedRed } from "@/constants/colors";
 import OnlineChart from "../ui/chart/onlineChart/OnlineChart";
 import OfflineChart from "../ui/chart/offlineChart/OfflineChart";
+import { card } from "@/types/types";
+import { Options, Upgrade, Downgrade } from "@/constants/react-icons";
+import { green, mutedRed } from "@/constants/colors";
 
 const Card: React.FC<card> = (props) => {
   const color: string = props.percentage === "+3.11%" ? green : mutedRed;
@@ -16,7 +15,7 @@ const Card: React.FC<card> = (props) => {
       ) : (
         <>
           <div className="v_center justify-between mt-[2px]">
-            <h1 className="font-semibold font-mukta ">{props.heading}</h1>
+            <h1 className="font-semibold ">{props.heading}</h1>
             <Options className="hidden med:inline" />
           </div>
           <div className="flex justify-between">

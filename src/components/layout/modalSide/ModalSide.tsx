@@ -1,10 +1,10 @@
 import Backdrop from "../../modals/backdrop/Backdrop";
+import SideNavBtn from "../sideNavButton/SideNavButton";
 import {
   sideNavbtns,
   belowSideNavBtns,
 } from "@/constants/sideNavContent/SideNav";
 import { Cross } from "@/constants/react-icons";
-import SideNavBtn from "../sideNavButton/SideNavButton";
 
 const ModalSide = ({
   handleShow,

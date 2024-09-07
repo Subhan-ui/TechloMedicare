@@ -35,11 +35,9 @@ const config: Config = {
         'max':'1411px'
       }
     },
-    fontFamily: {
-      mukta: ['--font-mukta'],
-    },
     
   },
   plugins: [],
 };
 export default config;
+
