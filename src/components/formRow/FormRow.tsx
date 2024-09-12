@@ -15,23 +15,23 @@ const Row: React.FC<typeFormRow> = ({
   <>
     <tr className="relative" style={{ top: top }}>
       <td className="">{children}</td>
-      <td className="relative md:-left-8 ">
+      <td className="relative md:-left-4 ">
         {type === "textarea" ? (
           <textarea
             name="notes"
             id={children}
             value={value}
             onChange={onChangeTextArea}
-            className="med:w-[415px] md:w-[345px] sm:w-[60vw] w-[65vw] h-[103px] px-3 border-2 border-gray-300"
+            className="med:w-[415px] md:w-[345px] sm:w-[47vw] w-[60vw] h-[103px] px-3 border-2 border-gray-300"
           ></textarea>
         ) : (
-          <div className="relative med:w-[415px] md:w-[345px] sm:w-[60vw] w-[65vw]">
+          <div className="relative med:w-[415px] md:w-[345px] sm:w-[47vw] w-[60vw]">
           <input
             value={value}
             name={name}
             onChange={onChange}
             type={type}
-            className="med:w-[415px] md:w-[345px] sm:w-[60vw] w-[65vw] px-3 h-[44px] border-2 border-gray-300"
+            className="med:w-[415px] md:w-[345px] sm:w-[47vw] w-[60vw] px-3 h-[44px] border-2 border-gray-300"
             placeholder=""
           />
         {cross && (

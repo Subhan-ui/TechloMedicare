@@ -28,7 +28,8 @@ const config: Config = {
         'shadow':'#000000bf',
         'awaiting': "#2f80ed",
         'orange':'#ff9939',
-        'back':'#f5f5f5'
+        'back':'#f5f5f5', 
+        "lightGray":"#fbfbfb"
       },
       screens:{
         'med':'1000px',

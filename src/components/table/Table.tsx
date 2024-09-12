@@ -10,7 +10,7 @@ const Table: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const number = useAppSelector(selectNumber);
   return (
     <>
-      <Bar classN="justify-between mx-[22.5px]">
+      <Bar classN="justify-between md:mx-[22.5px] mx-[6px]">
         <h1 className="font-semibold text-xl">
           Total Patients <span className="text-lightSlate">({number})</span>
         </h1>
@@ -39,7 +39,7 @@ const Table: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           />
         </div>
       </Bar>
-      <div className="max:w-[1122px] med:w-[calc(100vw-250px)] md:w-[calc(100vw-240px)] w-[94vw] bg-white mx-[22.55px] overflow-x-scroll mt-[12.75px]">
+      <div className="max:w-[1122px] med:w-[calc(100vw-250px)] md:w-[calc(100vw-240px)] w-[94vw] bg-white md:mx-[22.55px] mx-[8px] overflow-x-scroll mt-[12.75px]">
       <table className=" w-full min-w-[1122px] table-fixed">
         <thead className="h-[65.7px] border-b-2  overflow-x-scroll border-gray-300">
           <tr className="text-lg text-lightSlate  text-center">

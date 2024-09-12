@@ -36,7 +36,7 @@ const Navbar = async () => {
             </button>
           </form>
           <div className="text-end mr-[33px]">
-            <p className="text-[15px]">{session?.user?.name}</p>
+            <p className="text-[15px] pb-[5px]">{session?.user?.name}</p>
             <h5 className="font-bold text-[15px]">General Doctor</h5>
           </div>
           <div className="border-2 center border-gray-300 mr-[36px] w-[137px] h-[40px] rounded-md ">
