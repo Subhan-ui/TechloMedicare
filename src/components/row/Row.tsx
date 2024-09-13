@@ -11,14 +11,14 @@ const Row: React.FC<tableContent> = (props) => {
 
   return (
     <>
-      <tr className="h-[72.57px] text-lg text-black text-center cursor-pointer">
+      <tr className="h-[72.57px] text-lg text-black text-start cursor-pointer">
         <td className="">
           <Image
             src={props.image}
             alt="profile image"
             height={45}
             width={45}
-            className="aspect-square rounded-full relative left-14"
+            className="aspect-square rounded-full relative left-8"
           />
         </td>
         <td>{props.name}</td>
@@ -34,7 +34,7 @@ const Row: React.FC<tableContent> = (props) => {
         <td>{props.last}</td>
         <td>{props.next}</td>
         <td
-          className="relative left-16"
+          className="relative left-8"
           onClick={() => props.handleShow(props.id)}
         >
           <Options style={{ fontSize: "20px" }} />
