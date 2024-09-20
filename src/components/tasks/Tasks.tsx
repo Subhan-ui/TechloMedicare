@@ -32,7 +32,7 @@ const Tasks: React.FC<emailType> = ({ email }) => {
           loadAdd={loadAdd}
         />
       )}
-      <div className="bg-white mt-[20px] max:w-[709px] overflow-y-scroll h-[611px] w-full ">
+      <div className="bg-white mt-[20px] maxi:w-[60%] max:w-[709px] overflow-y-scroll h-[611px] w-full ">
         <div className="v_center justify-between h-[61.78px] pl-[22px] pr-[16px]">
           <h5 className="font-bold text-base">Tasks</h5>
           <h4

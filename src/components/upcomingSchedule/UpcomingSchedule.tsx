@@ -16,7 +16,7 @@ const UpcomingSchedule = ({ name, email }: emailType) => {
   return (
     <>
       {show && <Modals email={email} name={name} hiding={handleShow} />}
-      <div className="h-[624.66px] max:w-[384.41px] med:w-full bg-white mt-[20px]">
+      <div className="h-[624.66px] maxi:w-[38%] max:w-[384.41px] med:w-full bg-white mt-[20px]">
         <div className="flex justify-between items-center mt-[19.61px] mx-[16.67px] ">
           <h1 className="font-bold md:text-base text-[12px]">
             Upcoming Schedule

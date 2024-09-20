@@ -9,7 +9,7 @@ import { green, mutedRed } from "@/constants/colors";
 const Card: React.FC<card> = (props) => {
   const color: string = props.percentage === "+3.11%" ? green : mutedRed;
   return (
-    <div className="max:w-[358.91px] med:w-[calc(calc(100vw-260px)/3)] md:w-[calc(calc(100vw-260px)/3)] w-[calc(100vw-44px)] h-[191.22px] bg-white max:p-[22px] med:p-[14px] md:p-[7px] p-[17px] relative">
+    <div className="max:w-[358.91px] maxi:w-[calc(calc(100%-60px)/3)] med:w-[calc(calc(100vw-260px)/3)] md:w-[calc(calc(100vw-260px)/3)] w-[calc(100vw-44px)] h-[191.22px] bg-white max:p-[22px] med:p-[14px] md:p-[7px] p-[17px] relative">
       {props.loading ? (
         <Loader />
       ) : (

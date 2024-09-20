@@ -16,7 +16,7 @@ const Login = () => {
   } = useLogin();
 
   return (
-    <form className="w-[544px] h-[1025px] " onSubmit={handleSubmit}>
+    <form className="w-[544px] h-[1025px] maxi:w-[32vw]" onSubmit={handleSubmit}>
       <h1 className="mt-[125px] md:px-[47px] px-[22px] font-normal med:text-4xl md:text-2xl text-3xl">
         Welcome to Medicare
       </h1>

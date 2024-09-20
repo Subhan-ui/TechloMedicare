@@ -33,7 +33,8 @@ const config: Config = {
       },
       screens:{
         'med':'1000px',
-        'max':'1411px'
+        'max':'1411px',
+        'maxi':'1441px',
       }
     },
     

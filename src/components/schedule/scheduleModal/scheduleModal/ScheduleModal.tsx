@@ -88,7 +88,7 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           placeholder=""
         />
         <Cross
-          className="absolute right-40 bottom-[1.08rem] md:block hidden"
+          className="absolute right-[2rem] bottom-[1.08rem] md:block hidden"
           color={darkGrey}
           size={12}
         />

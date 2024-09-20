@@ -10,8 +10,8 @@ const TaskModal = ({
   loadAdd,
 }: typeTaskModal) => (
   <Modal hiding={handleShow} className="fixed">
-    <form onSubmit={handleSubmit}>
-      <h3 className="text-center font-bold text-2xl ">
+    <form onSubmit={handleSubmit} className="maxi:w-[50vw] max:w-[500px] med:w-[450px] md:w-[350px] sm:w-[300px]">
+      <h3 className="text-center  font-bold text-2xl ">
         Enter Your Tasks
       </h3>
       <Input

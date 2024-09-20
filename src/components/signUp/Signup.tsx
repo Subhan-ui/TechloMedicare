@@ -9,7 +9,7 @@ const Signup = () => {
   const { handleRegister, loading, values } = useSignup();
 
   return (
-    <div className="w-[544px] h-[1025px]">
+    <div className="w-[544px] h-[1025px] maxi:w-[32vw]">
       <h1 className="mt-[125px] text-4xl md:px-[47px] px-[22px]">Welcome to Medicare</h1>
       <p className="font-medium text-xl text-grey mt-2 md:px-[47px] px-[22px]">
         Tell us about your company

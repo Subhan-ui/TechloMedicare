@@ -10,7 +10,7 @@ export default async function Home() {
   const session = await getServerSession(authOptions);
   return (
     <>
-      <div className="px-[12.4px]  max:w-[1152px] box-border max:pl-[26.48px]">
+      <div className="px-[12.4px] maxi:w-[78%] max:w-[1152px] box-border max:pl-[26.48px]">
         <Text ml="">Dashboard {">"} Summary</Text>
         <Cards email={session?.user?.email} />
         <div className="flex max:flex-row max:gap-[19.61px] flex-col ">

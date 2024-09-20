@@ -9,7 +9,7 @@ const Schedule = async () => {
   const session = await getServerSession(authOptions);
   return (
     <>
-    <div>
+    <div className="maxi:w-[78vw]">
         <Text ml="29px">Schedule </Text>
         <Table name={session?.user?.name} email={session?.user?.email} />
       </div>
