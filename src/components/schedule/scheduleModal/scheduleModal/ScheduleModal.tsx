@@ -84,7 +84,7 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           name="patient"
           onChange={handleChanges}
           type="text"
-          className="md:w-[415px] sm:w-[50%] w-[100%-120px] px-3 md:h-[44px] h-[32px] md:ml-40 sm:ml-32 ml-7 border-2 border-gray-300"
+          className="md:w-[415px] sm:w-[50%] w-[100%-120px] px-3 md:h-[44px] h-[32px] md:ml-[142px] sm:ml-32 ml-7 border-2 border-gray-300"
           placeholder=""
         />
         <Cross
@@ -93,7 +93,7 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           size={12}
         />
       </div>
-      <div className="relative md:left-10 left-3 mt-4 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">
+      <div className="relative md:left-10 left-3 mt-[18px] v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">
       <p className="md:text-[18px] text-sm">Purpose of Visit</p>
         <textarea
           name="purpose"
@@ -103,7 +103,7 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           className="md:w-[415px] sm:w-[50%] w-[100%-120px] md:ml-[98px] sm:ml-[66px] ml-4 md:h-[103px] h-[70px] px-3 border-2 border-gray-300"
         ></textarea>
       </div>
-      <div className="mt-4 relative md:left-10 left-3 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">
+      <div className="mt-[18px] relative md:left-10 left-3 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">
       <p className="md:text-[18px] text-sm">Appointment Status</p>
         <div className="md:ml-[70px] sm:ml-[29px] ml-[6px] flex md:gap-3 gap-1">
           {statuses.map((status) => (
@@ -118,7 +118,7 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           ))}
         </div>
       </div>
-      <div className="mt-4 relative md:left-10 left-3 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">
+      <div className="mt-[18px] relative md:left-10 left-3 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">
       <p className="md:text-[18px] text-sm">Duration</p>
         <div className="md:ml-[150px] sm:ml-[100px] ml-[6px] flex md:gap-3 gap-1">
           {durations.map((duration) => (
@@ -133,7 +133,7 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           ))}
         </div>
       </div>
-      <div className="mt-4 relative md:left-10 left-3 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">
+      <div className="mt-[18px] relative md:left-10 left-3 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">
       <p className="md:text-[18px] text-sm">Appointment Type</p>
         <div className="md:ml-[83px] sm:ml-[48px] ml-[12px] flex md:gap-3 gap-1">
           {types.map((type) => (
@@ -148,7 +148,7 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           ))}
         </div>
       </div>
-      <div className="mt-4 relative md:left-10 left-3 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-100px)] ">
+      <div className="mt-[18px] relative md:left-10 left-3 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-100px)] ">
       <p className="md:text-[18px] text-sm">Online Consultations</p>
         <Toggle isChecked={online} handleChange={handleChangeToggle} />
       </div>
@@ -157,7 +157,7 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           <Bell size={30} />
           <p className="font-bold text-lg">Send Notifications</p>
         </div>
-        <p className="text-darkGrey text-base mx-7 mt-2">
+        <p className="text-darkGrey text-base mx-[30px] mt-2">
           Appointment confirmation and reminder messages will be automatically
           sent to clinic SMS notification settings.
         </p>

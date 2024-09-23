@@ -20,7 +20,7 @@ const SideNav = () => (
       ))}
     </ul>
     <div className="border-[1px] my-6 border-gray-300 mx-[38px]" />
-    <h5 className="text-lightSlate text-[12px] mt-[30px] ml-[20px] mb-[5px]">General</h5>
+    <h5 className="text-lightSlate text-[12px] mt-[35px] ml-[20px] mb-[5px]">General</h5>
     <ul className="flex flex-col gap-2">
       {belowSideNavBtns.map((btn) => (
         <SideNavBtn
