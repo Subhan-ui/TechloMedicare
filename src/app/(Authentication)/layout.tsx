@@ -23,7 +23,7 @@ const RootLayout = async ({ children }: propsLayout) => {
   }
   return (
     <NextAuthSessionProvider>
-      <div className="center w-full maxi:w-screen maxi:justify-between ">
+      <div className="center w-full maxi:w-screen maxi:justify-between">
         {children}
         <div className="max:w-[900px] h-[1024px] maxi:h-screen maxi:min-h-[1026px] maxi:w-[66vw] med:w-[800px] bg-blue v_center maxi:center flex-col md:flex hidden text-white">
           <h1 className="font-bold max:text-2xl med:text-xl md:text-lg mt-[137px]">

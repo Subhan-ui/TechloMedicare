@@ -7,8 +7,19 @@ import { authOptions } from "@/lib/AuthOptions";
 import { Search, Bell, Mail } from "@/constants/react-icons";
 import { lightSlate } from "@/constants/colors";
 
+
+function formatDate(): string {
+  const date = new Date();
+  const day = date.getDate();
+  const month = date.toLocaleString('default', { month: 'long' });
+  const year = date.getFullYear();
+
+  return `${day}, ${month} ${year}`;
+}
+
 const Navbar = async () => {
   const session = await getServerSession(authOptions);
+  const date = formatDate();
   return (
     <>
       <nav className="md:flex hidden v_center maxi:gap-[34px] max:gap-[26px] med:gap-5 bg-white border-b-2 border-gray-300 h-[92.18px] md:sticky md:top-0 z-[5000] md:gap-7 gap-5 box-border">
@@ -39,7 +50,7 @@ const Navbar = async () => {
             <h5 className="font-bold text-[15px]">General Doctor</h5>
           </div>
           <div className="border-2 center border-gray-300 mr-[36px] maxi:mr-0 w-[137px] h-[40px] rounded-md ">
-            <p className="text-[15px] font-normal">24, October 2022</p>
+            <p className="text-[15px] font-normal">{date}</p>
           </div>
           <div className="gap-[32.9px] maxi:mr-8 v_center">
             <Mail size={24} color={lightSlate} />

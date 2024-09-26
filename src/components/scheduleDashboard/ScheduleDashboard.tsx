@@ -28,7 +28,7 @@ const ScheduleDashboard = ({ email }: emailType) => {
           <div key={item?.id} className="justify-between relative flex-col flex w-full">
             <div className="flex flex-col gap-[7px]">
               <div className=" v_center w-[86.7px] gap-[35.7px]">
-                <p className="font-normal text-xs text-lightSlate">{timeManagement(item?.time)}</p>
+                <p className="font-normal text-xs text-lightSlate w-[21.7px]">{timeManagement(item?.time)}</p>
                 <div className="rounded-full h-[9px] w-[9px] bg-black  flex-shrink-0 relative z-10" />
                 {index !== data?.length - 1 && (
                   <div className="absolute left-[61.5px] top-[11px] h-full w-[1px] bg-gray-300" />
@@ -38,7 +38,7 @@ const ScheduleDashboard = ({ email }: emailType) => {
                 <div
                   onMouseEnter={() => setHoveredId(item?.id)}
                   onMouseLeave={() => setHoveredId("0")}
-                  className={`v_center justify-between pl-3 pr-1 border-lightGrey rounded-md max:w-[272px] w-[calc(100%-80px)] h-[25px] ${
+                  className={`v_center justify-between pl-3 pr-1 border-lightGrey rounded-md max:w-[272px] maxi:w-[80%] w-[calc(100%-80px)] h-[25px] ${
                     hoveredId === item?.id ? "border-2" : ""
                   }`}
                 >

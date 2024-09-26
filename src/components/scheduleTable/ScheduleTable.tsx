@@ -52,7 +52,7 @@ const Table: React.FC<emailType> = ({ name, email }) => {
           />
         </div>
       </Bar>
-      <div className="maxi:w-[77vw] max:w-[calc(100vw-300px)]  max:mt-[34px] med:mt-[29px] md:mt-[19px] mt-[28px] max:ml-[27px] md:ml-[24px] ml-[20px] med:w-[calc(100vw-250px)] md:w-[calc(100vw-240px)] w-[94vw] overflow-x-scroll">
+      <div className="maxi:w-[76vw] max:w-[calc(100vw-300px)]  max:mt-[34px] med:mt-[29px] md:mt-[19px] mt-[28px] max:ml-[27px] md:ml-[24px] ml-[20px] med:w-[calc(100vw-250px)] md:w-[calc(100vw-240px)] w-[94vw] overflow-x-scroll">
         <Calendar email={email} view="week"/>
       </div>
     </>

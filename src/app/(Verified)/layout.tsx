@@ -28,7 +28,7 @@ export default async function RootLayout({
   }
   return (
     <div className=" bg-back v_center flex-col box-border">
-      <div className="max:w-screen w-full">
+      <div className=" w-full">
         <Navbar />
         <div className="flex">
           <SideNav />

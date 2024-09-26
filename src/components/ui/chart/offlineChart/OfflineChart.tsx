@@ -69,7 +69,7 @@ const OfflineChart = ({email}:{email:string|null|undefined}) => {
     labels: Object.keys(onlineGroupedByWeek),
     datasets: [
       {
-        label: "Online Consultations",
+        label: "Offline Consultations",
         data: Object.values(onlineGroupedByWeek).map(
           (appointments) => appointments.length
         ),
