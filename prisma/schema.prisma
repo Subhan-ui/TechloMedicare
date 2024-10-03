@@ -21,7 +21,7 @@ model User {
 model Patient {
   id           String @id @default(auto()) @map("_id") @db.ObjectId
   doctor       User   @relation(fields: [doctorEmail], references: [email])
-  name         String @unique
+  name         String 
   image        String
   doctorEmail  String
   recordNumber Int
@@ -35,7 +35,7 @@ model Patient {
 model Appointment {
   id                String  @id @default(auto()) @map("_id") @db.ObjectId
   doctorEmail       String
-  patientName       String  @unique
+  patientName       String  
   date              String
   time              String
   location          String

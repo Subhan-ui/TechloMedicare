@@ -84,11 +84,11 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           name="patient"
           onChange={handleChanges}
           type="text"
-          className="md:w-[415px] sm:w-[50%] w-[100%-120px] px-3 md:h-[44px] h-[32px] md:ml-[142px] sm:ml-32 ml-7 border-2 border-gray-300"
+          className="md:w-[415px] sm:w-[50%] w-[calc(100%-120px)] px-3 md:h-[44px] h-[32px] relative md:left-[142px] sm:left-32 left-12 sm:mr-0 mr-10  border-2 border-gray-300"
           placeholder=""
         />
         <Cross
-          className="absolute right-[2rem] bottom-[1.08rem] md:block hidden"
+          className="absolute right-[-2rem] bottom-[1.08rem] md:block hidden"
           color={darkGrey}
           size={12}
         />
@@ -100,7 +100,7 @@ const ScheduleModal: React.FC<ModalProps> = ({ hiding, name, email }) => {
           value={purpose}
           onChange={handleChangeText}
           id="notes"
-          className="md:w-[415px] sm:w-[50%] w-[100%-120px] md:ml-[98px] sm:ml-[66px] ml-4 md:h-[103px] h-[70px] px-3 border-2 border-gray-300"
+          className="md:w-[415px] sm:w-[50%] w-[calc(100%-120px)] relative md:left-[80px] sm:left-[78px] left-3  md:h-[103px] h-[70px] px-3 border-2 border-gray-300"
         ></textarea>
       </div>
       <div className="mt-[18px] relative md:left-10 left-3 v_center sm:justify-start justify-between md:w-[550px] w-[calc(100%-32px)]">

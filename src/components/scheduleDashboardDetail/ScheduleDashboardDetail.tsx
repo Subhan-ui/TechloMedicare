@@ -14,7 +14,7 @@ const ScheduleDashboardDetail = ({
   return (
     clickedId === id && (
       <>
-        <div className="w-[80%]  h-[121px] border-2 relative border-lightGrey">
+        <div className="max:w-[272px] maxi:w-[80%] w-[calc(100%-80px)] h-[121px] border-2 relative border-lightGrey">
           <div className="flex mx-[11.7px]  items-center">
             <p className="font-semibold text-[10.79px] text-black mt-[7.85px]">
               Patient

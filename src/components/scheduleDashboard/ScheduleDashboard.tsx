@@ -34,7 +34,7 @@ const ScheduleDashboard = ({ email }: emailType) => {
                   <div className="absolute left-[61.5px] top-[11px] h-full w-[1px] bg-gray-300" />
                 )}
               </div>
-              <div className="w-full flex justify-end">
+              <div className="w-full flex justify-end pr-[16px]">
                 <div
                   onMouseEnter={() => setHoveredId(item?.id)}
                   onMouseLeave={() => setHoveredId("0")}
@@ -67,7 +67,7 @@ const ScheduleDashboard = ({ email }: emailType) => {
                 </div>
               </div>
             </div>
-            <div className="w-full flex justify-end mt-[9.81px]">
+            <div className="w-full flex justify-end mt-[9.81px] pr-[16px]">
             <ScheduleDashboardDetail
               id={item?.id}
               clickedId={clickedId}

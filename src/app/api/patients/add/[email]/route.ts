@@ -14,15 +14,7 @@ export const POST = async (
     }
 
     const name = foreName+' '+lastName;
-    const existedPatient = await prisma.patient.findFirst({
-      where: {
-        name
-      }
-    });
-
-    if (existedPatient) {
-      return NextResponse.json({ message: 'Patient already exists' }, { status: 409 });
-    }
+    
 
     const newPatient = await prisma.patient.create({
       data: {

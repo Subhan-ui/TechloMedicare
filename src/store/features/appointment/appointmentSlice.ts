@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 type ValuePiece = Date | null;
 
-type Value = ValuePiece | [ValuePiece, ValuePiece];
+type Value = ValuePiece | [ValuePiece, ValuePiece] | string;
 
 const dates = new Date();
 const formattedDate = dates.toLocaleString("en-US", {
@@ -45,14 +45,14 @@ const appointmentSlice = createSlice({
     handleOnline: (state, action: PayloadAction<boolean>) => {
       state.online = action.payload;
     },
-    handleDateTime: (state, action: PayloadAction<Value>) => {
-      const formatted = action.payload?.toLocaleString("en-US", {
+    handleDateTime: (state, action: PayloadAction<string>) => {
+      const formatted = new Date(action.payload)?.toLocaleString("en-US", {
         weekday: "short",
         month: "long",
         day: "numeric",
       });
-      const hours = (action.payload as Date)?.getHours();
-      const minutes = (action.payload as Date)?.getMinutes();
+      const hours = (new Date(action.payload))?.getHours();
+      const minutes = (new Date(action.payload))?.getMinutes();
       const originalHours = hours < 12 ? hours : hours - 12;
       const time = originalHours + ":" + minutes;
       if (formatted) {
