@@ -7,6 +7,7 @@ import { awaiting, recover, treat } from "@/constants/colors";
 const Card: React.FC<AppointmentProps> = ({ event }) => {
   const { location, patientName, purpose, start, end } = event;
   const [color, setColor] = useState<string>("");
+  const [duration, setDuration] = useState<number>(0);
   const randomNumber = Math.floor(Math.random() * 3) + 1;
   useEffect(() => {
     switch (randomNumber) {
@@ -19,8 +20,13 @@ const Card: React.FC<AppointmentProps> = ({ event }) => {
       case 3:
         setColor(treat);
     }
-  }, []);
+    const startTime = new Date(start);
+const endTime = new Date(end);
 
+const durationInMilliseconds = endTime.getTime() - startTime.getTime();
+
+setDuration(Math.floor(durationInMilliseconds / (1000 * 60)))
+  }, []);
   return (
     <>
       <div
@@ -33,15 +39,15 @@ const Card: React.FC<AppointmentProps> = ({ event }) => {
         >
           Pending
         </p>
-        <div className="flex flex-col justify-around h-[99px]">
+        <div className="flex flex-col justify-around h-[75%]">
           <div className="v_center gap-3 ml-2 font-normal text-xs">
             <Person size={10} />
             {patientName}
           </div>
-          <div className="v_center gap-3 ml-2 font-normal text-xs">
+          {duration>=45&&<div className="v_center gap-3 ml-2 font-normal text-xs">
             <Notes size={10} />
             {purpose}
-          </div>
+          </div>}
           <div className="v_center gap-3 ml-2 font-normal text-xs">
             <Clock size={10} />
             {start.toLocaleTimeString([], {
@@ -54,10 +60,10 @@ const Card: React.FC<AppointmentProps> = ({ event }) => {
               minute: "2-digit",
             })}
           </div>
-          <div className="v_center gap-3 ml-2 font-normal text-xs">
+          {duration>=10&&<div className="v_center gap-3 ml-2 font-normal text-xs">
             <LocationI size={10} />
             Room {location}
-          </div>
+          </div>}
         </div>
       </div>
     </>
