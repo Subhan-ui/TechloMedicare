@@ -3,9 +3,6 @@ import { useState } from "react";
 import { handleDateTime } from "../store/features/appointment/appointmentSlice";
 import { useAppDispatch } from "../store/hooks";
 
-type ValuePiece = Date | null;
-
-type Value = ValuePiece | [ValuePiece, ValuePiece] | string;
 
 const formatDateTimeLocal = (date: Date) => {
   const year = date.getFullYear();
@@ -23,7 +20,6 @@ const useDateTime = (onClick: () => void) => {
   const handleChange = () => {
     dispatch(handleDateTime(value));
     onChange;
-    console.log(value);
     onClick();
   };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

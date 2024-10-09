@@ -25,3 +25,11 @@
     @apply bg-[#e0e0e0] text-[#333333]  text-base py-2 px-4 rounded-lg;
   }
 }
+
+.rbc-day-slot .rbc-event,
+.rbc-day-slot .rbc-background-event {
+  @apply bg-white border-white p-0 !important;
+}
+.rbc-day-slot .rbc-events-container {
+  @apply mr-0 !important;
+}

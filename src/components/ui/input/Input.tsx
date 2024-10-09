@@ -1,3 +1,5 @@
+"use client";
+
 import { typeLogout } from "@/types/types";
 
 const Input: React.FC<typeLogout> = ({

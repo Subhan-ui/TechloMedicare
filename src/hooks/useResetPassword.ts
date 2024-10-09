@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -9,34 +11,27 @@ import {
   selectPassword,
 } from "../store/features/login/loginSlice";
 
-const usePasswordChange = (hiding: () => void) => {
+const useResetPassword = (id: string) => {
   const dispatch = useAppDispatch();
   const email = useAppSelector(selectEmail);
   const password = useAppSelector(selectPassword);
-
   const [loading, setLoading] = useState(false);
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     try {
       setLoading(true);
-
-      const some = await axios.post("/api/sendEmail", {
-        email,
+      const response = await axios.put(`/api/auth/change/${id}`, {
+        password,
       });
-
-      toast.success("Email Sent", some.data.message);
+      toast.success(response.data.message);
     } catch (error: any) {
-      if (error?.response?.data) {
+      if (error?.response && error?.response?.data) {
         toast.error(error?.response?.data?.message);
       } else {
         toast.error("An error occurred. Please try again.");
       }
     } finally {
       setLoading(false);
-
-      hiding();
     }
   };
 
@@ -45,17 +40,7 @@ const usePasswordChange = (hiding: () => void) => {
     dispatch(handleChange({ name, value }));
   };
 
-  const inputs = [
-    {
-      id: 1,
-      placeholder: "Email",
-      name: "email",
-      value: email,
-      onChange: onChange,
-    },
-  ];
-
-  return { loading, handleSubmit, inputs, password, onChange };
+  return { loading, handleSubmit, password, onChange };
 };
 
-export default usePasswordChange;
+export default useResetPassword;

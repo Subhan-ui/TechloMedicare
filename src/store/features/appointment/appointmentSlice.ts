@@ -54,7 +54,6 @@ const appointmentSlice = createSlice({
       const hours = (new Date(action.payload))?.getHours();
       const minutes = (new Date(action.payload))?.getMinutes();
       const time = hours + ":" + minutes;
-      console.log(time)
       if (formatted) {
         state.date = formatted;
         state.time = time;

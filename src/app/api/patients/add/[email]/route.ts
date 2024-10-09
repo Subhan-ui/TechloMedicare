@@ -7,14 +7,22 @@ export const POST = async (
 ) => {
   try {
     const { email } = params;
-    const { foreName, lastName, dateOfBirth, sex, diagnosis, notes, phNo,url } = await req.json();
+    const {
+      foreName,
+      lastName,
+      dateOfBirth,
+      sex,
+      diagnosis,
+      notes,
+      phNo,
+      url,
+    } = await req.json();
 
     if (!foreName || !dateOfBirth || !sex || !diagnosis || !notes || !phNo) {
-      return NextResponse.json({ message: 'Missing Data' }, { status: 400 });
+      return NextResponse.json({ message: "Missing Data" }, { status: 400 });
     }
 
-    const name = foreName+' '+lastName;
-    
+    const name = foreName + " " + lastName;
 
     const newPatient = await prisma.patient.create({
       data: {
@@ -26,13 +34,13 @@ export const POST = async (
         notes,
         phNo,
         recordNumber: lastName.length,
-        image: url
-      }
+        image: url,
+      },
     });
 
     return NextResponse.json({ patient: newPatient }, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ message: 'Some Error Occured' }, { status: 500 });
+    return NextResponse.json({ message: "Error-> ", error }, { status: 500 });
   } finally {
     await prisma.$disconnect();
   }

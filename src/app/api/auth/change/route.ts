@@ -44,7 +44,7 @@ export const PUT = async (req: Request) => {
 
     return NextResponse.json(updatedUser, { status: 200 });
   } catch (error: any) {
-    return NextResponse.json({message: error.message},{status: 400})
+    return NextResponse.json({ message: error.message }, { status: 400 });
   } finally {
     await prisma.$disconnect();
   }
