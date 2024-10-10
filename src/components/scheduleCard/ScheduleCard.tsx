@@ -33,7 +33,7 @@ setDuration(Math.floor(durationInMilliseconds / (1000 * 60)))
   return (
     <>
       <div
-        className="w-full h-[100%] min-h-4 rounded-lg pt-1"
+        className="w-full h-[100%] min-h-[8rem] rounded-lg pt-1"
         style={{ backgroundColor: `${color}4f`, color: color }}
       >
         <p
@@ -42,7 +42,7 @@ setDuration(Math.floor(durationInMilliseconds / (1000 * 60)))
         >
           {text}
         </p>
-        <div className="flex flex-col justify-around h-[75%]">
+        <div className="flex flex-col gap-[7%] h-[75%]">
           <div className="v_center gap-3 ml-2 font-normal text-xs">
             <Person size={10} />
             {patientName}

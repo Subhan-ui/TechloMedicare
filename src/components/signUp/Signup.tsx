@@ -11,7 +11,7 @@ const Signup = () => {
   return (
     <div className="w-[544px] h-[1025px] maxi:w-[32vw]">
       <h1 className="mt-[125px] text-4xl md:px-[47px] px-[22px]">Welcome to Medicare</h1>
-      <p className="font-medium text-[22px] text-grey md:px-[47px] px-[22px]">
+      <p className="font-medium text-[22px] text-grey md:px-[47px] px-[22px] mt-2">
         Tell us about your company
       </p>
       <div className="md:pl-[44px] md:mt-[55px] md:pr-[48px] px-[22px]">

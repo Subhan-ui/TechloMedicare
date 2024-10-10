@@ -18,7 +18,7 @@ const Login = () => {
         <h1 className=" md:px-[47px] px-[22px] font-normal med:text-4xl md:text-2xl text-3xl">
           Welcome to Medicare
         </h1>
-        <p className="font-medium med:text-xl md:px-[47px] px-[22px]  md:text-lg text-grey ">
+        <p className="font-medium med:text-xl md:px-[47px] px-[22px]  md:text-lg text-grey mt-2 ">
           Login In here
         </p>
         <div className="md:pl-[44px] md:pr-[48px] md:mt-[55px] px-[22px]">

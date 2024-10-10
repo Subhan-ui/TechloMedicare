@@ -28,8 +28,12 @@
 
 .rbc-day-slot .rbc-event,
 .rbc-day-slot .rbc-background-event {
-  @apply bg-white border-white p-0 !important;
+  @apply bg-transparent border-white p-0 min-h-[115px] !important;
 }
 .rbc-day-slot .rbc-events-container {
   @apply mr-0 !important;
+}
+
+.rbc-timeslot-group{
+  @apply min-h-[142px] !important;
 }
