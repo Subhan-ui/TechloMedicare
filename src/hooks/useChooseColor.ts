@@ -9,15 +9,18 @@ const useChooseColor = (status?:number, email?:string|null, id?:string)=>{
     const [text,setText] = useState<string>('')
     const [loading,setLoading] = useState(false)
   useEffect(() => {
-    if (status === 3) {
-      setColor(recover);
-      setText("Recovered")
-    } else if (status === 1) {
-      setColor(awaiting);
-      setText("Awaiting Surgery")
-    } else {
-      setText("On Treatment")
-      setColor(treat);
+    switch (status) {
+      case 1:
+        setColor(awaiting);
+        setText("Awaiting Surgery")
+        break;
+        case 2:
+        setText("Recovered")
+        setColor(recover);
+        break;
+        default:
+        setText("On treatment")
+        setColor(treat);
     }
   }, [status]);
 
