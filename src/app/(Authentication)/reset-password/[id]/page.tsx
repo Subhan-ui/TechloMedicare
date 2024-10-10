@@ -33,7 +33,7 @@ const Page = ({ params }: { params: { id: string } }) => {
           className="w-full bg-blue disabled:bg-disabled text-white py-4 rounded-xl"
           disabled={loading}
         >
-          {loading ? "Creating..." : "Sign Up"}
+          {loading ? "Changing..." : "Change Password"}
         </button>
       </div>
     </form>

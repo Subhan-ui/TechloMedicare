@@ -33,7 +33,7 @@ export const POST = async (
         diagnosis,
         notes,
         phNo,
-        recordNumber: lastName.length,
+        recordNumber: 1,
         image: url,
       },
     });
@@ -45,3 +45,50 @@ export const POST = async (
     await prisma.$disconnect();
   }
 };
+
+export const PUT = async (
+  req: Request,
+  { params }: { params: { email: string } }
+) => {
+  try {
+    const { email } = params;
+    const { id } = await req.json();
+    const patient = await prisma.patient.findUnique({
+      where: { id, doctorEmail: email },
+      select: { recordNumber: true, id: true },
+    });
+    if (!patient) {
+      return NextResponse.json(
+        { message: "patient not found" },
+        { status: 404 }
+      );
+    }
+    const { recordNumber } = patient;
+    let newRecord: number;
+    switch (recordNumber) {
+      case 1:
+        newRecord = 2;
+        break;
+      case 2:
+        newRecord = 3;
+        break;
+      default:
+        newRecord = 1;
+        break;
+    }
+
+    await prisma.patient.update({
+      where: { id: patient.id },
+      data: { recordNumber: newRecord },
+    });
+    return NextResponse.json(
+      { message: "Status Updated Successfully" },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json({ message: error }, { status: 500 });
+  } finally {
+    await prisma.$disconnect();
+  }
+};
+

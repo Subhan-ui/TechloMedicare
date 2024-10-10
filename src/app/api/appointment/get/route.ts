@@ -15,21 +15,48 @@ export const GET = async (
         { status: 400 }
       );
     }
+
     const appointments = await prisma.appointment.findMany({
       where: { doctorEmail: email },
     });
 
     if (appointments.length === 0) {
-      return NextResponse.json({ message: "You have no appointments so far." });
+      return NextResponse.json(
+        { message: "No appointments found." },
+        { status: 200 }
+      );
     }
 
-    return NextResponse.json(appointments, { status: 200 });
+    const patientNames = Array.from(
+      new Set(appointments.map((appt) => appt.patientName))
+    );
+
+    const patients = await prisma.patient.findMany({
+      where: {
+        name: {
+          in: patientNames,
+        },
+        doctorEmail: email,
+      },
+      select: {
+        name: true,
+        recordNumber: true,
+      },
+    });
+
+    const patientRecordMap = patients.reduce((map, patient) => {
+      map[patient.name] = patient.recordNumber;
+      return map;
+    }, {} as Record<string, number>);
+
+    const appointmentsWithRecordNumber = appointments.map((appointment) => ({
+      ...appointment,
+      patientRecordNumber: patientRecordMap[appointment.patientName] || null,
+    }));
+
+    return NextResponse.json(appointmentsWithRecordNumber, { status: 200 });
   } catch (error: any) {
-    if (error) {
-      return NextResponse.json({ message: error.message }, { status: 400 });
-    } else {
-      return NextResponse.json({ message: error.message }, { status: 500 });
-    }
+    return NextResponse.json({ message: error.message }, { status: 400 });
   } finally {
     await prisma.$disconnect();
   }

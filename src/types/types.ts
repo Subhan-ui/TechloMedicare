@@ -109,11 +109,12 @@ export type tableContent = {
   image: string;
   name: string;
   diagnosis: string;
-  status: "On Treatment" | "Recovered" | "Awaiting Surgery";
+  status?: number;
   last: string;
   next: string;
   handleShow: (id: string) => void;
   handleHiding: () => void;
+  email?:string|null;
 };
 
 export type sideBtnType = {
@@ -130,6 +131,7 @@ export type AppointmentProps = {
     purpose: string;
     start: Date;
     end: Date;
+    patientRecordNumber?:number|null
   };
   handleShow?: () => void;
 };
@@ -143,6 +145,7 @@ export type patientType = {
   dateOfBirth: string;
   sex?: string;
   notes?: string;
+  recordNumber?:number
 };
 
 export type ModalProps = {
@@ -178,6 +181,7 @@ export type cardType = EventProps & {
   id: string;
   duration: string;
   online?:boolean;
+  patientRecordNumber?:number|null;
 };
 
 export type appointmentData = {

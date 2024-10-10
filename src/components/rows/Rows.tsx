@@ -30,13 +30,14 @@ const Rows: React.FC<emailType> = ({ email }) => {
                   <tbody>
                     {data?.map((row) => (
                       <Row
+                      email={email}
                         handleHiding={handleHiding}
                         handleShow={handleShow}
                         key={row?.id}
                         id={row?.id}
                         image={row?.image}
                         name={row?.name}
-                        status="Recovered"
+                        status={row?.recordNumber}
                         last={row?.phNo}
                         next={row?.dateOfBirth}
                         diagnosis={row?.diagnosis}

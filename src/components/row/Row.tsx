@@ -7,7 +7,7 @@ import { tableContent } from "@/types/types";
 import { Options } from "@/constants/react-icons";
 
 const Row: React.FC<tableContent> = (props) => {
-  const { color } = useChooseColor(props.status);
+  const { color, text, handleStatus, loading } = useChooseColor(props.status, props.email, props.id);
 
   return (
     <>
@@ -24,12 +24,14 @@ const Row: React.FC<tableContent> = (props) => {
         <td>{props.name}</td>
         <td>{props.diagnosis}</td>
         <td>
-          <span
+          <button
+          onClick={handleStatus}
+          disabled={loading}
             className=" w-[140.23px] h-[25.5px] center rounded-full text-center text-xs"
             style={{ backgroundColor: `${color}52`, color: color }}
           >
-            {props.status}
-          </span>
+            {text}
+          </button>
         </td>
         <td>{props.last}</td>
         <td>{props.next}</td>

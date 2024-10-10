@@ -29,7 +29,7 @@ const PasswordModal: React.FC<ModalProps> = ({ hiding }) => {
             className="w-48 bg-blue text-white py-4 rounded-xl"
             disabled={loading}
           >
-            {loading ? "Changing..." : "Change"}
+            {loading ? "Sending..." : "Send Email"}
           </button>
           <button
             onClick={hiding}

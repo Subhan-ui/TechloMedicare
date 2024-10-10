@@ -7,17 +7,20 @@ import { awaiting, recover, treat } from "@/constants/colors";
 const Card: React.FC<AppointmentProps> = ({ event }) => {
   const { location, patientName, purpose, start, end } = event;
   const [color, setColor] = useState<string>("");
+  const [text, setText] = useState<string>("");
   const [duration, setDuration] = useState<number>(0);
-  const randomNumber = Math.floor(Math.random() * 3) + 1;
   useEffect(() => {
-    switch (randomNumber) {
+    switch (event.patientRecordNumber) {
       case 1:
         setColor(awaiting);
+        setText("Awaiting Surgery")
         break;
-      case 2:
+        case 2:
+        setText("Recovered")
         setColor(recover);
         break;
-      case 3:
+        default:
+        setText("On treatment")
         setColor(treat);
     }
     const startTime = new Date(start);
@@ -37,7 +40,7 @@ setDuration(Math.floor(durationInMilliseconds / (1000 * 60)))
           className="font-normal text-xs pl-2 border-l-2 h-5 v_center"
           style={{ borderColor: color, backgroundColor: `${color}40` }}
         >
-          Pending
+          {text}
         </p>
         <div className="flex flex-col justify-around h-[75%]">
           <div className="v_center gap-3 ml-2 font-normal text-xs">
