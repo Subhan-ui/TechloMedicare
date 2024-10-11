@@ -67,7 +67,7 @@ const useSchedule = (email: string | null | undefined) => {
       );
       if (response.status === 201) {
         toast.success("Successfully added appointment");
-        notification(email,`Successfully registered ${patient} appointment`)
+        notification(email, `Successfully registered ${patient} appointment`);
       } else {
         toast.error(response?.data?.message || "Failed to add appointment");
       }

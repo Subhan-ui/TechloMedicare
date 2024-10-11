@@ -9,7 +9,7 @@ const initialState = {
   notes: "",
   phNo: "",
   image: "",
-  numberOfPatient:0,
+  numberOfPatient: 0,
   data: [
     {
       name: "",
@@ -41,14 +41,14 @@ const patientSlice = createSlice({
         sex: action.payload,
       };
     },
-    handleChangeImages: (state, action: PayloadAction<string|undefined>) => {
-      if(action.payload){
+    handleChangeImages: (state, action: PayloadAction<string | undefined>) => {
+      if (action.payload) {
         state.image = action.payload;
       }
     },
-    handleNumber:(state,action:PayloadAction<number>)=>{
-      state.numberOfPatient=action.payload
-    }
+    handleNumber: (state, action: PayloadAction<number>) => {
+      state.numberOfPatient = action.payload;
+    },
   },
   selectors: {
     selectForeName: (data) => data.foreName,

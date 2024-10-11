@@ -132,7 +132,7 @@ const usePatientCRUD = (
         `/api/patients/add/${email}`,
         patientData
       );
-      notification(email, `${foreName} ${lastName} was added.`)
+      notification(email, `${foreName} ${lastName} was added.`);
       toast.success("Patient Successfully added.");
       router.push("/patients");
     } catch (error: any) {

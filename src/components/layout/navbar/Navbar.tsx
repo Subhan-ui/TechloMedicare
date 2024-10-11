@@ -7,11 +7,10 @@ import { authOptions } from "@/lib/AuthOptions";
 import { Search, Bell, Mail } from "@/constants/react-icons";
 import { lightSlate } from "@/constants/colors";
 
-
 function formatDate(): string {
   const date = new Date();
   const day = date.getDate();
-  const month = date.toLocaleString('default', { month: 'long' });
+  const month = date.toLocaleString("default", { month: "long" });
   const year = date.getFullYear();
 
   return `${day}, ${month} ${year}`;

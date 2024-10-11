@@ -4,7 +4,8 @@ import bcrypt from "bcrypt";
 
 export const POST = async (req: Request) => {
   try {
-    const { name, email, password, companyName, industry, eNumber } = await req.json();
+    const { name, email, password, companyName, industry, eNumber } =
+      await req.json();
     if (!name || !email || !password || !companyName || !industry || !eNumber) {
       return NextResponse.json({ message: "Missing Data" }, { status: 422 });
     }

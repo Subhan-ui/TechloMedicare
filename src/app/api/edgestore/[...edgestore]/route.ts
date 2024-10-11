@@ -1,11 +1,11 @@
-import { initEdgeStore } from '@edgestore/server';
-import { createEdgeStoreNextHandler } from '@edgestore/server/adapters/next/app';
+import { initEdgeStore } from "@edgestore/server";
+import { createEdgeStoreNextHandler } from "@edgestore/server/adapters/next/app";
 
 const es = initEdgeStore.create();
 
 const edgeStoreRouter = es.router({
   publicFiles: es.imageBucket({
-    maxSize: 1024 *1024*1
+    maxSize: 1024 * 1024 * 1,
   }),
 });
 

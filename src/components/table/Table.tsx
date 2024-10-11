@@ -40,22 +40,22 @@ const Table: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </div>
       </Bar>
       <div className="maxi:w-[76vw] max:w-[1122px] med:w-[calc(100vw-250px)] md:w-[calc(100vw-240px)] w-[94vw] bg-white md:mx-[22.55px] mx-[8px] overflow-x-scroll mt-[12.75px]">
-      <table className=" w-full min-w-[1122px] table-fixed">
-        <thead className="h-[65.7px] border-b-2  overflow-x-scroll border-gray-300">
-          <tr className="text-lg text-lightSlate  text-center relative maxi:right-[57px] right-[32px]">
-            <td className="pl-[24px]">Profile</td>
-            <td>Name</td>
-            <td>Diagnosis</td>
-            <td>Status</td>
-            <td>Phone Number</td>
-            <td>Date of Birth</td>
-            <td>Options</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>{children}</tr>
-        </tbody>
-      </table>
+        <table className=" w-full min-w-[1122px] table-fixed">
+          <thead className="h-[65.7px] border-b-2  overflow-x-scroll border-gray-300">
+            <tr className="text-lg text-lightSlate  text-center relative maxi:right-[57px] right-[32px]">
+              <td className="pl-[24px]">Profile</td>
+              <td>Name</td>
+              <td>Diagnosis</td>
+              <td>Status</td>
+              <td>Phone Number</td>
+              <td>Date of Birth</td>
+              <td>Options</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>{children}</tr>
+          </tbody>
+        </table>
       </div>
     </>
   );

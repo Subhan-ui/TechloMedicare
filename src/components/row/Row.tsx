@@ -7,7 +7,11 @@ import { tableContent } from "@/types/types";
 import { Options } from "@/constants/react-icons";
 
 const Row: React.FC<tableContent> = (props) => {
-  const { color, text, handleStatus, loading } = useChooseColor(props.status, props.email, props.id);
+  const { color, text, handleStatus, loading } = useChooseColor(
+    props.status,
+    props.email,
+    props.id
+  );
 
   return (
     <>
@@ -25,8 +29,8 @@ const Row: React.FC<tableContent> = (props) => {
         <td>{props.diagnosis}</td>
         <td>
           <button
-          onClick={handleStatus}
-          disabled={loading}
+            onClick={handleStatus}
+            disabled={loading}
             className=" w-[140.23px] h-[25.5px] center rounded-full text-center text-xs"
             style={{ backgroundColor: `${color}52`, color: color }}
           >

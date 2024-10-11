@@ -9,7 +9,7 @@ export type componentsProps = {
 export type TextType = {
   children: string[] | string;
   ml?: string;
-  cls?:string;
+  cls?: string;
 };
 
 export type emailType = {
@@ -114,7 +114,7 @@ export type tableContent = {
   next: string;
   handleShow: (id: string) => void;
   handleHiding: () => void;
-  email?:string|null;
+  email?: string | null;
 };
 
 export type sideBtnType = {
@@ -131,7 +131,7 @@ export type AppointmentProps = {
     purpose: string;
     start: Date;
     end: Date;
-    patientRecordNumber?:number|null
+    patientRecordNumber?: number | null;
   };
   handleShow?: () => void;
 };
@@ -145,7 +145,7 @@ export type patientType = {
   dateOfBirth: string;
   sex?: string;
   notes?: string;
-  recordNumber?:number
+  recordNumber?: number;
 };
 
 export type ModalProps = {
@@ -166,9 +166,8 @@ export type card = {
     female: number;
   };
   loading: boolean;
-  email?:string|null|undefined;
+  email?: string | null | undefined;
 };
-
 
 export type cardType = EventProps & {
   location: string;
@@ -180,8 +179,8 @@ export type cardType = EventProps & {
   time: string;
   id: string;
   duration: string;
-  online?:boolean;
-  patientRecordNumber?:number|null;
+  online?: boolean;
+  patientRecordNumber?: number | null;
 };
 
 export type appointmentData = {

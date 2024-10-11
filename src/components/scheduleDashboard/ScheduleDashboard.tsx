@@ -25,10 +25,15 @@ const ScheduleDashboard = ({ email }: emailType) => {
         <p className="h_center w-full">You don't have any appointments yet.</p>
       ) : (
         data?.map((item, index) => (
-          <div key={item?.id} className="justify-between relative flex-col flex w-full">
+          <div
+            key={item?.id}
+            className="justify-between relative flex-col flex w-full"
+          >
             <div className="flex flex-col gap-[7px]">
               <div className=" v_center w-[86.7px] gap-[35.7px]">
-                <p className="font-normal text-xs text-lightSlate w-[21.7px]">{timeManagement(item?.time)}</p>
+                <p className="font-normal text-xs text-lightSlate w-[21.7px]">
+                  {timeManagement(item?.time)}
+                </p>
                 <div className="rounded-full h-[9px] w-[9px] bg-black  flex-shrink-0 relative z-10" />
                 {index !== data?.length - 1 && (
                   <div className="absolute left-[61.5px] top-[11px] h-full w-[1px] bg-gray-300" />
@@ -68,14 +73,15 @@ const ScheduleDashboard = ({ email }: emailType) => {
               </div>
             </div>
             <div className="w-full flex justify-end mt-[9.81px] pr-[16px]">
-            <ScheduleDashboardDetail
-              id={item?.id}
-              clickedId={clickedId}
-              patientName={item?.patientName}
-              time={item?.time}
-              duration={item?.duration}
-              purpose={item?.purpose}
-            /></div>
+              <ScheduleDashboardDetail
+                id={item?.id}
+                clickedId={clickedId}
+                patientName={item?.patientName}
+                time={item?.time}
+                duration={item?.duration}
+                purpose={item?.purpose}
+              />
+            </div>
           </div>
         ))
       )}

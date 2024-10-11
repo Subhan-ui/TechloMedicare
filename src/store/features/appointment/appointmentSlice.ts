@@ -25,7 +25,7 @@ const initialState = {
   duration: "",
   type: "",
   online: false,
-  number : 0,
+  number: 0,
 };
 
 const appointmentSlice = createSlice({
@@ -51,17 +51,17 @@ const appointmentSlice = createSlice({
         month: "long",
         day: "numeric",
       });
-      const hours = (new Date(action.payload))?.getHours();
-      const minutes = (new Date(action.payload))?.getMinutes();
+      const hours = new Date(action.payload)?.getHours();
+      const minutes = new Date(action.payload)?.getMinutes();
       const time = hours + ":" + minutes;
       if (formatted) {
         state.date = formatted;
         state.time = time;
       }
     },
-    handleNumber: (state, action:PayloadAction<number>)=>{
+    handleNumber: (state, action: PayloadAction<number>) => {
       state.number = action.payload;
-    }
+    },
   },
   selectors: {
     selectDate: (data) => data.date,
@@ -77,7 +77,8 @@ const appointmentSlice = createSlice({
   },
 });
 
-export const { handleChange, handleOnline,handleDateTime,handleNumber } = appointmentSlice.actions;
+export const { handleChange, handleOnline, handleDateTime, handleNumber } =
+  appointmentSlice.actions;
 export const {
   selectDate,
   selectDuration,

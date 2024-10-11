@@ -9,7 +9,8 @@ const Modal: React.FC<{ handleShow: () => void; id: string }> = ({
   id,
 }) => {
   const { handleDelete, handleSubmit, loading, loadingDelete } = usePatientCRUD(
-    id, handleShow,
+    id,
+    handleShow
   );
   return (
     <Modals
@@ -23,28 +24,28 @@ const Modal: React.FC<{ handleShow: () => void; id: string }> = ({
           </tbody>
         </table>
         <div className="flex justify-between">
-        <button
-          className="bg-blue disabled:bg-disabled text-white px-3 py-2 absolute bottom-16 md:right-64 sm:right-[12rem] right-[11rem] rounded-lg hover:bg-white hover:text-black hover:border-2"
-          type="submit"
-          disabled={loading}
-        >
-          {loading ? "Submiting..." : "Submit"}
-        </button>
-        <button
-          className="bg-blue text-white px-3 py-2 absolute bottom-16 md:right-40 sm:right-[7rem] right-[6rem] rounded-lg hover:bg-white hover:text-black hover:border-2"
-          type="button"
-          onClick={handleShow}
-        >
-          Cancel
-        </button>
-        <button
-          className="bg-blue disabled:bg-disabled text-white px-3 py-2 absolute bottom-16 md:right-16 sm:right-[2rem] right-[1rem] rounded-lg hover:bg-white hover:text-black hover:border-2"
-          type="button"
-          disabled={loadingDelete}
-          onClick={handleDelete}
-        >
-          {loadingDelete ? "Deleting" : "Delete"}
-        </button>
+          <button
+            className="bg-blue disabled:bg-disabled text-white px-3 py-2 absolute bottom-16 md:right-64 sm:right-[12rem] right-[11rem] rounded-lg hover:bg-white hover:text-black hover:border-2"
+            type="submit"
+            disabled={loading}
+          >
+            {loading ? "Submiting..." : "Submit"}
+          </button>
+          <button
+            className="bg-blue text-white px-3 py-2 absolute bottom-16 md:right-40 sm:right-[7rem] right-[6rem] rounded-lg hover:bg-white hover:text-black hover:border-2"
+            type="button"
+            onClick={handleShow}
+          >
+            Cancel
+          </button>
+          <button
+            className="bg-blue disabled:bg-disabled text-white px-3 py-2 absolute bottom-16 md:right-16 sm:right-[2rem] right-[1rem] rounded-lg hover:bg-white hover:text-black hover:border-2"
+            type="button"
+            disabled={loadingDelete}
+            onClick={handleDelete}
+          >
+            {loadingDelete ? "Deleting" : "Delete"}
+          </button>
         </div>
       </form>
     </Modals>

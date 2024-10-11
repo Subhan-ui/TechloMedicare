@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 import useHandleMessage from "./useHandleMessage";
 import { emailType, typeTasks } from "@/types/types";
 
-
 const useTasks = ({ email }: emailType) => {
   const [loadAdd, setLoadAdd] = useState(false);
   const [show, setShow] = useState(false);
@@ -72,7 +71,7 @@ const useTasks = ({ email }: emailType) => {
       });
       toast.success("Successfully added Your Task");
       setTrack((prev) => prev + 1);
-      notification(email, `task added successfully...`)
+      notification(email, `task added successfully...`);
       handleShow();
     } catch (error: any) {
       toast.error(error?.response?.data?.message);

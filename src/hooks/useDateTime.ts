@@ -3,13 +3,12 @@ import { useState } from "react";
 import { handleDateTime } from "../store/features/appointment/appointmentSlice";
 import { useAppDispatch } from "../store/hooks";
 
-
 const formatDateTimeLocal = (date: Date) => {
   const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0'); 
-  const day = String(date.getDate()).padStart(2, '0');
-  const hours = String(date.getHours()).padStart(2, '0');
-  const minutes = String(date.getMinutes()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
 
   return `${year}-${month}-${day}T${hours}:${minutes}`;
 };
@@ -24,8 +23,8 @@ const useDateTime = (onClick: () => void) => {
   };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    onChange(value)
-  }
+    onChange(value);
+  };
   return { handleChange, value, onChange, handleInputChange };
 };
 

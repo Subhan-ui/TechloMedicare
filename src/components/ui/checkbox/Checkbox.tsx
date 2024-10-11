@@ -3,7 +3,11 @@ import React from "react";
 import { checkbox } from "@/types/types";
 
 const Checkbox: React.FC<checkbox> = (props) => (
-  <div className={`w-10 h-10 rounded-lg ${props.checked?'bg-[#0075ff]':"bg-white"}`}>
+  <div
+    className={`w-10 h-10 rounded-lg ${
+      props.checked ? "bg-[#0075ff]" : "bg-white"
+    }`}
+  >
     <label className="text-white ">
       <input
         checked={props.checked}
@@ -13,7 +17,6 @@ const Checkbox: React.FC<checkbox> = (props) => (
       />
     </label>
   </div>
- 
 );
 
 export default Checkbox;

@@ -30,7 +30,7 @@ const Rows: React.FC<emailType> = ({ email }) => {
                   <tbody>
                     {data?.map((row) => (
                       <Row
-                      email={email}
+                        email={email}
                         handleHiding={handleHiding}
                         handleShow={handleShow}
                         key={row?.id}

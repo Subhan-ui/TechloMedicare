@@ -24,20 +24,20 @@ export const PUT = async (req: Request) => {
     }
     const name = firstName + " " + lastName;
     const updatedPatient = await prisma.patient.update({
-        where:{id:id},
-        data:{
-            name,
-            dateOfBirth,
-            sex,
-            diagnosis,
-            notes,
-            phNo,
-        }
-    })
-    return NextResponse.json(updatedPatient,{status: 200})
+      where: { id: id },
+      data: {
+        name,
+        dateOfBirth,
+        sex,
+        diagnosis,
+        notes,
+        phNo,
+      },
+    });
+    return NextResponse.json(updatedPatient, { status: 200 });
   } catch (error) {
-    NextResponse.json({message: error})
-  } finally{
+    NextResponse.json({ message: error });
+  } finally {
     await prisma.$disconnect();
   }
 };

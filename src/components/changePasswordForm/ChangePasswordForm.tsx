@@ -14,7 +14,10 @@ const ChangePassword: React.FC<emailType> = ({ email }) => {
   return (
     <>
       {show ? (
-        <Bar classN="justify-between mt-9 ml-[26px] cursor-pointer" onClick={handleShow}>
+        <Bar
+          classN="justify-between mt-9 ml-[26px] cursor-pointer"
+          onClick={handleShow}
+        >
           <h1 className="font-semibold text-xl">Change Password</h1>
         </Bar>
       ) : (

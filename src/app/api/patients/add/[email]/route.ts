@@ -91,4 +91,3 @@ export const PUT = async (
     await prisma.$disconnect();
   }
 };
-

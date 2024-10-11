@@ -20,10 +20,11 @@ const PersonalInformation: React.FC<emailType> = ({ email }) => {
   return (
     <>
       {show ? (
-        <Bar classN="justify-between mt-9 cursor-pointer ml-[26px]" onClick={handleShow}>
-          <h1 className="font-semibold text-xl">
-            Change Personal Info
-          </h1>
+        <Bar
+          classN="justify-between mt-9 cursor-pointer ml-[26px]"
+          onClick={handleShow}
+        >
+          <h1 className="font-semibold text-xl">Change Personal Info</h1>
         </Bar>
       ) : (
         <>

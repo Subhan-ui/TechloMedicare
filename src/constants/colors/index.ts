@@ -7,5 +7,5 @@ export const lightSlate = "#828282";
 export const recover = "#27AE60";
 export const awaiting = "#2f80ed";
 export const treat = "#EB5757";
-export const darkGreen = '#27ae80'
+export const darkGreen = "#27ae80";
 export const lightGray = "#fbfbfb";

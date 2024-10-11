@@ -4,7 +4,7 @@ import useNotification from "@/hooks/useNotification";
 
 const NotificationSound = () => {
   const { audioRef } = useNotification();
-  
+
   return (
     <>
       <audio

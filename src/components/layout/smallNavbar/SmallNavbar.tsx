@@ -17,7 +17,7 @@ const SmallNavbar = () => {
     <>
       {show && <ModalSide show={show} handleShow={handleShow} />}
       <nav className="md:hidden flex sticky top-0 z-[5000] h-[64px] w-full border-b-2 border-gray-300 bg-white items-center justify-between pl-5 pr-10">
-          <Burger size={20} color={lightSlate} onClick={handleShow} />
+        <Burger size={20} color={lightSlate} onClick={handleShow} />
         <div className="center h-full gap-3">
           <Image
             src="/assets/logo.svg"
@@ -29,7 +29,6 @@ const SmallNavbar = () => {
         </div>
 
         <div className="gap-[34.9px] v_center">
-          
           <LogoutButton size={20} />
         </div>
       </nav>

@@ -20,7 +20,7 @@ export const GET = async (req: Request, { params }: { params: Params }) => {
 
     return NextResponse.json(user, { status: 200 });
   } catch (error) {
-    return NextResponse.json(error, {status:500})
+    return NextResponse.json(error, { status: 500 });
   } finally {
     await prisma.$disconnect();
   }
@@ -44,10 +44,10 @@ export const PUT = async (req: Request, { params }: { params: Params }) => {
         eNumber: eNumber,
       },
     });
-    return NextResponse.json(updatedUser,{status:200})
+    return NextResponse.json(updatedUser, { status: 200 });
   } catch (error) {
-    return NextResponse.json(error, {status:500})
-  } finally{
+    return NextResponse.json(error, { status: 500 });
+  } finally {
     await prisma.$disconnect();
   }
 };

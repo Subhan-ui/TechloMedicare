@@ -1,9 +1,20 @@
 import { SlOptions as Options } from "react-icons/sl";
 import { GrUpgrade as Upgrade, GrNotes as Notes } from "react-icons/gr";
 import { ImCross as Cross } from "react-icons/im";
-import { GoPerson as Person, GoClock as Clock, GoLocation as LocationI } from "react-icons/go";
-import { FaRegBell as Bell, FaChevronRight as Right, FaCircle } from "react-icons/fa";
-import { AiOutlineSchedule as Schedules, AiOutlineDelete } from "react-icons/ai";
+import {
+  GoPerson as Person,
+  GoClock as Clock,
+  GoLocation as LocationI,
+} from "react-icons/go";
+import {
+  FaRegBell as Bell,
+  FaChevronRight as Right,
+  FaCircle,
+} from "react-icons/fa";
+import {
+  AiOutlineSchedule as Schedules,
+  AiOutlineDelete,
+} from "react-icons/ai";
 import { BsPeople as Peoples } from "react-icons/bs";
 import { TbBrandGoogleAnalytics as Analytics } from "react-icons/tb";
 import { BiTask as Task } from "react-icons/bi";
@@ -55,7 +66,6 @@ export {
   IoIosArrowDown,
   AiOutlineDelete,
   FiEdit,
-  Downgrade, 
+  Downgrade,
   Burger,
 };
-

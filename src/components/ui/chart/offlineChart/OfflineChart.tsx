@@ -31,14 +31,12 @@ ChartJS.register(
   Filler
 );
 
-const OfflineChart = ({email}:{email:string|null|undefined}) => {
+const OfflineChart = ({ email }: { email: string | null | undefined }) => {
   const chartRef = useRef<ChartJS<"line"> | null>(null);
   const events = useAppointment(email);
 
   const onlineConsultations: cardType[] =
-    events?.filter(
-      (event: cardType) => event.online === false
-    ) || [];
+    events?.filter((event: cardType) => event.online === false) || [];
 
   const groupByWeek = (
     appointments: cardType[]

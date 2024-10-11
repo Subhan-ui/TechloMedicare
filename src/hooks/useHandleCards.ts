@@ -4,8 +4,8 @@ import toast from "react-hot-toast";
 
 import { card, emailType } from "../types/types";
 
-const useHandleCards = ({email}:emailType)=>{
-    const [offline, setOffline] = useState<number>(0);
+const useHandleCards = ({ email }: emailType) => {
+  const [offline, setOffline] = useState<number>(0);
   const [online, setOnline] = useState<number>(0);
   const [total, setTotal] = useState<{
     total: number;
@@ -59,7 +59,7 @@ const useHandleCards = ({email}:emailType)=>{
       loading: loading,
     },
   ];
-  return {cardData, total}
-}
+  return { cardData, total };
+};
 
 export default useHandleCards;

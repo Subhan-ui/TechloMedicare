@@ -13,22 +13,22 @@ const Card: React.FC<AppointmentProps> = ({ event }) => {
     switch (event.patientRecordNumber) {
       case 1:
         setColor(awaiting);
-        setText("Awaiting Surgery")
+        setText("Awaiting Surgery");
         break;
-        case 2:
-        setText("Recovered")
+      case 2:
+        setText("Recovered");
         setColor(recover);
         break;
-        default:
-        setText("On treatment")
+      default:
+        setText("On treatment");
         setColor(treat);
     }
     const startTime = new Date(start);
-const endTime = new Date(end);
+    const endTime = new Date(end);
 
-const durationInMilliseconds = endTime.getTime() - startTime.getTime();
+    const durationInMilliseconds = endTime.getTime() - startTime.getTime();
 
-setDuration(Math.floor(durationInMilliseconds / (1000 * 60)))
+    setDuration(Math.floor(durationInMilliseconds / (1000 * 60)));
   }, []);
   return (
     <>
@@ -47,10 +47,12 @@ setDuration(Math.floor(durationInMilliseconds / (1000 * 60)))
             <Person size={10} />
             {patientName}
           </div>
-          {duration>=45&&<div className="v_center gap-3 ml-2 font-normal text-xs">
-            <Notes size={10} />
-            {purpose}
-          </div>}
+          {duration >= 45 && (
+            <div className="v_center gap-3 ml-2 font-normal text-xs">
+              <Notes size={10} />
+              {purpose}
+            </div>
+          )}
           <div className="v_center gap-3 ml-2 font-normal text-xs">
             <Clock size={10} />
             {start.toLocaleTimeString([], {
@@ -63,10 +65,12 @@ setDuration(Math.floor(durationInMilliseconds / (1000 * 60)))
               minute: "2-digit",
             })}
           </div>
-          {duration>=10&&<div className="v_center gap-3 ml-2 font-normal text-xs">
-            <LocationI size={10} />
-            Room {location}
-          </div>}
+          {duration >= 10 && (
+            <div className="v_center gap-3 ml-2 font-normal text-xs">
+              <LocationI size={10} />
+              Room {location}
+            </div>
+          )}
         </div>
       </div>
     </>

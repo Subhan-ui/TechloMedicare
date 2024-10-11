@@ -23,7 +23,7 @@ const FormAddPatient: React.FC<typeFormAddPatient> = ({ cross }) => {
           {detail.children}
         </Row>
       ))}
-      <GenderButton sex={sex} handleChangeSex={handleChangeSex}/>
+      <GenderButton sex={sex} handleChangeSex={handleChangeSex} />
       {detailBelow.map((detail) => (
         <Row
           key={detail.id}

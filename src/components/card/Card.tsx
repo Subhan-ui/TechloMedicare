@@ -45,14 +45,13 @@ const Card: React.FC<card> = (props) => {
             </div>
 
             {props.image ? (
-             
               props.percentage === "+3.11%" ? (
                 <div className="h-[112px] med:w-[164px] md:w-[144px] w-[164px]">
                   <OfflineChart email={props.email} />
                 </div>
               ) : (
                 <div className="h-[112px] med:w-[164px] md:w-[144px] w-[164px]">
-                <OnlineChart email={props.email} />
+                  <OnlineChart email={props.email} />
                 </div>
               )
             ) : props?.total?.male ? (

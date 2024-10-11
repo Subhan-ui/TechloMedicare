@@ -23,14 +23,14 @@ const convertToDateTime = (dateString: string, timeString: string): Date => {
   return moment(time).toDate();
 };
 
-export const deletingAppointment = async (id:string)=>{
+export const deletingAppointment = async (id: string) => {
   try {
-    await axios.delete(`/api/appointment/delete?id=${id}`)
-    toast.success('Removed Appointment successfully')
-  } catch (error:any) {
-    toast.error(error?.response?.data?.message)
+    await axios.delete(`/api/appointment/delete?id=${id}`);
+    toast.success("Removed Appointment successfully");
+  } catch (error: any) {
+    toast.error(error?.response?.data?.message);
   }
-} 
+};
 
 const useAppointment = (email: string | null | undefined) => {
   const [data, setData] = useState<cardType[]>([]);
@@ -59,7 +59,7 @@ const useAppointment = (email: string | null | undefined) => {
             }
           );
           const sortedData = transformedData.sort(
-            (a:cardType, b:cardType) => a.start.getTime() - b.start.getTime()
+            (a: cardType, b: cardType) => a.start.getTime() - b.start.getTime()
           );
 
           setData(sortedData);
