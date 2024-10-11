@@ -42,7 +42,7 @@ setDuration(Math.floor(durationInMilliseconds / (1000 * 60)))
         >
           {text}
         </p>
-        <div className="flex flex-col gap-[7%] h-[75%]">
+        <div className="flex flex-col gap-[7%] h-[75%] pt-[5px]">
           <div className="v_center gap-3 ml-2 font-normal text-xs">
             <Person size={10} />
             {patientName}
